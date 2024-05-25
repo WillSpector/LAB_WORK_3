@@ -1,0 +1,26 @@
+
+„
+java:S4973."<Strings and Boxed types should be compared using "equals()".(ÄæÓñıÿÿÿÿ8èÕò®ú1J$f5bfdb2f-6b1c-4046-a750-01c78b576fa8
+„
+java:S4973."<Strings and Boxed types should be compared using "equals()".(ÄæÓñıÿÿÿÿ8èÕò®ú1J$6fa1f931-4161-4c37-8325-95dc090ec775
+
+java:S49738"<Strings and Boxed types should be compared using "equals()".(É“Â˜8èÕò®ú1J$b1f06a3f-a241-44f1-a4a8-14232911fba3
+
+java:S4973:"<Strings and Boxed types should be compared using "equals()".(ŞÕî8èÕò®ú1J$992b903d-cd08-4c3f-b7ae-448b0918be00
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¬ÿ÷ì8éÕò®ú1J$b23207de-6f81-47bd-844d-fcc875cc3c49
+
+java:S2589$"7Remove this expression which always evaluates to "true"(ß³¦™ÿÿÿÿÿ8ñÕò®ú1J$a66ff43e-edac-4b7a-9f80-a1bb41cc0f34
+É
+java:S1186?"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(µÓ«Ëüÿÿÿÿ8òÕò®ú1J$96fba5ae-fe88-447f-86bf-24653d803f76
+o
+java:S1125 "'Remove the unnecessary boolean literal.(Ú—ğµÿÿÿÿÿ8÷Õò®ú1J$9571098c-3f23-4913-ab0a-20aff82249b5
+m	java:S106""+Replace this use of System.out by a logger.(¹”î8øÕò®ú1J$d8a82581-4265-4ea0-925d-2ae95e785d21
+o
+java:S1125$"'Remove the unnecessary boolean literal.(ß³¦™ÿÿÿÿÿ8øÕò®ú1J$f00381c5-f173-4c14-8ffa-98f70291a7ac
+p	java:S108$")Either remove or fill this block of code.(ß³¦™ÿÿÿÿÿ8øÕò®ú1J$7dd18885-7b0e-446a-879e-ba69096a16a0
+r	java:S106("+Replace this use of System.out by a logger.(¼¶ãõşÿÿÿÿ8úÕò®ú1J$4b3e10bc-8682-482b-a3f7-9468995ad185
+a
+java:S2178."Correct this "|" to "||".(ÄæÓñıÿÿÿÿ8ûÕò®ú1J$1f34de8b-aa86-480f-ad68-4986f11192f0
+r	java:S1062"+Replace this use of System.out by a logger.(ô¾Ã¢şÿÿÿÿ8ûÕò®ú1J$1dfd9347-6263-442e-98ea-2e5df743b4e9
+m	java:S1069"+Replace this use of System.out by a logger.(ˆ„­8üÕò®ú1J$e00eca5a-6d5d-4e64-b123-5c6d5268e2db
+r	java:S106;"+Replace this use of System.out by a logger.(şõ…çıÿÿÿÿ8ıÕò®ú1J$d615c5c7-62d5-4db1-9de0-351d9fbd8de1
