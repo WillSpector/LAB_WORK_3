@@ -1,8 +1,8 @@
+// imports
 import Actors.*;
 import Abstract.Concatenation;
 import Hat.*;
 
-import static Hat.Item.*;
 import static Locations.Location.*;
 
 public class Main {
@@ -15,52 +15,44 @@ public class Main {
         Concatenation and = new Concatenation();
         // Выводи на экран имя объекта crabs
         System.out.print(crabs);
-        // Задаем локацию в которую будем перемщаться
+        // Задаем локацию в которую будем перемещаться
         crabs.setLocation(HOTEL_ROOM);
-        // Выводим на экран куда и с кем перемащается персонаж
+        // Выводим на экран куда и с кем перемещается персонаж
         crabs.moveTo(scooperfield);
-        // Задаем фразу которую говорит
+        // Задаем фразу которую говорит Крабс
         crabs.setPhrase("You need to wash your face!");
-        // Выводим на экран что говорит Mr.Crabs
+        // Выводим на экран что говорит Крабс
         crabs.speak(scooperfield);
         // Скоперфильд осматривает локацию (можно выбрать)
         scooperfield.look(HOTEL_ROOM);
-        // Соеднияем строки
+        // Соединяем строки
         and.and();
         // Задаем выражение лица
-        scooperfield.setFacialExpressions("smile");
-        // выводим текст сравнения выражение лица
+        scooperfield.setFacialExpressions("grimace of disgust");
+        // Выводим текст сравнения выражение лица
         scooperfield.getFacialExpressions();
-         /* Будет ли Mr.Scooperfield кого-то балгодаирть.Да параметр "willThank" лишний,
+         /* Будет ли Mr.Scooperfield кого-то благодарить. Да параметр "willThank" лишний,
          но так интересней плюс можно расписать false:)*/
         scooperfield.thanks(true,crabs);
-        // Соеднияем строки
+        // Соединяем строки
         and.and();
-        // Задаем локацию в которую будем перемщаться
+        // Задаем локацию в которую будем перемещаться
         scooperfield.setLocation(BATHROOM);
-        // Выводим на экран куда и с кем перемащается персонаж
+        // Выводим на экран куда и с кем перемещается персонаж
         scooperfield.moveTo("");
-        // создаем объект Шляпа
+        // Создаем объект Шляпа
         Hat hat = new Hat("hat");
         // Надета ли шляпа ?
         scooperfield.setHatOnHead(true);
         // Скуперфильд снимает шляпу с головы
         scooperfield.takeOffHat(hat);
         /* Достаем вещи из шляпы (расписал для каждого предмета, если надо будет достать определенный.
-        На экарн выводи массив всех предметов)*/
+        На экран выводи массив всех предметов)*/
         hat.takeItemFromHat(false,null);
-        //Выводим место подбора предметов
+        //Выводим место где были взяты предметы
         hat.picUplocationItem(STREET);
         //Выводи на экран роль шляпы
         hat.getRoles();
-
-
-
-
-
-
-
-
 
     }
 }

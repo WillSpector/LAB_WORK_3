@@ -1,6 +1,7 @@
 package Hat;
 
 public enum Item {
+    // Список предметов
     TOOTHBRUSH ("toothbrush"),
     HANDKERCHIEFS ("handkerchiefs"),
     DENTIFRICE ("dentifrice"),
@@ -9,13 +10,14 @@ public enum Item {
     TOWEL ("towel"),
     PIECE_OF_COPPER_WIRE ("piece of copper wire");
 
+    // Переменная для хранения предмета
   private final String item;
-
   Item (String item) {this.item = item;}
-
   public String getItem() {return item;}
 
     @Override
+    // Переопределяем метод toString
     public String toString() {return  item;}
+
 
 }
