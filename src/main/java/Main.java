@@ -42,7 +42,7 @@ public class Main {
         scooperfield.moveTo("");
         // Создаем объект Шляпа
         Hat hat = new Hat("hat");
-        // Надета ли шляпа ?
+        // Надета ли шляпа?
         scooperfield.setHatOnHead(true);
         // Скуперфильд снимает шляпу с головы
         scooperfield.takeOffHat(hat);
@@ -51,7 +51,7 @@ public class Main {
         hat.takeItemFromHat(false,null);
         //Выводим место где были взяты предметы
         hat.picUplocationItem(STREET);
-        //Выводи на экран роль шляпы
+        //Выводим на экран роль шляпы
         hat.getRoles();
 
     }
