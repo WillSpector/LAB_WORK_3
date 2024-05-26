@@ -5,7 +5,6 @@ import Interfaces.InteractionWithHat;
 import Interfaces.Thankable;
 import Locations.Location;
 import Hat.*;
-
 import java.util.Objects;
 
 public class Scooperfield extends Mister implements Thankable, InteractionWithHat {
