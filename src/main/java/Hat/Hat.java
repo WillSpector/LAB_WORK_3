@@ -1,33 +1,23 @@
 package Hat;
 
+// imports
 import Interfaces.InteractionWithHat;
 import Locations.Location;
-
 import java.util.Arrays;
-
+import java.util.Objects;
 import static Hat.Item.*;
 
 public class Hat implements InteractionWithHat {
     //Переменная имя
-    String name;
+    private final String name;
     // Массив для хранения предметов
-    Item[] arrayThings = Item.values();
-    // Перемнная роли шляпы
-    String[] roles = {"a headgear","a travel bag","warehouse for scrap materials"};
+    private final Item[] arrayThings = Item.values();
+    // Массив роли шляпы
+    private final String[] roles = {"a headgear","a travel bag","warehouse for scrap materials"};
     // Имя объекта
   public Hat (String name){
       this.name = name;
   }
-
-
-
-    @Override
-    public String toString(){
-        return name;
-    }
-    // Метод для снятия шляпы с головы
-    public void takeOffHat(Hat hat) {}
-
     // Метод, который выводит место подбора предметов
     public void picUplocationItem(Location location) {
       if (location ==Location.STREET){
@@ -35,14 +25,17 @@ public class Hat implements InteractionWithHat {
       else {System.out.println("which he got in " + location+ ".");}
     }
     // Метод роли шляпы
-
-
     public void getRoles() {
       System.out.println("Obviously, Mr.Scooperfield's hat served not only as "+roles[0]+", but also as "
               +roles[1]+ " and also as "+roles[2]+".");;
     }
 
     @Override
+    //  Переопределим метод toString
+    public String toString(){return name;}
+    // Переорпеделям метод для снятия шляпы с головы
+    public void takeOffHat(Hat hat) {}
+    // Переопределяем метод интерфейса. Достать предметы из шляпы
     public void takeItemFromHat(boolean isHatOnHead, Item item) {
       if (!isHatOnHead) {
           if (item == TOOTHBRUSH){System.out.println(arrayThings[0]+", ");}
@@ -56,9 +49,17 @@ public class Hat implements InteractionWithHat {
               System.out.print(Arrays.toString(arrayThings).replace("[","")
                                                                 .replace("]", " "));
       }
-      else {
-          System.out.println("You can't do that. Hat on head. Take off it. ");
-      }
-
+      else {System.out.println("You can't do that. Hat on head. Take off it. ");}
+    }
+    // Переопределение метода equals
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hat hat = (Hat) o;
+        return Objects.equals(name, hat.name) && Objects.deepEquals(arrayThings, hat.arrayThings) && Objects.deepEquals(roles, hat.roles);
+    }
+    // Переопределение метода hashCode
+    public int hashCode() {
+        return Objects.hash(name, Arrays.hashCode(arrayThings), Arrays.hashCode(roles));
     }
 }
