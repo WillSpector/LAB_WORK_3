@@ -13,19 +13,21 @@ public class Mister extends Character{
     // Выбор локации
     public void setLocation(Location location) {this.location = location;}
     // Метод перемещения в выбранную локацию
-    public void moveTo(Object object) {
-        if (object ==""){
+
+    public void moveToLocation(Character character) {
+        if (character == null){
             if (this.location == Location.STREET) {System.out.print(" went on " + this.location + ". ");}
             else {System.out.print(" went to " + this.location + ". ");}
         }
         else {
             if (this.location == Location.STREET) {
-                System.out.print(" went on " + this.location + " with " + object + ". ");
+                System.out.print(" went on " + this.location + " with " + character + ". ");
             } else {
-                System.out.print(" went to " + this.location + " with " + object + ". ");
+                System.out.print(" went to " + this.location + " with " + character + ". ");
             }
         }
     }
+
     @Override
     // Переопределение метода equals
     public boolean equals(Object o) {
