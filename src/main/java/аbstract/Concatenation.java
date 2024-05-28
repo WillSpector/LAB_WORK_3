@@ -1,4 +1,4 @@
-package Abstract;
+package аbstract;
 
 public class Concatenation {
     // Метод выводит на экран союз "и"

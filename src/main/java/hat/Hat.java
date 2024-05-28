@@ -1,11 +1,11 @@
-package Hat;
+package hat;
 
 // imports
-import Interfaces.InteractionWithHat;
-import Locations.Location;
+import interfaces.InteractionWithHat;
+import locations.Location;
 import java.util.Arrays;
 import java.util.Objects;
-import static Hat.Item.*;
+import static hat.Item.*;
 
 public class Hat implements InteractionWithHat {
     //Переменная имя

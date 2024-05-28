@@ -1,7 +1,7 @@
-package Interfaces;
+package interfaces;
 
 // imports
-import Hat.*;
+import hat.*;
 
 public interface InteractionWithHat {
    // Снять шляпу с головы

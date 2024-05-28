@@ -1,4 +1,4 @@
-package Interfaces;
+package interfaces;
 
 public interface Thankable {
     // Метод, говорит ли Скопрефильд спасибо и кому

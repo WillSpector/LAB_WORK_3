@@ -1,7 +1,7 @@
-package Actors;
+package аctors;
 
 // imports
-import Locations.Location;
+import locations.Location;
 import java.util.Objects;
 
 

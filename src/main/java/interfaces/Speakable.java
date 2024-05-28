@@ -1,4 +1,4 @@
-package Interfaces;
+package interfaces;
 
 public interface Speakable {
     // Выводит на экран фразу и к кому она направлена

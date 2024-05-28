@@ -1,10 +1,10 @@
-package Actors;
+package аctors;
 
 // imports
-import Interfaces.InteractionWithHat;
-import Interfaces.Thankable;
-import Locations.Location;
-import Hat.*;
+import interfaces.InteractionWithHat;
+import interfaces.Thankable;
+import locations.Location;
+import hat.*;
 import java.util.Objects;
 
 public class Scooperfield extends Mister implements Thankable, InteractionWithHat {

@@ -1,7 +1,7 @@
-package Actors;
+package аctors;
 
 // imports
-import Interfaces.Speakable;
+import interfaces.Speakable;
 import java.util.Objects;
 
 public class Crabs extends Mister implements Speakable {

@@ -1,9 +1,9 @@
 // imports
-import Actors.*;
-import Abstract.Concatenation;
-import Hat.*;
+import аctors.*;
+import аbstract.Concatenation;
+import hat.*;
 
-import static Locations.Location.*;
+import static locations.Location.*;
 
 public class Main {
     public static void main(String[] args) {

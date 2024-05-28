@@ -1,4 +1,4 @@
-package Hat;
+package hat;
 
 public enum Item {
     // Список предметов

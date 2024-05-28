@@ -1,4 +1,4 @@
-package Actors;
+package аctors;
 
 // imports
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package Locations;
+package locations;
 
 public enum Location {
     // Список локаций
