@@ -12,6 +12,11 @@ abstract class Character {
     public String getName() {
         return this.name;
     }
+    // Конструктор Character
+    public Character(String name){
+        this.name = name;
+    }
+
 
     @Override
     // Переопределение метода equals

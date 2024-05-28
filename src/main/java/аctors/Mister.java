@@ -9,7 +9,7 @@ public class Mister extends Character{
     // Переменная location
     private Location location;
     // Имя
-    public Mister(String name) {setName(name);}
+    public Mister(String name) {super(name);}
     // Выбор локации
     public void setLocation(Location location) {this.location = location;}
     // Метод перемещения в выбранную локацию
