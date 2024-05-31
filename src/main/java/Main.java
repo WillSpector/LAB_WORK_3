@@ -18,7 +18,7 @@ public class Main {
         // Задаем локацию в которую будем перемещаться
         crabs.setLocation(HOTEL_ROOM);
         // Выводим на экран куда и с кем перемещается персонаж
-        crabs.moveToLocation(scooperfield);
+        crabs.moveToLocationWith(scooperfield);
         // Задаем фразу которую говорит Крабс
         crabs.setPhrase("You need to wash your face!");
         // Выводим на экран что говорит Крабс
@@ -38,8 +38,8 @@ public class Main {
         and.and();
         // Задаем локацию в которую будем перемещаться
         scooperfield.setLocation(BATHROOM);
-        // Выводим на экран куда и с кем перемещается персонаж
-        scooperfield.moveToLocation(null);
+        // Выводим на экран куда перемещается персонаж
+        scooperfield.moveToLocationAlone();
         // Создаем объект Шляпа
         Hat hat = new Hat("hat");
         // Надета ли шляпа?
