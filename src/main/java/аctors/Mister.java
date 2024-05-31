@@ -12,19 +12,20 @@ public class Mister extends Character{
     public Mister(String name) {super(name);}
     // Выбор локации
     public void setLocation(Location location) {this.location = location;}
-    // Метод перемещения в выбранную локацию
-
-    public void moveToLocation(Character character) {
-        if (character == null){
-            if (this.location == Location.STREET) {System.out.print(" went on " + this.location + ". ");}
-            else {System.out.print(" went to " + this.location + ". ");}
-        }
-        else {
+    // Метод перемещения в выбранную локацию c кем-то
+    public void moveToLocationWith(Character character) {
             if (this.location == Location.STREET) {
-                System.out.print(" went on " + this.location + " with " + character + ". ");
+                System.out.print(" went on " + this.location + ". ");
             } else {
-                System.out.print(" went to " + this.location + " with " + character + ". ");
+                System.out.print(" went to " + this.location + ". ");
             }
+        }
+    // Метод перемещения в выбранную локацию
+    public void moveToLocationAlone() {
+        if (this.location == Location.STREET) {
+            System.out.print(" went on " + this.location + ". ");
+        } else {
+            System.out.print(" went to " + this.location + ". ");
         }
     }
 
