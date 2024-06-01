@@ -16,7 +16,7 @@ public class Crabs extends Mister implements Speakable {
 
     @Override
     // Выводит на экран фразу и к кому она направлена
-    public void speak (Object addressObject) {
+    public void speak(Object addressObject) {
         System.out.println("Mr."+getName() + " said: " + this.phrase + " - to " + addressObject +". ");
     }
     // Переопределение метода equals
@@ -27,6 +27,13 @@ public class Crabs extends Mister implements Speakable {
         Crabs crabs = (Crabs) o;
         return Objects.equals(phrase, crabs.phrase);
     }
+
+
+
+
+
+
+
     // Переопределение метода hashCode
     public int hashCode() {
         return Objects.hash(super.hashCode(), phrase);

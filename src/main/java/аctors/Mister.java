@@ -14,12 +14,12 @@ public class Mister extends Character{
     public void setLocation(Location location) {this.location = location;}
     // Метод перемещения в выбранную локацию c кем-то
     public void moveToLocationWith(Character character) {
-            if (this.location == Location.STREET) {
-                System.out.print(" went on " + this.location + ". ");
-            } else {
-                System.out.print(" went to " + this.location + ". ");
-            }
+        if (this.location == Location.STREET) {
+            System.out.print(" went on " + this.location +" with "+ character + ". ");
+        } else {
+            System.out.print(" went to " + this.location + " with "+ character + ". ");
         }
+    }
     // Метод перемещения в выбранную локацию
     public void moveToLocationAlone() {
         if (this.location == Location.STREET) {

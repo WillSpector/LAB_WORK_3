@@ -7,7 +7,9 @@ abstract class Character {
     // Имя персонажа
     private String name;
     // Метод для установки имени
-    public void setName(String name) {this.name = "Mr." + name;}
+    public void setName(String name) {
+        this.name = "Mr." + name;
+    }
     // Метод возврата имени (пока не используется)
     public String getName() {
         return this.name;
@@ -16,7 +18,6 @@ abstract class Character {
     public Character(String name){
         this.name = name;
     }
-
 
     @Override
     // Переопределение метода equals
