@@ -17,7 +17,7 @@ public class Crabs extends Mister implements Speakable {
     @Override
     // Выводит на экран фразу и к кому она направлена
     public void speak (Object addressObject) {
-        System.out.println("Mr.Crabs said: " + this.phrase + " - to " + addressObject +". ");
+        System.out.println(getName() + " said: " + this.phrase + " - to " + addressObject +". ");
     }
     // Переопределение метода equals
     public boolean equals(Object o) {
