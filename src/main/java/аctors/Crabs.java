@@ -7,8 +7,6 @@ import java.util.Objects;
 public class Crabs extends Mister implements Speakable {
     // Переменная для хранения слов Крабса
     private String phrase;
-    // Кому будут направлены слова
-    private Object addressObject;
     // Имя персонажа (Крабс)
     public Crabs(String name) {super(name);}
     // Метод для установки слов, которые говорит Крабс
@@ -26,11 +24,12 @@ public class Crabs extends Mister implements Speakable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Crabs crabs = (Crabs) o;
-        return Objects.equals(phrase, crabs.phrase) && Objects.equals(addressObject, crabs.addressObject);
+        return Objects.equals(phrase, crabs.phrase);
     }
     // Переопределение метода hashCode
     public int hashCode() {
-        return Objects.hash(phrase, addressObject);
+        return Objects.hash(super.hashCode(), phrase);
     }
 }
