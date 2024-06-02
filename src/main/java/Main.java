@@ -50,7 +50,7 @@ public class Main {
         scooperfield.takeOffHat(hat);
         /* Достаем вещи из шляпы (расписал для каждого предмета, если надо будет достать определенный.
         На экран выводи массив всех предметов)*/
-        scooperfield.takeItemFromHat();
+        scooperfield.takeItemsFromHat();
         //Выводим место где были взяты предметы
         hat.pickUpLocationItem(STREET);
         //Выводим на экран роль шляпы
