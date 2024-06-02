@@ -55,9 +55,6 @@ public class Main {
         hat.pickUpLocationItem(STREET);
         //Выводим на экран роль шляпы
         hat.getRoles();
-
-
-
     }
 }
 

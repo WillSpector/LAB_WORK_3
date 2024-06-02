@@ -8,4 +8,6 @@ public interface InteractionWithHat {
    void takeOffHat(Hat hat);
    // Достать предметы из шляпы
    void takeItemsFromHat();
+   void takeItemFromHat(int quantity_of_item);
+
 }
