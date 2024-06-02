@@ -13,11 +13,9 @@ import static hat.Item.*;
 
 public class Scooperfield extends Mister implements Thankable, InteractionWithHat {
     // Переменная для выражения лица
-    String facialExpressions;
-    // Переменная спасибо
-    boolean thanks;
+    private String facialExpressions;
     //  Переменная наличия шляпы на голове
-    boolean isHatOnHead;
+    private boolean isHatOnHead;
     // Массив для хранения предметов
     private final Item[] arrayThings = Item.values();
     // Имя персонажа (Крабс)
