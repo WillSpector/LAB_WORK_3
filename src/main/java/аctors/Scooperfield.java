@@ -28,7 +28,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
     // Метод позволяет настроить гримасу на лице Скуперфильда (только smile или grimace of disgust)
     public void setFacialExpressions(String facialExpressions) {
-        if(facialExpressions == "grimace of disgust"| facialExpressions == "smile" ) {
+        if(Objects.equals(facialExpressions, "grimace of disgust") | Objects.equals(facialExpressions, "smile")) {
             this.facialExpressions = facialExpressions;
         }
         else {
@@ -37,9 +37,9 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
     // Метод выводит на экран манипуляции с лицом
     public void getFacialExpressions() {
-        if(this.facialExpressions == "smile") {
+        if(Objects.equals(this.facialExpressions, "smile")) {
             System.out.print(" putting a " + this.facialExpressions + " on his face, which can be mistaken for a grimace of disgust, ");}
-        else if (this.facialExpressions == "grimace of disgust") {
+        else if (Objects.equals(this.facialExpressions, "grimace of disgust")) {
             System.out.print(" putting a " + this.facialExpressions + " on his face, which can be mistaken for a smile, ");
         }
     }

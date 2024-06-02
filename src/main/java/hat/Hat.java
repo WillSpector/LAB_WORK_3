@@ -15,7 +15,7 @@ public class Hat {
       this.name = name;
     }
     // Метод, который выводит место подбора предметов
-    public void pickUplocationItem(Location location) {
+    public void pickUpLocationItem(Location location) {
       if (location ==Location.STREET) {
           System.out.println("which he got on " + location+ ".");}
       else {

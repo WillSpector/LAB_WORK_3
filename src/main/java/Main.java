@@ -15,7 +15,9 @@ public class Main {
         Concatenation and = new Concatenation();
         // Выводи на экран имя объекта crabs
         System.out.print(crabs);
-        // Задаем локацию в которую будем перемещаться
+        // Задаем локацию в которую будет пермещаться Scooperfield
+        scooperfield.setLocation(HOTEL_ROOM);
+        // Задаем локацию в которую будет пермещаться Crabs
         crabs.setLocation(HOTEL_ROOM);
         // Выводим на экран куда и с кем перемещается персонаж
         crabs.moveToLocationWith(scooperfield);
@@ -50,7 +52,7 @@ public class Main {
         На экран выводи массив всех предметов)*/
         scooperfield.takeItemFromHat(Item.ALL_ITEM);
         //Выводим место где были взяты предметы
-        hat.pickUplocationItem(STREET);
+        hat.pickUpLocationItem(STREET);
         //Выводим на экран роль шляпы
         hat.getRoles();
     }
