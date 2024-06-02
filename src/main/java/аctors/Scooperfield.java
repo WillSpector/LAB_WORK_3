@@ -75,10 +75,8 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
     // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
     public void thanks(boolean willThank, Object addressObject) {
-        Scooperfield scooperfield = new Scooperfield("Scooperfield");
-        this.thanks = willThank;
-        if (this.thanks) {
-            System.out.println(scooperfield +" thanked " + addressObject);
+        if (willThank) {
+            System.out.println("Mr."+getName() +" thanked " + "Mr." + addressObject);
         }
     }
     // Переопределение метода equals

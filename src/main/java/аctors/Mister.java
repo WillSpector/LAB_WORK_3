@@ -15,9 +15,9 @@ public class Mister extends Character{
     // Метод перемещения в выбранную локацию c кем-то
     public void moveToLocationWith(Character character) {
         if (this.location == Location.STREET) {
-            System.out.print(" went on " + this.location +" with "+ character + ". ");
+            System.out.print(" went on " + this.location +" with "+ "Mr." + character + ". ");
         } else {
-            System.out.print(" went to " + this.location + " with "+ character + ". ");
+            System.out.print(" went to " + this.location + " with "+ "Mr." + character + ". ");
         }
     }
     // Метод перемещения в выбранную локацию

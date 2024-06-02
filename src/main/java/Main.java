@@ -14,7 +14,8 @@ public class Main {
         // Создаем класс and для соединения строк в тексте
         Concatenation and = new Concatenation();
         // Выводи на экран имя объекта crabs
-        System.out.print(crabs);
+        crabs.setName("Crabs");
+        System.out.print(crabs.getName());
         // Задаем локацию в которую будет пермещаться Scooperfield
         scooperfield.setLocation(HOTEL_ROOM);
         // Задаем локацию в которую будет пермещаться Crabs
