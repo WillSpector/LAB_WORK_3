@@ -9,8 +9,6 @@ import hat.*;
 import java.util.Arrays;
 import java.util.Objects;
 
-import static hat.Item.*;
-
 public class Scooperfield extends Mister implements Thankable, InteractionWithHat {
     // Переменная для выражения лица
     private String facialExpressions;
@@ -56,19 +54,10 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         }
     }
     // Переопределяем метод интерфейса. Достать предметы из шляпы
-    public void takeItemFromHat(Item item) {
-        if (!isHatOnHead) {
-            if (item == TOOTHBRUSH){System.out.print(arrayThings[0]+", ");}
-            else if (item ==HANDKERCHIEFS) {System.out.print(arrayThings[1]+", ");}
-            else if (item ==DENTIFRICE) {System.out.print(arrayThings[2]+", ");}
-            else if (item ==SPARE_SOCKS) {System.out.print(arrayThings[3]+", ");}
-            else if (item ==OLD_NAIL) {System.out.print(arrayThings[4]+", ");}
-            else if (item ==TOWEL) {System.out.print(arrayThings[5]+", ");}
-            else if (item ==PIECE_OF_COPPER_WIRE) {System.out.print(arrayThings[6]+", ");}
-            else if (item ==ALL_ITEM) {System.out.print(arrayThings[7]);}
-            else {System.out.print("There is no this item in the hat");}
-        } else {
-            System.out.println("You can't do that. Hat on head. Take off it. ");
+    public void takeItemFromHat() {
+        int quantity_of_item;
+        for (quantity_of_item =0; quantity_of_item <arrayThings.length; quantity_of_item++){
+            System.out.print(arrayThings[quantity_of_item]+ ", ");
         }
     }
     // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
