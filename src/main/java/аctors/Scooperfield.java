@@ -61,13 +61,8 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         }
     }
     // Переопределяем метод интерфейса. Достать предмет из шляпы
-    public void takeItemFromHat(int quantity_of_item){
-        int quantity;
-        for(quantity = 0; quantity<quantity_of_item; quantity++){
-            System.out.print(arrayThings[quantity]+ ", ");
-        }
-
-
+    public void takeItemFromHat(Item item){
+        System.out.println(item.getItem() + ", ");
     }
 
     // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
