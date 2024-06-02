@@ -45,7 +45,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     public void setHatOnHead(boolean isHatOnHead) {
         this.isHatOnHead = isHatOnHead;
     }
-@Override
+    @Override
     // Метод для снятия шляпы с головы
     public void takeOffHat(Hat hat) {
         if (isHatOnHead) {
@@ -78,17 +78,16 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         }
     }
     // Переопределение метода equals
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Scooperfield that = (Scooperfield) o;
-        return thanks == that.thanks && isHatOnHead == that.isHatOnHead && Objects.equals(facialExpressions, that.facialExpressions) && Objects.deepEquals(arrayThings, that.arrayThings);
+        return isHatOnHead == that.isHatOnHead && Objects.equals(facialExpressions, that.facialExpressions) && Objects.deepEquals(arrayThings, that.arrayThings);
     }
     // Переопределение метода hashCode
     public int hashCode() {
-        return Objects.hash(super.hashCode(), facialExpressions, thanks, isHatOnHead, Arrays.hashCode(arrayThings));
+        return Objects.hash(super.hashCode(), facialExpressions, isHatOnHead, Arrays.hashCode(arrayThings));
     }
 }
 
