@@ -8,8 +8,14 @@ public enum Location {
 
     // Переменная для хранения локации
     private final String location;
-    Location(String location) {this.location = location;}
-    public String getLocation() {return location;}
+
+    Location(String location) {
+        this.location = location;
+    }
+
+    public String getLocation() {
+        return location;
+    }
 
     @Override
     // Переопределяем метод toString

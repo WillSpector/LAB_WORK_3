@@ -1,4 +1,5 @@
 // imports
+
 import аctors.*;
 import аbstract.Concatenation;
 import hat.*;
@@ -35,7 +36,7 @@ public class Main {
         scooperfield.getFacialExpressions();
          /* Будет ли Mr.Scooperfield кого-то благодарить. Да параметр "willThank" лишний,
          но так интересней плюс можно расписать false:)*/
-        scooperfield.thanks(true,crabs);
+        scooperfield.thanks(true, crabs);
         // Соединяем строки
         and.and();
         // Задаем локацию в которую будем перемещаться
