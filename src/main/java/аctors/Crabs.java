@@ -2,6 +2,7 @@ package аctors;
 
 // imports
 
+import interfaces.Communication;
 import interfaces.Speakable;
 
 import java.util.Objects;
@@ -22,7 +23,7 @@ public class Crabs extends Mister implements Speakable {
 
     @Override
     // Выводит на экран фразу и к кому она направлена
-    public void speak(Object addressObject) {
+    public void speak(Communication addressObject) {
         System.out.println("Mr." + getName() + " said: " + this.phrase + " - to " + "Mr." + addressObject + ". ");
     }
 

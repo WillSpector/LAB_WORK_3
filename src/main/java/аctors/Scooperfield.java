@@ -2,6 +2,7 @@ package аctors;
 
 // imports
 
+import interfaces.Communication;
 import interfaces.InteractionWithHat;
 import interfaces.Thankable;
 import locations.Location;
@@ -76,7 +77,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
-    public void thanks(boolean willThank, Object addressObject) {
+    public void thanks(boolean willThank, Communication addressObject) {
         if (willThank) {
             System.out.println("Mr." + getName() + " thanked " + "Mr." + addressObject);
         }

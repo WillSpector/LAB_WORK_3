@@ -2,12 +2,13 @@ package аctors;
 
 // imports
 
+import interfaces.Communication;
 import locations.Location;
 
 import java.util.Objects;
 
 
-public class Mister extends Character {
+public class Mister extends Character implements Communication {
     // Переменная location
     private Location location;
 
