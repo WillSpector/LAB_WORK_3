@@ -96,6 +96,26 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     public int hashCode() {
         return Objects.hash(super.hashCode(), facialExpressions, isHatOnHead, Arrays.hashCode(arrayThings));
     }
+
+    // Метод помыть часть тела
+    public void washBodyPart(BodyPart bodyPart){
+        System.out.println("wash his "+ bodyPart);
+    }
+    
+    // вложенный класс
+    public static class BodyPart {
+        public static BodyPart Hands;
+        String name;
+        // Локальный класс
+        public class Hands{
+            boolean isBeingWashed;
+        }
+        // Локальный класс
+        public class Cheeks{
+            boolean isBeingWashed;
+        }
+    }
+    
 }
 
 
