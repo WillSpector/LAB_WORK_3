@@ -2,6 +2,8 @@ package аctors;
 
 // imports
 
+import exception.NotSetFacialExpressionsException;
+import exception.ScooperfieldNotTakeItemFromHatException;
 import interfaces.Communication;
 import interfaces.InteractionWithHat;
 import interfaces.Thankable;
@@ -30,11 +32,11 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод позволяет настроить гримасу на лице Скуперфильда (только smile или grimace of disgust)
-    public void setFacialExpressions(String facialExpressions) {
+    public void setFacialExpressions(String facialExpressions) throws NotSetFacialExpressionsException {
         if (Objects.equals(facialExpressions, "grimace of disgust") || Objects.equals(facialExpressions, "smile")) {
             this.facialExpressions = facialExpressions;
         } else {
-            System.out.println("Enter 'smile' or 'grimace of disgust'");
+            throw new NotSetFacialExpressionsException("Enter 'smile' or 'grimace of disgust'");
         }
     }
 
@@ -70,12 +72,14 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
             System.out.print(arrayThings[quantityOfItem] + ", ");
         }
     }
-
     // Переопределяем метод интерфейса. Достать предмет из шляпы
-    public void takeItemFromHat(Item item) {
-        System.out.println(item.getItem() + ", ");
+    public void takeItemFromHat(Item item) throws ScooperfieldNotTakeItemFromHatException {
+        if (item == null) {
+            throw new ScooperfieldNotTakeItemFromHatException("Can't pull out null from Hat!");
+        } else {
+            System.out.println(item.getItem() + ", ");
+        }
     }
-
     // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
     public void thanks(boolean willThank, Communication addressObject) {
         if (willThank) {
@@ -98,24 +102,30 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод помыть часть тела
-    public void washBodyPart(BodyPart bodyPart){
-        System.out.println("wash his "+ bodyPart);
+    public void washBodyPart(BodyPart.Hands bodyPart) {
+
+        System.out.println("wash his " + bodyPart);
     }
-    
-    // вложенный класс
-    public static class BodyPart {
-        public static BodyPart Hands;
-        String name;
-        // Локальный класс
-        public class Hands{
-            boolean isBeingWashed;
+
+    // Вложенный нестатический класс
+    public class BodyPart {
+        private static String name;
+
+        // Вложенный статический класс
+        public static class Hands {
+            public Hands() {
+                name = "hands";
+                boolean isBeingWashed = true;
+            }
+
+            public String toString() {
+                return name;
+            }
         }
-        // Локальный класс
-        public class Cheeks{
-            boolean isBeingWashed;
-        }
+
     }
-    
 }
+
+
 
 

@@ -1,5 +1,6 @@
 // imports
 
+import exception.NotSetFacialExpressionsException;
 import аctors.*;
 import аbstract.Concatenation;
 import hat.*;
@@ -7,7 +8,7 @@ import hat.*;
 import static locations.Location.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NotSetFacialExpressionsException {
         //Создаем объект класса Crabs
         Crabs crabs = new Crabs("Crabs");
         //Создаем объект класса Scooperfield
@@ -56,7 +57,17 @@ public class Main {
         hat.pickUpLocationItem(STREET);
         //Выводим на экран роль шляпы
         hat.getRoles();
-        scooperfield.washBodyPart(Scooperfield.BodyPart.Hands);
+
+
+        Scooperfield.BodyPart.Hands hands = new Scooperfield.BodyPart.Hands();
+        scooperfield.washBodyPart(hands);
+
+
+
+
+
+
+
 
 
     }
