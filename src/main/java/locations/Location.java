@@ -1,6 +1,16 @@
 package locations;
 
 public enum Location {
+//private static String location;
+//
+//
+//    public static class HotelRoom{
+//        @Override
+//        public String toString() {
+//            location = "hotel room";
+//            return location;
+//        }
+//    }
     // Список локаций
     HOTEL_ROOM("the hotel room"),
     BATHROOM("the bathroom"),

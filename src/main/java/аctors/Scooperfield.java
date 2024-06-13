@@ -7,7 +7,7 @@ import exception.ScooperfieldNotTakeItemFromHatException;
 import interfaces.Communication;
 import interfaces.InteractionWithHat;
 import interfaces.Thankable;
-import locations.Location;
+import locations.*;
 import hat.*;
 
 import java.util.Arrays;
@@ -21,10 +21,12 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     // Массив для хранения предметов
     private final Item[] arrayThings = Item.values();
 
+
     // Имя персонажа (Крабс)
     public Scooperfield(String name) {
         super(name);
     }
+
 
     // Метод осмотр локации (улица, комната или ванная комната)
     public void look(Location location) {
@@ -72,6 +74,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
             System.out.print(arrayThings[quantityOfItem] + ", ");
         }
     }
+
     // Переопределяем метод интерфейса. Достать предмет из шляпы
     public void takeItemFromHat(Item item) throws ScooperfieldNotTakeItemFromHatException {
         if (item == null) {
@@ -80,6 +83,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
             System.out.println(item.getItem() + ", ");
         }
     }
+
     // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
     public void thanks(boolean willThank, Communication addressObject) {
         if (willThank) {
@@ -101,30 +105,42 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         return Objects.hash(super.hashCode(), facialExpressions, isHatOnHead, Arrays.hashCode(arrayThings));
     }
 
-    // Метод помыть часть тела
-    public void washBodyPart(BodyPart.Hands bodyPart) {
-
-        System.out.println("wash his " + bodyPart);
-    }
-
-    // Вложенный нестатический класс
+    // Вложенный нестатический класс BodyPart (Hands and Cheeks)
     public class BodyPart {
-        private static String name;
-
-        // Вложенный статический класс
-        public static class Hands {
-            public Hands() {
-                name = "hands";
-                boolean isBeingWashed = true;
+        private String namePart;
+        // Метод c локальным классом помыть руки
+        public void washHands() {
+            class Hands {
+                public Hands() {
+                    namePart = " hands";
+                    boolean isBeingWashed = true;
+                }
+                @Override
+                public String toString() {
+                    return namePart;
+                }
             }
-
-            public String toString() {
-                return name;
-            }
+            Hands hands = new Hands();
+            System.out.print("wash his" + hands);
         }
-
+        // Метод c локальным классом помыть руки
+        public void washCheeks() {
+            class Cheeks {
+                public Cheeks() {
+                    namePart = " cheeks";
+                    boolean isBeingWashed = true;
+                }
+                @Override
+                public String toString() {
+                    return namePart;
+                }
+            }
+            Cheeks cheeks = new Cheeks();
+            System.out.print("wash his" + cheeks);
+        }
     }
 }
+
 
 
 

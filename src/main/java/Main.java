@@ -1,6 +1,7 @@
 // imports
 
 import exception.NotSetFacialExpressionsException;
+import locations.Location;
 import аctors.*;
 import аbstract.Concatenation;
 import hat.*;
@@ -57,18 +58,18 @@ public class Main {
         hat.pickUpLocationItem(STREET);
         //Выводим на экран роль шляпы
         hat.getRoles();
-
-
-        Scooperfield.BodyPart.Hands hands = new Scooperfield.BodyPart.Hands();
-        scooperfield.washBodyPart(hands);
-
-
-
-
+        //Создаем части тела через локальные классы
+        Scooperfield.BodyPart bodyPart = scooperfield.new BodyPart();
+        bodyPart.washHands();
+        and.and();
+        bodyPart.washCheeks();
 
 
 
 
+
+
+        // Анонимный класс
 
     }
 }
