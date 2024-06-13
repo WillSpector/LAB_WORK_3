@@ -6,8 +6,8 @@ import exception.NotSetFacialExpressionsException;
 import exception.ScooperfieldNotTakeItemFromHatException;
 import interfaces.Communication;
 import interfaces.InteractionWithHat;
+import interfaces.Locations;
 import interfaces.Thankable;
-import locations.*;
 import hat.*;
 
 import java.util.Arrays;
@@ -29,7 +29,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
 
 
     // Метод осмотр локации (улица, комната или ванная комната)
-    public void look(Location location) {
+    public void look(Locations location) {
         System.out.print("Looking around " + location);
     }
 
@@ -108,6 +108,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     // Вложенный нестатический класс BodyPart (Hands and Cheeks)
     public class BodyPart {
         private String namePart;
+
         // Метод c локальным классом помыть руки
         public void washHands() {
             class Hands {
@@ -115,6 +116,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
                     namePart = " hands";
                     boolean isBeingWashed = true;
                 }
+
                 @Override
                 public String toString() {
                     return namePart;
@@ -123,6 +125,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
             Hands hands = new Hands();
             System.out.print("wash his" + hands);
         }
+
         // Метод c локальным классом помыть руки
         public void washCheeks() {
             class Cheeks {
@@ -130,6 +133,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
                     namePart = " cheeks";
                     boolean isBeingWashed = true;
                 }
+
                 @Override
                 public String toString() {
                     return namePart;

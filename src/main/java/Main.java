@@ -1,10 +1,10 @@
 // imports
 
 import exception.NotSetFacialExpressionsException;
+import hat.Hat;
 import locations.Location;
 import аctors.*;
 import аbstract.Concatenation;
-import hat.*;
 
 import static locations.Location.*;
 
@@ -18,18 +18,20 @@ public class Main {
         Concatenation and = new Concatenation();
         // Выводи на экран имя объекта crabs
         System.out.print(crabs);
+        // Создаем локации
+        Location.HotelRoom hotelRoom = new HotelRoom();
         // Задаем локацию в которую будет пермещаться Scooperfield
-        scooperfield.setLocation(HOTEL_ROOM);
+        scooperfield.setLocation(hotelRoom);
         // Задаем локацию в которую будет пермещаться Crabs
-        crabs.setLocation(HOTEL_ROOM);
-        // Выводим на экран куда и с кем перемещается персонаж
+        crabs.setLocation(hotelRoom);
+       // Выводим на экран куда и с кем перемещается персонаж
         crabs.moveToLocationWith(scooperfield);
         // Задаем фразу которую говорит Крабс
         crabs.setPhrase("You need to wash your face!");
         // Выводим на экран что говорит Крабс
         crabs.speak(scooperfield);
-        // Скоперфильд осматривает локацию (можно выбрать)
-        scooperfield.look(HOTEL_ROOM);
+       // Скоперфильд осматривает локацию (можно выбрать)
+        scooperfield.look(hotelRoom);
         // Соединяем строки
         and.and();
         // Задаем выражение лица
@@ -41,8 +43,9 @@ public class Main {
         scooperfield.thanks(true, crabs);
         // Соединяем строки
         and.and();
-        // Задаем локацию в которую будем перемещаться
-        scooperfield.setLocation(BATHROOM);
+        // Создаем и задаем локацию в которую будем перемещаться
+        Location.Bathroom bathroom = new Bathroom();
+        scooperfield.setLocation(bathroom);
         // Выводим на экран куда перемещается персонаж
         scooperfield.moveToLocationAlone();
         // Создаем объект Шляпа
@@ -55,19 +58,15 @@ public class Main {
         На экран выводи массив всех предметов)*/
         scooperfield.takeItemsFromHat();
         //Выводим место где были взяты предметы
-        hat.pickUpLocationItem(STREET);
+        Location.Street street = new Street();
+        hat.pickUpLocationItem(street);
         //Выводим на экран роль шляпы
         hat.getRoles();
-        //Создаем части тела через локальные классы
-        Scooperfield.BodyPart bodyPart = scooperfield.new BodyPart();
-        bodyPart.washHands();
-        and.and();
-        bodyPart.washCheeks();
-
-
-
-
-
+//        //Создаем части тела через локальные классы
+//        Scooperfield.BodyPart bodyPart = scooperfield.new BodyPart();
+//        bodyPart.washHands();
+//        and.and();
+//        bodyPart.washCheeks();
 
         // Анонимный класс
 

@@ -3,14 +3,14 @@ package аctors;
 // imports
 
 import interfaces.Communication;
-import locations.Location;
+import interfaces.Locations;
 
 import java.util.Objects;
 
 
 public class Mister extends Character implements Communication {
     // Переменная location
-    private Location location;
+    private Locations location;
 
     // Имя
     public Mister(String name) {
@@ -18,30 +18,22 @@ public class Mister extends Character implements Communication {
     }
 
     // Выбор локации
-    public void setLocation(Location location) {
+    public void setLocation(Locations location) {
         this.location = location;
     }
 
     // Метод перемещения в выбранную локацию c кем-то
     public void moveToLocationWith(Character character) {
-        if (this.location == Location.STREET) {
-            System.out.print(" went on " + this.location + " with " + "Mr." + character + ". ");
-        } else {
-            System.out.print(" went to " + this.location + " with " + "Mr." + character + ". ");
-        }
+        System.out.print(" went to " + this.location + " with " + "Mr." + character + ". ");
     }
 
     // Метод перемещения в выбранную локацию
     public void moveToLocationAlone() {
-        if (this.location == Location.STREET) {
-            System.out.print(" went on " + this.location + ". ");
-        } else {
-            System.out.print(" went to " + this.location + ". ");
-        }
+        System.out.print(" went to " + this.location + ". ");
     }
 
     @Override
-    // Переопределение метода equals
+// Переопределение метода equals
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

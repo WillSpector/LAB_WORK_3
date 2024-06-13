@@ -2,6 +2,7 @@ package hat;
 
 // imports
 
+import interfaces.Locations;
 import locations.Location;
 
 import java.util.Arrays;
@@ -19,8 +20,8 @@ public class Hat {
     }
 
     // Метод, который выводит место подбора предметов
-    public void pickUpLocationItem(Location location) {
-        if (location == Location.STREET) {
+    public void pickUpLocationItem(Locations location) {
+        if (location == Location.Street) {
             System.out.println("which he got on " + location + ".");
         } else {
             System.out.println("which he got in " + location + ".");

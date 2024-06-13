@@ -1,35 +1,42 @@
 package locations;
 
-public enum Location {
-//private static String location;
-//
-//
-//    public static class HotelRoom{
-//        @Override
-//        public String toString() {
-//            location = "hotel room";
-//            return location;
-//        }
-//    }
-    // Список локаций
-    HOTEL_ROOM("the hotel room"),
-    BATHROOM("the bathroom"),
-    STREET("the street");
+import interfaces.Locations;
 
-    // Переменная для хранения локации
-    private final String location;
+public class Location {
+    public static Locations Street;
+    private static String location;
 
-    Location(String location) {
-        this.location = location;
+    public static class Street implements Locations {
+        public Street() {
+            location = "street";
+        }
+
+        @Override
+        public String toString() {
+            return location;
+        }
     }
 
-    public String getLocation() {
-        return location;
+    public static class HotelRoom implements Locations {
+        public HotelRoom() {
+            location = "hotel room ";
+        }
+
+        @Override
+        public String toString() {
+            return location;
+        }
     }
 
-    @Override
-    // Переопределяем метод toString
-    public String toString() {
-        return location;
+    public static class Bathroom implements Locations {
+        public Bathroom() {
+            location = "bathroom";
+        }
+
+        @Override
+        public String toString() {
+            return location;
+        }
     }
 }
+
