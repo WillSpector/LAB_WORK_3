@@ -2,6 +2,7 @@
 
 import exception.NotSetFacialExpressionsException;
 import hat.Hat;
+import hat.Item;
 import locations.Location;
 import аctors.*;
 import аbstract.Concatenation;
@@ -62,6 +63,14 @@ public class Main {
         hat.pickUpLocationItem(street);
         //Выводим на экран роль шляпы
         hat.getRoles();
+        String[] myArray = new String[3];
+
+
+        Location.Bathroom.Locker locker = new Bathroom.Locker(myArray);
+        locker.putThingsInsideLocker();
+
+
+
 //        //Создаем части тела через локальные классы
 //        Scooperfield.BodyPart bodyPart = scooperfield.new BodyPart();
 //        bodyPart.washHands();

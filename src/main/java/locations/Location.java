@@ -2,9 +2,14 @@ package locations;
 
 import interfaces.Locations;
 
+import java.util.Arrays;
+
+
 public class Location {
     public static Locations Street;
     private static String location;
+
+
 
     public static class Street implements Locations {
         public Street() {
@@ -31,6 +36,25 @@ public class Location {
     public static class Bathroom implements Locations {
         public Bathroom() {
             location = "bathroom";
+
+
+
+
+
+        }
+        public static class Locker {
+            private final String name;
+            private final String[] thingsInsideLocker;
+            private boolean isEmpty;
+            public Locker(String[] thingsInsideLocker ){
+                name = "Locker";
+                this.thingsInsideLocker = thingsInsideLocker;
+            }
+            public void putThingsInsideLocker(){
+                System.out.println("Спяртав все вещи в шкаф" + Arrays.toString(thingsInsideLocker));
+            }
+
+
         }
 
         @Override
