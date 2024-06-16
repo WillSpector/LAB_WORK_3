@@ -36,27 +36,24 @@ public class Location {
     public static class Bathroom implements Locations {
         public Bathroom() {
             location = "bathroom";
-
-
-
-
-
         }
         public static class Locker {
-            private final String name;
             private final String[] thingsInsideLocker;
             private boolean isEmpty;
             public Locker(String[] thingsInsideLocker ){
-                name = "Locker";
+                String name = "Locker";
                 this.thingsInsideLocker = thingsInsideLocker;
             }
             public void putThingsInsideLocker(){
                 System.out.println("Спяртав все вещи в шкаф" + Arrays.toString(thingsInsideLocker));
             }
-
-
         }
-
+        public static class Shelf {
+            public String toString() {
+                String name = "shelf";
+                return name;
+            }
+        }
         @Override
         public String toString() {
             return location;

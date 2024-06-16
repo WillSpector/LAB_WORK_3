@@ -7,6 +7,8 @@ import locations.Location;
 import аctors.*;
 import аbstract.Concatenation;
 
+import java.sql.SQLOutput;
+
 import static locations.Location.*;
 
 public class Main {
@@ -63,19 +65,39 @@ public class Main {
         hat.pickUpLocationItem(street);
         //Выводим на экран роль шляпы
         hat.getRoles();
-        String[] myArray = new String[3];
+        String[] myArray = new String[5];
 
-
+    // Доделать
         Location.Bathroom.Locker locker = new Bathroom.Locker(myArray);
         locker.putThingsInsideLocker();
 
+        //Достаем мыло из шляпы
+        System.out.print(scooperfield +" take from " + hat);
+        scooperfield.takeItemFromHat(Item.STRAWBERRY_SOAP);
+
+        // Создаем объетк полка
+        Location.Bathroom.Shelf shelf = new Bathroom.Shelf();
+        // Вызываем метод где заметил, какой предмет и кому он принадлежал
+        scooperfield.toNotice(shelf,Item.STRAWBERRY_SOAP, crabs);
+        // Метод положить рядом
+        scooperfield.putItemNear(Item.STRAWBERRY_SOAP);
+        // Метод смотреть на предметы
+        System.out.print(scooperfield);
+        scooperfield.lookAtItems(Item.STRAWBERRY_SOAP,Item.STRAWBERRY_SOAP);
+        //Создаем части тела
+        Scooperfield.BodyPart bodyPart = scooperfield.new BodyPart();
 
 
-//        //Создаем части тела через локальные классы
-//        Scooperfield.BodyPart bodyPart = scooperfield.new BodyPart();
-//        bodyPart.washHands();
-//        and.and();
-//        bodyPart.washCheeks();
+
+        //Методы помыть руки и щеки ДОДЕЛАТЬ
+        System.out.print(" after that he started ");
+        bodyPart.washHands();
+        and.and();
+        bodyPart.washCheeks();
+        System.out.println(", however, not with "+ Item.STRAWBERRY_SOAP + " but with " + Item.STRAWBERRY_SOAP + " that lay nearby.");
+
+
+
 
         // Анонимный класс
 

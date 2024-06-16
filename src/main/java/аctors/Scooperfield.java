@@ -9,6 +9,7 @@ import interfaces.InteractionWithHat;
 import interfaces.Locations;
 import interfaces.Thankable;
 import hat.*;
+import locations.Location;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -32,6 +33,14 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     public void look(Locations location) {
         System.out.print("Looking around " + location);
     }
+
+
+    // Метод смотреть на предметы
+    public void lookAtItems(Item item0, Item item1) {
+        System.out.print(" looked at" + item0 + " and" + item1 + " for a while,");
+    }
+
+
 
     // Метод позволяет настроить гримасу на лице Скуперфильда (только smile или grimace of disgust)
     public void setFacialExpressions(String facialExpressions) throws NotSetFacialExpressionsException {
@@ -80,9 +89,27 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         if (item == null) {
             throw new ScooperfieldNotTakeItemFromHatException("Can't pull out null from Hat!");
         } else {
-            System.out.println(item.getItem() + ", ");
+            System.out.print(item.getItem()+ ", ");
         }
     }
+    // Метод "замечать где"
+    public void toNotice(Location.Bathroom.Shelf locations, Item item, Object object){
+        System.out.println("but then noticed on " + locations + " at the washstand, exactly the same" + item + " belonging to "+ object);
+    }
+    // Метод положить предмет рядом
+    public  void putItemNear(Item item) {
+        System.out.print("Put"+ item + " near, ");
+    }
+
+
+
+
+
+
+
+
+
+
 
     // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
     public void thanks(boolean willThank, Communication addressObject) {
