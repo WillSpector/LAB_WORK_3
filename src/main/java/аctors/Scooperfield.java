@@ -93,7 +93,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод "замечать где"
-    public void toNotice(Location.Bathroom.Shelf locations, Location.Bathroom.Shelf.StrawberrySoapOfCrabs item, Object object) {
+    public void toNotice(Location.Bathroom.Shelf locations, Location.Bathroom.Shelf.StrawberrySoapOfCrabs item, Communication object) {
         System.out.println("but then noticed on " + locations + " at the washstand, exactly the same" + item + " belonging to " + object);
     }
 
@@ -128,12 +128,15 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     public class BodyPart {
         private String namePart;
 
+
         // Метод c локальным классом помыть руки
         public void washHands() {
             class Hands {
+                boolean isBeingWashed = true;
+
                 public Hands() {
                     namePart = " hands";
-                    boolean isBeingWashed = true;
+
                 }
 
                 @Override
