@@ -6,9 +6,6 @@ import hat.Item;
 import locations.Location;
 import аctors.*;
 import аbstract.Concatenation;
-
-import java.sql.SQLOutput;
-
 import static locations.Location.*;
 
 public class Main {
@@ -27,13 +24,13 @@ public class Main {
         scooperfield.setLocation(hotelRoom);
         // Задаем локацию в которую будет пермещаться Crabs
         crabs.setLocation(hotelRoom);
-       // Выводим на экран куда и с кем перемещается персонаж
+        // Выводим на экран куда и с кем перемещается персонаж
         crabs.moveToLocationWith(scooperfield);
         // Задаем фразу которую говорит Крабс
         crabs.setPhrase("You need to wash your face!");
         // Выводим на экран что говорит Крабс
         crabs.speak(scooperfield);
-       // Скоперфильд осматривает локацию (можно выбрать)
+        // Скоперфильд осматривает локацию (можно выбрать)
         scooperfield.look(hotelRoom);
         // Соединяем строки
         and.and();
@@ -57,47 +54,47 @@ public class Main {
         scooperfield.setHatOnHead(true);
         // Скуперфильд снимает шляпу с головы
         scooperfield.takeOffHat(hat);
-        /* Достаем вещи из шляпы (расписал для каждого предмета, если надо будет достать определенный.
-        На экран выводи массив всех предметов)*/
-        scooperfield.takeItemsFromHat();
+        /* Достаем вещи из шляпы (расписал для каждого предмета, если надо будет достать определенный)*/
+        scooperfield.takeItemFromHat(Item.TOOTHBRUSH);
+        scooperfield.takeItemFromHat(Item.HANDKERCHIEFS);
+        scooperfield.takeItemFromHat(Item.DENTIFRICE);
+        scooperfield.takeItemFromHat(Item.SPARE_SOCKS);
+        scooperfield.takeItemFromHat(Item.OLD_NAIL);
+        scooperfield.takeItemFromHat(Item.TOWEL);
+        scooperfield.takeItemFromHat(Item.PIECE_OF_COPPER_WIRE);
         //Выводим место где были взяты предметы
         Location.Street street = new Street();
         hat.pickUpLocationItem(street);
         //Выводим на экран роль шляпы
         hat.getRoles();
-        String[] myArray = new String[5];
-
-    // Доделать
-        Location.Bathroom.Locker locker = new Bathroom.Locker(myArray);
-        locker.putThingsInsideLocker();
-
+        // Создаем массив из вещей
+        Item[] arrayItem = {Item.TOOTHBRUSH, Item.HANDKERCHIEFS, Item.DENTIFRICE, Item.SPARE_SOCKS, Item.OLD_NAIL, Item.TOWEL, Item.PIECE_OF_COPPER_WIRE};
+        // Создаем класс шкафчик
+        Location.Bathroom.Locker locker = new Bathroom.Locker();
+        // Класдем массив из предметов в шкафчик
+        locker.putThingsInsideLocker(arrayItem);
         //Достаем мыло из шляпы
-        System.out.print(scooperfield +" take from " + hat);
+        System.out.print(scooperfield + " take from " + hat);
         scooperfield.takeItemFromHat(Item.STRAWBERRY_SOAP);
-
-        // Создаем объетк полка
+        // Создаем объект полка
         Location.Bathroom.Shelf shelf = new Bathroom.Shelf();
+        // Создаем объект strawberry soap of Crabs
+        Bathroom.Shelf.StrawberrySoapOfCrabs strawberrySoapOfCrabs = new Bathroom.Shelf.StrawberrySoapOfCrabs();
         // Вызываем метод где заметил, какой предмет и кому он принадлежал
-        scooperfield.toNotice(shelf,Item.STRAWBERRY_SOAP, crabs);
+        scooperfield.toNotice(shelf, strawberrySoapOfCrabs, crabs);
         // Метод положить рядом
         scooperfield.putItemNear(Item.STRAWBERRY_SOAP);
         // Метод смотреть на предметы
         System.out.print(scooperfield);
-        scooperfield.lookAtItems(Item.STRAWBERRY_SOAP,Item.STRAWBERRY_SOAP);
+        scooperfield.lookAtItems(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
         //Создаем части тела
         Scooperfield.BodyPart bodyPart = scooperfield.new BodyPart();
-
-
-
-        //Методы помыть руки и щеки ДОДЕЛАТЬ
+        //Методы помыть руки и щеки
         System.out.print(" after that he started ");
         bodyPart.washHands();
         and.and();
         bodyPart.washCheeks();
-        System.out.println(", however, not with "+ Item.STRAWBERRY_SOAP + " but with " + Item.STRAWBERRY_SOAP + " that lay nearby.");
-
-
-
+        System.out.println(", however, not with " + Item.STRAWBERRY_SOAP + " but with " + strawberrySoapOfCrabs + " that lay nearby.");
 
         // Анонимный класс
 
