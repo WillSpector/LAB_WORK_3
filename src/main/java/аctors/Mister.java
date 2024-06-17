@@ -33,7 +33,7 @@ public class Mister extends Character implements Communication {
     }
 
     @Override
-// Переопределение метода equals
+    // Переопределение метода equals
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
