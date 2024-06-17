@@ -6,6 +6,7 @@ import hat.Item;
 import locations.Location;
 import аctors.*;
 import аbstract.Concatenation;
+
 import static locations.Location.*;
 
 public class Main {
@@ -96,8 +97,15 @@ public class Main {
         bodyPart.washCheeks();
         System.out.println(", however, not with " + Item.STRAWBERRY_SOAP + " but with " + strawberrySoapOfCrabs + " that lay nearby.");
 
-        // Анонимный класс
 
+        // Анонимный класс ресторан
+        Location restaurant = new Location() {
+            @Override
+            public String toString() {
+                return "restaurant";
+            }
+        };
+        System.out.println(crabs + " go to " + restaurant);
     }
 }
 
