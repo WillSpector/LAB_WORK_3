@@ -16,9 +16,11 @@ public class Main {
         //Создаем объект класса Scooperfield
         Scooperfield scooperfield = new Scooperfield("Scooperfield");
         // Создаем класс and для соединения строк в тексте
-        Concatenation and = new Concatenation();
+        Concatenation сoncatenation = new Concatenation();
         // Выводи на экран имя объекта crabs
         System.out.print(crabs);
+        // Пробел
+        сoncatenation.space();
         // Создаем локации
         Location.HotelRoom hotelRoom = new HotelRoom();
         // Задаем локацию в которую будет пермещаться Scooperfield
@@ -34,7 +36,7 @@ public class Main {
         // Скоперфильд осматривает локацию (можно выбрать)
         scooperfield.look(hotelRoom);
         // Соединяем строки
-        and.and();
+        сoncatenation.and();
         // Задаем выражение лица
         scooperfield.setFacialExpressions("grimace of disgust");
         // Выводим текст сравнения выражение лица
@@ -43,7 +45,7 @@ public class Main {
          но так интересней плюс можно расписать false:)*/
         scooperfield.thanks(true, crabs);
         // Соединяем строки
-        and.and();
+        сoncatenation.and();
         // Создаем и задаем локацию в которую будем перемещаться
         Location.Bathroom bathroom = new Bathroom();
         scooperfield.setLocation(bathroom);
@@ -76,6 +78,8 @@ public class Main {
         locker.putThingsInsideLocker(arrayItem);
         //Достаем мыло из шляпы
         System.out.print(scooperfield + " take from " + hat);
+        // Пробел
+        сoncatenation.space();
         scooperfield.takeItemFromHat(Item.STRAWBERRY_SOAP);
         // Создаем объект полка
         Location.Bathroom.Shelf shelf = new Bathroom.Shelf();
@@ -85,15 +89,17 @@ public class Main {
         scooperfield.toNotice(shelf, strawberrySoapOfCrabs, crabs);
         // Метод положить рядом
         scooperfield.putItemNear(Item.STRAWBERRY_SOAP);
-        // Метод смотреть на предметы
+        // Скуперфильд
         System.out.print(scooperfield);
+        // Метод смотреть на предметы
         scooperfield.lookAtItems(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
         //Создаем части тела
         Scooperfield.BodyPart bodyPart = scooperfield.new BodyPart();
         //Методы помыть руки и щеки
         System.out.print(" after that he started ");
         bodyPart.washHands();
-        and.and();
+        // Пробел
+        сoncatenation.and();
         bodyPart.washCheeks();
         System.out.println(", however, not with " + Item.STRAWBERRY_SOAP + " but with " + strawberrySoapOfCrabs + " that lay nearby.");
 

@@ -8,12 +8,12 @@ public class Concatenation {
 
     // Метод выводит на экран "пробел"
     public void space() {
-        System.out.println(" ");
+        System.out.print(" ");
     }
 
     // Метод выводит на экран точку
     public void dot() {
-        System.out.println(".");
+        System.out.print(".");
     }
 }
 

@@ -37,7 +37,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
 
     // Метод смотреть на предметы
     public void lookAtItems(Item item0, Location.Bathroom.Shelf.StrawberrySoapOfCrabs item1) {
-        System.out.print(" looked at" + item0 + " and" + item1 + " for a while,");
+        System.out.print(" looked at " + item0 + " and " + item1 + " for a while,");
     }
 
 
@@ -53,9 +53,9 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     // Метод выводит на экран манипуляции с лицом
     public void getFacialExpressions() {
         if (Objects.equals(this.facialExpressions, "smile")) {
-            System.out.print(" putting a " + this.facialExpressions + " on his face, which can be mistaken for a grimace of disgust, ");
+            System.out.print("putting a " + this.facialExpressions + " on his face, which can be mistaken for a grimace of disgust, ");
         } else if (Objects.equals(this.facialExpressions, "grimace of disgust")) {
-            System.out.print(" putting a " + this.facialExpressions + " on his face, which can be mistaken for a smile, ");
+            System.out.print("putting a " + this.facialExpressions + " on his face, which can be mistaken for a smile, ");
         }
     }
 

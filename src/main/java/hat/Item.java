@@ -9,7 +9,7 @@ public enum Item {
     OLD_NAIL("two old nails"),
     TOWEL("towel"),
     PIECE_OF_COPPER_WIRE("piece of copper wire"),
-    STRAWBERRY_SOAP(" strawberry soap");
+    STRAWBERRY_SOAP("strawberry soap");
     // Переменная для хранения предмета
     private final String item;
 

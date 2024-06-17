@@ -24,7 +24,7 @@ public class Location {
     // Создаем класс HotelRoom
     public static class HotelRoom implements Locations {
         public HotelRoom() {
-            location = "hotel room ";
+            location = "hotel room";
         }
 
         @Override
@@ -47,7 +47,8 @@ public class Location {
             }
             // Создаем метод "спрятать вещи в шкафчик"
             public void putThingsInsideLocker(Item[] thingsInsideLocker) {
-                System.out.println("Спяртав все вещи в шкаф " + Arrays.toString(thingsInsideLocker).replaceAll("\\[|\\]$", "") + ".");
+                System.out.println("\n" +
+                        "Hid all things in the locker " + Arrays.toString(thingsInsideLocker).replaceAll("\\[|\\]$", "") + ".");
             }
         }
         // Создаем класс Shelf
@@ -58,7 +59,7 @@ public class Location {
             }
             // Создаем класс StrawberrySoapOfCrabs
             public static class StrawberrySoapOfCrabs {
-                String name = " strawberry soap of Crabs";
+                String name = "strawberry soap of Crabs";
 
                 public String toString() {
                     return name;

@@ -24,12 +24,12 @@ public class Mister extends Character implements Communication {
 
     // Метод перемещения в выбранную локацию c кем-то
     public void moveToLocationWith(Character character) {
-        System.out.print(" went to " + this.location + " with " + "Mr." + character + ". ");
+        System.out.print("went to " + this.location + " with " + "Mr." + character + ". ");
     }
 
     // Метод перемещения в выбранную локацию
     public void moveToLocationAlone() {
-        System.out.print(" went to " + this.location + ". ");
+        System.out.print("went to " + this.location + ". ");
     }
 
     @Override
