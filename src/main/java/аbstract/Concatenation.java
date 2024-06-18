@@ -15,5 +15,13 @@ public class Concatenation {
     public void dot() {
         System.out.print(".");
     }
+    public void after() {
+        System.out.print("after that he started");
+    }
+    public void however() {
+        System.out.print(", however, not with");
+    }
+
+
 }
 

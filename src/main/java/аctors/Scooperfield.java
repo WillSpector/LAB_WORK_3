@@ -4,10 +4,7 @@ package аctors;
 
 import exception.NotSetFacialExpressionsException;
 import exception.ScooperfieldNotTakeItemFromHatException;
-import interfaces.Communication;
-import interfaces.InteractionWithHat;
-import interfaces.Locations;
-import interfaces.Thankable;
+import interfaces.*;
 import hat.*;
 import locations.Location;
 
@@ -21,25 +18,22 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     private boolean isHatOnHead;
     // Массив для хранения предметов
     private final Item[] arrayThings = Item.values();
-
+    private boolean isBeingWashed;
 
     // Имя персонажа (Крабс)
     public Scooperfield(String name) {
         super(name);
     }
 
-
     // Метод осмотр локации (улица, комната или ванная комната)
     public void look(Locations location) {
         System.out.print("Looking around " + location);
     }
 
-
     // Метод смотреть на предметы
     public void lookAtItems(Item item0, Location.Bathroom.Shelf.StrawberrySoapOfCrabs item1) {
         System.out.print(" looked at " + item0 + " and " + item1 + " for a while,");
     }
-
 
     // Метод позволяет настроить гримасу на лице Скуперфильда (только smile или grimace of disgust)
     public void setFacialExpressions(String facialExpressions) throws NotSetFacialExpressionsException {
@@ -102,11 +96,58 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         System.out.print("Put his " + item + " near, ");
     }
 
-
     // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
     public void thanks(boolean willThank, Communication addressObject) {
         if (willThank) {
             System.out.println("Mr." + getName() + " thanked " + "Mr." + addressObject);
+        }
+    }
+
+    // Метод помыть часть тела
+    public void washBodyPart(Washable bodyPart) {
+        this.isBeingWashed = true;
+        System.out.print("wash his " + bodyPart);
+    }
+
+    public void isBeingWashed(Washable bodyPart) {
+        String isWashed;
+        if (isBeingWashed) {
+            isWashed = " was washed";
+        } else {
+            isWashed = " wasn't washed";
+        }
+        System.out.println(bodyPart.toString() +
+                isWashed);
+    }
+
+    public void isWashingWithAnotherSoap(Item itemFirst, Location.Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
+        System.out.println(itemFirst + " but with " + itemSecond + " that lay nearby.");
+    }
+
+    // Вложенные статические классы Hands and Cheeks
+    public static class Hands implements Washable {
+        String name;
+
+        public Hands(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return name;
+        }
+    }
+
+    public static class Cheeks implements Washable {
+        String name;
+
+        public Cheeks(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return name;
         }
     }
 
@@ -123,49 +164,8 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     public int hashCode() {
         return Objects.hash(super.hashCode(), facialExpressions, isHatOnHead, Arrays.hashCode(arrayThings));
     }
-
-    // Вложенный нестатический класс BodyPart (Hands and Cheeks)
-    public class BodyPart {
-        private String namePart;
-
-
-        // Метод c локальным классом помыть руки
-        public void washHands() {
-            class Hands {
-                boolean isBeingWashed = true;
-
-                public Hands() {
-                    namePart = " hands";
-
-                }
-
-                @Override
-                public String toString() {
-                    return namePart;
-                }
-            }
-            Hands hands = new Hands();
-            System.out.print("wash his" + hands);
-        }
-
-        // Метод c локальным классом помыть руки
-        public void washCheeks() {
-            class Cheeks {
-                public Cheeks() {
-                    namePart = " cheeks";
-                    boolean isBeingWashed = true;
-                }
-
-                @Override
-                public String toString() {
-                    return namePart;
-                }
-            }
-            Cheeks cheeks = new Cheeks();
-            System.out.print("wash his" + cheeks);
-        }
-    }
 }
+
 
 
 

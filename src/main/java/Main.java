@@ -93,25 +93,34 @@ public class Main {
         System.out.print(scooperfield);
         // Метод смотреть на предметы
         scooperfield.lookAtItems(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
+        // Вводная часть
+        сoncatenation.space();
+        сoncatenation.after();
+        сoncatenation.space();
         //Создаем части тела
-        Scooperfield.BodyPart bodyPart = scooperfield.new BodyPart();
-        //Методы помыть руки и щеки
-        System.out.print(" after that he started ");
-        bodyPart.washHands();
-        // Пробел
+        Scooperfield.Hands hands = new Scooperfield.Hands("hands");
+        Scooperfield.Cheeks cheeks = new Scooperfield.Cheeks("cheeks");
+        //Методы помыть руки
+        scooperfield.washBodyPart(hands);
+        // Соединяем строки
         сoncatenation.and();
-        bodyPart.washCheeks();
-        System.out.println(", however, not with " + Item.STRAWBERRY_SOAP + " but with " + strawberrySoapOfCrabs + " that lay nearby.");
+        //Методы помыть щеки
+        scooperfield.washBodyPart(cheeks);
+        // Вводная часть
+        сoncatenation.however();
+        сoncatenation.space();
+        // Метод помыть другим мылом
+        scooperfield.isWashingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
 
 
-        // Анонимный класс ресторан
-        Location restaurant = new Location() {
-            @Override
-            public String toString() {
-                return "restaurant";
-            }
-        };
-        System.out.println(crabs + " go to " + restaurant);
+//        // Анонимный класс ресторан
+//        Location restaurant = new Location() {
+//            @Override
+//            public String toString() {
+//                return "restaurant";
+//            }
+//        };
+//        System.out.println(crabs + " go to " + restaurant);
     }
 }
 
