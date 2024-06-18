@@ -2,11 +2,12 @@ package аctors;
 
 // imports
 
-import exception.NotSetFacialExpressionsException;
-import exception.ScooperfieldNotTakeItemFromHatException;
+import exception.*;
 import interfaces.*;
 import hat.*;
-import locations.Location;
+import locations.Bathroom;
+import locations.Locations;
+
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -31,8 +32,8 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод смотреть на предметы
-    public void lookAtItems(Item item0, Location.Bathroom.Shelf.StrawberrySoapOfCrabs item1) {
-        System.out.print(" looked at " + item0 + " and " + item1 + " for a while,");
+    public void lookAtItems(Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
+        System.out.print(" looked at " + itemFirst + " and " + itemSecond + "for a while,");
     }
 
     // Метод позволяет настроить гримасу на лице Скуперфильда (только smile или grimace of disgust)
@@ -87,8 +88,8 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод "замечать где"
-    public void toNotice(Location.Bathroom.Shelf locations, Location.Bathroom.Shelf.StrawberrySoapOfCrabs item, Communication object) {
-        System.out.println("but then noticed on " + locations + " at the washstand, exactly the same" + item + " belonging to " + object);
+    public void toNotice(Bathroom.Shelf locations, Bathroom.Shelf.StrawberrySoapOfCrabs item, Communication object) {
+        System.out.print("but then noticed on " + locations + " at the washstand, exactly the same " + item + "belonging to " + object);
     }
 
     // Метод положить предмет рядом
@@ -120,8 +121,8 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
                 isWashed);
     }
 
-    public void isWashingWithAnotherSoap(Item itemFirst, Location.Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
-        System.out.println(itemFirst + " but with " + itemSecond + " that lay nearby.");
+    public void isWashingWithAnotherSoap(Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
+        System.out.println(itemFirst + " but with " + itemSecond + "that lay nearby.");
     }
 
     // Вложенные статические классы Hands and Cheeks
@@ -151,18 +152,18 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         }
     }
 
-    // Переопределение метода equals
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Scooperfield that = (Scooperfield) o;
-        return isHatOnHead == that.isHatOnHead && Objects.equals(facialExpressions, that.facialExpressions) && Objects.deepEquals(arrayThings, that.arrayThings);
+        return isHatOnHead == that.isHatOnHead && isBeingWashed == that.isBeingWashed && Objects.equals(facialExpressions, that.facialExpressions) && Objects.deepEquals(arrayThings, that.arrayThings);
     }
 
-    // Переопределение метода hashCode
+    @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), facialExpressions, isHatOnHead, Arrays.hashCode(arrayThings));
+        return Objects.hash(super.hashCode(), facialExpressions, isHatOnHead, Arrays.hashCode(arrayThings), isBeingWashed);
     }
 }
 

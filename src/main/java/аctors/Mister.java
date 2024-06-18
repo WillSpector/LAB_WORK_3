@@ -3,14 +3,14 @@ package аctors;
 // imports
 
 import interfaces.Communication;
-import interfaces.Locations;
+import locations.*;
 
 import java.util.Objects;
 
 
 public class Mister extends Character implements Communication {
     // Переменная location
-    private Locations location;
+    Locations location;
 
     // Имя
     public Mister(String name) {
@@ -33,16 +33,15 @@ public class Mister extends Character implements Communication {
     }
 
     @Override
-    // Переопределение метода equals
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Mister mister = (Mister) o;
-        return location == mister.location;
+        return Objects.equals(location, mister.location);
     }
 
-    // Переопределение метода hashCode
+    @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), location);
     }

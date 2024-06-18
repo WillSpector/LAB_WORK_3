@@ -3,11 +3,10 @@
 import exception.NotSetFacialExpressionsException;
 import hat.Hat;
 import hat.Item;
-import locations.Location;
+import locations.*;
 import аctors.*;
 import аbstract.Concatenation;
 
-import static locations.Location.*;
 
 public class Main {
     public static void main(String[] args) throws NotSetFacialExpressionsException {
@@ -22,7 +21,7 @@ public class Main {
         // Пробел
         сoncatenation.space();
         // Создаем локации
-        Location.HotelRoom hotelRoom = new HotelRoom();
+        HotelRoom hotelRoom = new HotelRoom("hotel room");
         // Задаем локацию в которую будет пермещаться Scooperfield
         scooperfield.setLocation(hotelRoom);
         // Задаем локацию в которую будет пермещаться Crabs
@@ -46,8 +45,10 @@ public class Main {
         scooperfield.thanks(true, crabs);
         // Соединяем строки
         сoncatenation.and();
+        // Пробел
+        сoncatenation.space();
         // Создаем и задаем локацию в которую будем перемещаться
-        Location.Bathroom bathroom = new Bathroom();
+        Bathroom bathroom = new Bathroom("bathroom");
         scooperfield.setLocation(bathroom);
         // Выводим на экран куда перемещается персонаж
         scooperfield.moveToLocationAlone();
@@ -66,14 +67,14 @@ public class Main {
         scooperfield.takeItemFromHat(Item.TOWEL);
         scooperfield.takeItemFromHat(Item.PIECE_OF_COPPER_WIRE);
         //Выводим место где были взяты предметы
-        Location.Street street = new Street();
+        Street street = new Street("street");
         hat.pickUpLocationItem(street);
         //Выводим на экран роль шляпы
         hat.getRoles();
         // Создаем массив из вещей
         Item[] arrayItem = {Item.TOOTHBRUSH, Item.HANDKERCHIEFS, Item.DENTIFRICE, Item.SPARE_SOCKS, Item.OLD_NAIL, Item.TOWEL, Item.PIECE_OF_COPPER_WIRE};
         // Создаем класс шкафчик
-        Location.Bathroom.Locker locker = new Bathroom.Locker();
+        Bathroom.Locker locker = new Bathroom.Locker("Locker");
         // Класдем массив из предметов в шкафчик
         locker.putThingsInsideLocker(arrayItem);
         //Достаем мыло из шляпы
@@ -82,11 +83,15 @@ public class Main {
         сoncatenation.space();
         scooperfield.takeItemFromHat(Item.STRAWBERRY_SOAP);
         // Создаем объект полка
-        Location.Bathroom.Shelf shelf = new Bathroom.Shelf();
+        Bathroom.Shelf shelf = new Bathroom.Shelf("shelf");
         // Создаем объект strawberry soap of Crabs
-        Bathroom.Shelf.StrawberrySoapOfCrabs strawberrySoapOfCrabs = new Bathroom.Shelf.StrawberrySoapOfCrabs();
+        Bathroom.Shelf.StrawberrySoapOfCrabs strawberrySoapOfCrabs = new Bathroom.Shelf.StrawberrySoapOfCrabs("soap ");
         // Вызываем метод где заметил, какой предмет и кому он принадлежал
         scooperfield.toNotice(shelf, strawberrySoapOfCrabs, crabs);
+        // Точка
+        сoncatenation.dot();
+        // Пробел
+        сoncatenation.space();
         // Метод положить рядом
         scooperfield.putItemNear(Item.STRAWBERRY_SOAP);
         // Скуперфильд
@@ -102,8 +107,12 @@ public class Main {
         Scooperfield.Cheeks cheeks = new Scooperfield.Cheeks("cheeks");
         //Методы помыть руки
         scooperfield.washBodyPart(hands);
+        // Пробел
+        сoncatenation.space();
         // Соединяем строки
         сoncatenation.and();
+        // Пробел
+        сoncatenation.space();
         //Методы помыть щеки
         scooperfield.washBodyPart(cheeks);
         // Вводная часть
@@ -113,14 +122,10 @@ public class Main {
         scooperfield.isWashingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
 
 
-//        // Анонимный класс ресторан
-//        Location restaurant = new Location() {
-//            @Override
-//            public String toString() {
-//                return "restaurant";
-//            }
-//        };
-//        System.out.println(crabs + " go to " + restaurant);
+        // Анонимный класс ресторан
+        Locations restaurant = new Locations("restaurant") {
+        };
+        System.out.println(crabs + " go to " + restaurant);
     }
 }
 
