@@ -10,7 +10,7 @@ import java.util.Objects;
 
 public class Mister extends Character implements Communication {
     // Переменная location
-    Locations location;
+    Location location;
 
     // Имя
     public Mister(String name) {
@@ -18,7 +18,7 @@ public class Mister extends Character implements Communication {
     }
 
     // Выбор локации
-    public void setLocation(Locations location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 

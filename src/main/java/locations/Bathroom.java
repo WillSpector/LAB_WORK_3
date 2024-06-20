@@ -4,7 +4,7 @@ import hat.Item;
 
 import java.util.Arrays;
 
-public class Bathroom extends Locations {
+public class Bathroom extends Location {
     public Bathroom(String name) {
         super(name);
     }

@@ -1,9 +1,9 @@
 package locations;
 
-public abstract class Locations {
+public abstract class Location {
     private final String name;
 
-    public Locations(String name) {
+    public Location(String name) {
         this.name = name;
     }
     @Override

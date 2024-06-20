@@ -6,7 +6,7 @@ import exception.*;
 import interfaces.*;
 import hat.*;
 import locations.Bathroom;
-import locations.Locations;
+import locations.Location;
 
 
 import java.util.Arrays;
@@ -27,7 +27,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод осмотр локации (улица, комната или ванная комната)
-    public void look(Locations location) {
+    public void look(Location location) {
         System.out.print("Looking around " + location);
     }
 
@@ -98,10 +98,8 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
-    public void thanks(boolean willThank, Communication addressObject) {
-        if (willThank) {
+    public void thanks(Communication addressObject) {
             System.out.println("Mr." + getName() + " thanked " + "Mr." + addressObject);
-        }
     }
 
     // Метод помыть часть тела
@@ -166,6 +164,10 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         return Objects.hash(super.hashCode(), facialExpressions, isHatOnHead, Arrays.hashCode(arrayThings), isBeingWashed);
     }
 }
+
+
+
+
 
 
 

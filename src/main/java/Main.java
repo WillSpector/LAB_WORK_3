@@ -42,7 +42,7 @@ public class Main {
         scooperfield.getFacialExpressions();
          /* Будет ли Mr.Scooperfield кого-то благодарить. Да параметр "willThank" лишний,
          но так интересней плюс можно расписать false:)*/
-        scooperfield.thanks(true, crabs);
+        scooperfield.thanks(crabs);
         // Соединяем строки
         сoncatenation.and();
         // Пробел
@@ -123,7 +123,7 @@ public class Main {
 
 
         // Анонимный класс ресторан
-        Locations restaurant = new Locations("restaurant") {
+        Location restaurant = new Location("restaurant") {
         };
         System.out.println(crabs + " go to " + restaurant);
     }
