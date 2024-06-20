@@ -1,7 +1,7 @@
 package аbstract;
 
 public class Concatenation {
-    // Метод выводит на экран союз "и"
+    // Метод выводит на экран "и"
     public void and() {
         System.out.print("and");
     }
@@ -11,17 +11,14 @@ public class Concatenation {
         System.out.print(" ");
     }
 
-    // Метод выводит на экран точку
-    public void dot() {
-        System.out.print(".");
-    }
+    // Метод выводит на экран "after"
     public void after() {
-        System.out.print("after that he started");
+        System.out.print("after that");
     }
+
+    // Метод выводит на экран "however"
     public void however() {
         System.out.print(", however, not with");
     }
-
-
 }
 

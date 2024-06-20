@@ -22,9 +22,10 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     private boolean isBeingWashed;
 
     // Имя персонажа (Крабс)
-    public Scooperfield(String name) {
-        super(name);
+    public Scooperfield(String name, String pronoun) {
+        super(name, pronoun);
     }
+    // Метод выводит на экран метсоимение
 
     // Метод осмотр локации (улица, комната или ванная комната)
     public void look(Location location) {
@@ -89,7 +90,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
 
     // Метод "замечать где"
     public void toNotice(Bathroom.Shelf locations, Bathroom.Shelf.StrawberrySoapOfCrabs item, Communication object) {
-        System.out.print("but then noticed on " + locations + " at the washstand, exactly the same " + item + "belonging to " + object);
+        System.out.print("but then noticed on " + locations + " at the washstand, exactly the same " + item + "belonging to " + object + ", ");
     }
 
     // Метод положить предмет рядом
@@ -99,13 +100,13 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
 
     // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
     public void thanks(Communication addressObject) {
-            System.out.println("Mr." + getName() + " thanked " + "Mr." + addressObject);
+        System.out.println("Mr." + getName() + " thanked " + "Mr." + addressObject);
     }
 
     // Метод помыть часть тела
     public void washBodyPart(Washable bodyPart) {
         this.isBeingWashed = true;
-        System.out.print("wash his " + bodyPart);
+        System.out.print("started to wash his " + bodyPart);
     }
 
     public void isBeingWashed(Washable bodyPart) {

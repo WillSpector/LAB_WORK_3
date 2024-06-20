@@ -13,8 +13,8 @@ public class Mister extends Character implements Communication {
     Location location;
 
     // Имя
-    public Mister(String name) {
-        super(name);
+    public Mister(String name, String pronoun) {
+        super(name, pronoun);
     }
 
     // Выбор локации

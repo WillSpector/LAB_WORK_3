@@ -12,8 +12,8 @@ public class Crabs extends Mister implements Speakable {
     private String phrase;
 
     // Имя персонажа (Крабс)
-    public Crabs(String name) {
-        super(name);
+    public Crabs(String name, String pronoun) {
+        super(name, pronoun);
     }
 
     // Метод для установки слов, которые говорит Крабс

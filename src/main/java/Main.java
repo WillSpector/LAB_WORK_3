@@ -11,9 +11,9 @@ import аbstract.Concatenation;
 public class Main {
     public static void main(String[] args) throws NotSetFacialExpressionsException {
         //Создаем объект класса Crabs
-        Crabs crabs = new Crabs("Crabs");
+        Crabs crabs = new Crabs("Crabs", "he");
         //Создаем объект класса Scooperfield
-        Scooperfield scooperfield = new Scooperfield("Scooperfield");
+        Scooperfield scooperfield = new Scooperfield("Scooperfield","he");
         // Создаем класс and для соединения строк в тексте
         Concatenation сoncatenation = new Concatenation();
         // Выводи на экран имя объекта crabs
@@ -88,20 +88,25 @@ public class Main {
         Bathroom.Shelf.StrawberrySoapOfCrabs strawberrySoapOfCrabs = new Bathroom.Shelf.StrawberrySoapOfCrabs("soap ");
         // Вызываем метод где заметил, какой предмет и кому он принадлежал
         scooperfield.toNotice(shelf, strawberrySoapOfCrabs, crabs);
-        // Точка
-        сoncatenation.dot();
-        // Пробел
-        сoncatenation.space();
         // Метод положить рядом
         scooperfield.putItemNear(Item.STRAWBERRY_SOAP);
         // Скуперфильд
         System.out.print(scooperfield);
         // Метод смотреть на предметы
         scooperfield.lookAtItems(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
-        // Вводная часть
+        // Пробел
         сoncatenation.space();
+        //, after that
         сoncatenation.after();
+        // Пробел
         сoncatenation.space();
+        // Местоимение he
+        scooperfield.getPronoun();
+        // Пробел
+        сoncatenation.space();
+
+
+
         //Создаем части тела
         Scooperfield.Hands hands = new Scooperfield.Hands("hands");
         Scooperfield.Cheeks cheeks = new Scooperfield.Cheeks("cheeks");

@@ -7,6 +7,8 @@ import java.util.Objects;
 abstract class Character {
     // Имя персонажа
     private String name;
+    // Местоимение персонажа
+    private String pronoun;
 
     // Метод для установки имени
     public void setName(String name) {
@@ -18,9 +20,15 @@ abstract class Character {
         return this.name;
     }
 
+    // Метод выводит местоимение
+    public void getPronoun() {
+        System.out.print(this.pronoun);
+    }
+
     // Конструктор Character
-    public Character(String name) {
+    public Character(String name, String pronoun) {
         this.name = name;
+        this.pronoun = pronoun;
     }
 
     @Override
