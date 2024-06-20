@@ -4,8 +4,11 @@ import exception.NotSetFacialExpressionsException;
 import hat.Hat;
 import hat.Item;
 import locations.*;
+import аbstract.FacialExpressions;
 import аctors.*;
 import аbstract.Concatenation;
+
+import java.sql.SQLOutput;
 
 
 public class Main {
@@ -34,10 +37,14 @@ public class Main {
         crabs.speak(scooperfield);
         // Скоперфильд осматривает локацию (можно выбрать)
         scooperfield.look(hotelRoom);
+        // Пробел
+        сoncatenation.space();
         // Соединяем строки
         сoncatenation.and();
+        // Пробел
+        сoncatenation.space();
         // Задаем выражение лица
-        scooperfield.setFacialExpressions("grimace of disgust");
+        scooperfield.setFacialExpressions(FacialExpressions.GRIMACE_OF_DISGUST);
         // Выводим текст сравнения выражение лица
         scooperfield.getFacialExpressions();
          /* Будет ли Mr.Scooperfield кого-то благодарить. Да параметр "willThank" лишний,
@@ -93,7 +100,7 @@ public class Main {
         // Скуперфильд
         System.out.print(scooperfield);
         // Метод смотреть на предметы
-        scooperfield.lookAtItems(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
+        scooperfield.lookAtSoaps(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
         // Пробел
         сoncatenation.space();
         //, after that
@@ -125,7 +132,6 @@ public class Main {
         сoncatenation.space();
         // Метод помыть другим мылом
         scooperfield.isWashingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
-
 
         // Анонимный класс ресторан
         Location restaurant = new Location("restaurant") {

@@ -7,6 +7,7 @@ import interfaces.*;
 import hat.*;
 import locations.Bathroom;
 import locations.Location;
+import аbstract.FacialExpressions;
 
 
 import java.util.Arrays;
@@ -14,7 +15,7 @@ import java.util.Objects;
 
 public class Scooperfield extends Mister implements Thankable, InteractionWithHat {
     // Переменная для выражения лица
-    private String facialExpressions;
+    private FacialExpressions facialExpressions;
     //  Переменная наличия шляпы на голове
     private boolean isHatOnHead;
     // Массив для хранения предметов
@@ -33,24 +34,24 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод смотреть на предметы
-    public void lookAtItems(Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
+    public void lookAtSoaps(Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
         System.out.print(" looked at " + itemFirst + " and " + itemSecond + "for a while,");
     }
 
     // Метод позволяет настроить гримасу на лице Скуперфильда (только smile или grimace of disgust)
-    public void setFacialExpressions(String facialExpressions) throws NotSetFacialExpressionsException {
-        if (Objects.equals(facialExpressions, "grimace of disgust") || Objects.equals(facialExpressions, "smile")) {
+    public void setFacialExpressions(FacialExpressions facialExpressions) throws NotSetFacialExpressionsException {
+        if (Objects.equals(facialExpressions, FacialExpressions.GRIMACE_OF_DISGUST) || Objects.equals(facialExpressions, FacialExpressions.SMILE)) {
             this.facialExpressions = facialExpressions;
         } else {
-            throw new NotSetFacialExpressionsException("Enter 'smile' or 'grimace of disgust'");
+            throw new NotSetFacialExpressionsException("Enter "+ FacialExpressions.GRIMACE_OF_DISGUST+" or " + FacialExpressions.SMILE);
         }
     }
 
     // Метод выводит на экран манипуляции с лицом
     public void getFacialExpressions() {
-        if (Objects.equals(this.facialExpressions, "smile")) {
+        if (Objects.equals(this.facialExpressions, FacialExpressions.SMILE)) {
             System.out.print("putting a " + this.facialExpressions + " on his face, which can be mistaken for a grimace of disgust, ");
-        } else if (Objects.equals(this.facialExpressions, "grimace of disgust")) {
+        } else if (Objects.equals(this.facialExpressions, FacialExpressions.GRIMACE_OF_DISGUST)) {
             System.out.print("putting a " + this.facialExpressions + " on his face, which can be mistaken for a smile, ");
         }
     }
@@ -89,7 +90,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод "замечать где"
-    public void toNotice(Bathroom.Shelf locations, Bathroom.Shelf.StrawberrySoapOfCrabs item, Communication object) {
+    public void toNotice(Bathroom.Shelf locations, Bathroom.Shelf.StrawberrySoapOfCrabs item, Character object) {
         System.out.print("but then noticed on " + locations + " at the washstand, exactly the same " + item + "belonging to " + object + ", ");
     }
 
