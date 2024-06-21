@@ -114,6 +114,7 @@ public class Main {
 
 
 
+
         //Создаем части тела
         Scooperfield.Hands hands = new Scooperfield.Hands("hands");
         Scooperfield.Cheeks cheeks = new Scooperfield.Cheeks("cheeks");

@@ -163,6 +163,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         }
 
         // Метод для проверки помыты ли щеки
+
         public void isWashedCheeks(Washable cheeks) {
             String isWashed;
             if (isCheeksWashed) {

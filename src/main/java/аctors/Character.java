@@ -7,6 +7,7 @@ import java.util.Objects;
 abstract class Character {
     // Имя персонажа
     private String name;
+
     // Местоимение персонажа
     private String pronoun;
 
