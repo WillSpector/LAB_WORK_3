@@ -22,7 +22,7 @@ public class Hat {
 
     // Метод, который выводит место подбора предметов
     public void pickUpLocationItem(Location location) {
-        if (Objects.equals(location.toString(), "street")) {
+        if (location instanceof Street) {
             System.out.println("which he got on " + location + ".");
         } else {
             System.out.println("which he got in " + location + ".");

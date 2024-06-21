@@ -65,10 +65,14 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     public void takeOffHat(Hat hat) {
         if (isHatOnHead) {
             this.isHatOnHead = false;
-            System.out.println("He took off his " + hat + " from head and pulled out of it: ");
+            System.out.print(" took off his " + hat + " from head ");
         } else {
-            System.out.println("Hat isn't on head");
+            System.out.print("Hat isn't on head");
         }
+    }
+
+    public void pullOutOFHat() {
+        System.out.print(" pulled out of it: ");
     }
 
     @Override

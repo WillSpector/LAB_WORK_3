@@ -58,8 +58,14 @@ public class Main {
         Hat hat = new Hat("hat");
         // Надета ли шляпа?
         scooperfield.setHatOnHead(true);
+        // Местоимение He
+        scooperfield.getPronoun();
         // Скуперфильд снимает шляпу с головы
         scooperfield.takeOffHat(hat);
+        // Соединяем строки
+        сoncatenation.and();
+        // Вывод на экран текста достать из шляпы
+        scooperfield.pullOutOFHat();
         /* Достаем вещи из шляпы (расписал для каждого предмета, если надо будет достать определенный)*/
         scooperfield.takeItemFromHat(Item.TOOTHBRUSH);
         scooperfield.takeItemFromHat(Item.HANDKERCHIEFS);
