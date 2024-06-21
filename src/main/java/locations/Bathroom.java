@@ -39,7 +39,7 @@ public class Bathroom extends Location {
         }
 
         // Метод положить предмет рядом на полку
-        public void toPutItemOnShelf(Item item) {
+        public void putItemOnShelf(Item item) {
             placeOnShelf = item;
             System.out.print("Put his " + item + " near, ");
         }

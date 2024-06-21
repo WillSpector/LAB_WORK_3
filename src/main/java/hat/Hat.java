@@ -21,9 +21,6 @@ public class Hat {
         itemsInHat = Item.values();
     }
 
-
-
-
     // Имя объекта
     public Hat(String name) {
         this.name = name;

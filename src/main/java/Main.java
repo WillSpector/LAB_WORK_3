@@ -16,17 +16,17 @@ public class Main {
         //Создаем объект класса Crabs
         Crabs crabs = new Crabs("Crabs", "he");
         //Создаем объект класса Scooperfield
-        Scooperfield scooperfield = new Scooperfield("Scooperfield","he");
+        Scooperfield scooperfield = new Scooperfield("Scooperfield", "he");
         // Создаем класс and для соединения строк в тексте
         Concatenation сoncatenation = new Concatenation();
         // Выводи на экран имя объекта crabs
         System.out.print(crabs);
         // Пробел
-        сoncatenation.space();
+        сoncatenation.getSpace();
         // Создаем локации
         HotelRoom hotelRoom = new HotelRoom("the hotel room");
         // Выводим на экран куда и с кем перемещается персонаж
-        crabs.moveToLocationWith(scooperfield,hotelRoom);
+        crabs.moveToLocationWith(scooperfield, hotelRoom);
         // Задаем фразу которую говорит Крабс
         crabs.setPhrase("You need to wash your face!");
         // Выводим на экран что говорит Крабс
@@ -34,11 +34,11 @@ public class Main {
         // Скоперфильд осматривает локацию (можно выбрать)
         scooperfield.look(hotelRoom);
         // Пробел
-        сoncatenation.space();
+        сoncatenation.getSpace();
         // Соединяем строки
-        сoncatenation.and();
+        сoncatenation.getAnd();
         // Пробел
-        сoncatenation.space();
+        сoncatenation.getSpace();
         // Задаем выражение лица
         scooperfield.setFacialExpressions(FacialExpressions.GRIMACE_OF_DISGUST);
         // Выводим текст сравнения выражение лица
@@ -47,9 +47,9 @@ public class Main {
          но так интересней плюс можно расписать false:)*/
         scooperfield.thanks(crabs);
         // Соединяем строки
-        сoncatenation.and();
+        сoncatenation.getAnd();
         // Пробел
-        сoncatenation.space();
+        сoncatenation.getSpace();
         // Создаем локацию
         Bathroom bathroom = new Bathroom("bathroom");
         // Выводим на экран куда перемещается персонаж
@@ -63,7 +63,7 @@ public class Main {
         // Скуперфильд снимает шляпу с головы
         scooperfield.takeOffHat(hat);
         // Соединяем строки
-        сoncatenation.and();
+        сoncatenation.getAnd();
         // Вывод на экран текста достать из шляпы
         scooperfield.pullOutOFHat();
         // Перемещаем предмет из шляпы в руки
@@ -90,55 +90,53 @@ public class Main {
         //Достаем мыло из шляпы
         System.out.print(scooperfield + " take from " + hat);
         // Пробел
-        сoncatenation.space();
+        сoncatenation.getSpace();
         scooperfield.takeItemFromHat(Item.STRAWBERRY_SOAP);
         // Создаем объект полка
         Bathroom.Shelf shelf = new Bathroom.Shelf("shelf");
         // Создаем объект strawberry soap of Crabs
         Bathroom.Shelf.StrawberrySoapOfCrabs strawberrySoapOfCrabs = new Bathroom.Shelf.StrawberrySoapOfCrabs("soap ");
         // Вызываем метод где заметил, какой предмет и кому он принадлежал
-        scooperfield.toNotice(shelf, strawberrySoapOfCrabs, crabs);
+        scooperfield.notice(shelf, strawberrySoapOfCrabs, crabs);
         // Метод положить рядом
-        shelf.toPutItemOnShelf(Item.STRAWBERRY_SOAP);
+        shelf.putItemOnShelf(Item.STRAWBERRY_SOAP);
         // Скуперфильд
         System.out.print(scooperfield);
         // Метод смотреть на предметы
         scooperfield.lookAtSoaps(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
         // Пробел
-        сoncatenation.space();
+        сoncatenation.getSpace();
         //, after that
-        сoncatenation.after();
+        сoncatenation.getAfter();
         // Пробел
-        сoncatenation.space();
+        сoncatenation.getSpace();
         // Местоимение he
         scooperfield.getPronoun();
         // Пробел
-        сoncatenation.space();
+        сoncatenation.getSpace();
         //Создаем части тела
         Scooperfield.Hands hands = new Scooperfield.Hands("hands");
         Scooperfield.Cheeks cheeks = new Scooperfield.Cheeks("cheeks");
         //Методы помыть руки
-        hands.toWashHands(hands);
+        hands.washHands(hands);
         // Пробел
-        сoncatenation.space();
+        сoncatenation.getSpace();
         // Соединяем строки
-        сoncatenation.and();
+        сoncatenation.getAnd();
         // Пробел
-        сoncatenation.space();
+        сoncatenation.getSpace();
         //Методы помыть щеки
-        cheeks.toWashCheeks(cheeks);
+        cheeks.washCheeks(cheeks);
         // Вводная часть
-        сoncatenation.however();
-        сoncatenation.space();
+        сoncatenation.getHowever();
+        сoncatenation.getSpace();
         // Метод помыть другим мылом
         scooperfield.isWashingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
 
 
-//        // Анонимный класс ресторан
-//        Location restaurant = new Location("restaurant") {
-//        };
-//        System.out.println(crabs + " go to " + restaurant);
+        // Анонимный класс ресторан
+        Location restaurant = new Location("restaurant") {
+        };
+        System.out.println(crabs + " go to " + restaurant);
     }
 }
-
-

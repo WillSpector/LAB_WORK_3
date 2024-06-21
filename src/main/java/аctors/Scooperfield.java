@@ -102,7 +102,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод "замечать где"
-    public void toNotice(Bathroom.Shelf locations, Bathroom.Shelf.StrawberrySoapOfCrabs item, Character object) {
+    public void notice(Bathroom.Shelf locations, Bathroom.Shelf.StrawberrySoapOfCrabs item, Character object) {
         System.out.print("but then noticed on " + locations + " at the washstand, exactly the same " + item + "belonging to " + object + ", ");
     }
 
@@ -128,7 +128,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         }
 
         // Метод помыть руки
-        public void toWashHands(Washable hands) {
+        public void washHands(Washable hands) {
             isHandsWashed = true;
             System.out.print("started to wash his " + hands);
         }
@@ -161,7 +161,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         }
 
         // Метод помыть щеки
-        public void toWashCheeks(Washable cheeks) {
+        public void washCheeks(Washable cheeks) {
             isCheeksWashed = true;
             System.out.print("started to wash his " + cheeks);
         }
