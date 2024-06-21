@@ -7,8 +7,8 @@ public enum FacialExpressions {
     // Переменная для хранения предмета
     private final String facialExpressions;
 
-    FacialExpressions(String FacialExpressions) {
-        this.facialExpressions = FacialExpressions;
+    FacialExpressions(String facialExpressions) {
+        this.facialExpressions = facialExpressions;
     }
 
     public String getFacialExpressions() {

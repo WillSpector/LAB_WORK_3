@@ -118,7 +118,7 @@ public class Main {
         Scooperfield.Hands hands = new Scooperfield.Hands("hands");
         Scooperfield.Cheeks cheeks = new Scooperfield.Cheeks("cheeks");
         //Методы помыть руки
-        scooperfield.washBodyPart(hands);
+        hands.toWashHands(hands);
         // Пробел
         сoncatenation.space();
         // Соединяем строки
@@ -126,17 +126,25 @@ public class Main {
         // Пробел
         сoncatenation.space();
         //Методы помыть щеки
-        scooperfield.washBodyPart(cheeks);
+        cheeks.toWashCheeks(cheeks);
         // Вводная часть
         сoncatenation.however();
         сoncatenation.space();
         // Метод помыть другим мылом
         scooperfield.isWashingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
 
-        // Анонимный класс ресторан
-        Location restaurant = new Location("restaurant") {
-        };
-        System.out.println(crabs + " go to " + restaurant);
+
+
+
+
+
+
+
+
+//        // Анонимный класс ресторан
+//        Location restaurant = new Location("restaurant") {
+//        };
+//        System.out.println(crabs + " go to " + restaurant);
     }
 }
 

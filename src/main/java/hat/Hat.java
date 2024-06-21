@@ -3,6 +3,7 @@ package hat;
 // imports
 
 import locations.*;
+import аbstract.HatRoles;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -11,7 +12,7 @@ public class Hat {
     //Переменная имя
     private final String name;
     // Массив роли шляпы
-    private final String[] roles = {"a headgear", "a travel bag", "warehouse for scrap materials"};
+    private HatRoles[] hatRoles;
 
     // Имя объекта
     public Hat(String name) {
@@ -29,8 +30,12 @@ public class Hat {
 
     // Метод роли шляпы
     public void getRoles() {
-        System.out.println("Obviously, Mr.Scooperfield's hat served not only as " + roles[0] + ", but also as "
-                + roles[1] + " and also as " + roles[2] + ".");
+        hatRoles = HatRoles.values();
+        System.out.print("Obviously, Mr.Scooperfield's hat used");
+        for (int i = 0; i < hatRoles.length; i++) {
+            System.out.print(" as " + hatRoles[i]);
+        }
+        System.out.print(".");
     }
 
     @Override
@@ -39,16 +44,16 @@ public class Hat {
         return name;
     }
 
-    // Переопределение метода equals
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Hat hat = (Hat) o;
-        return Objects.equals(name, hat.name) && Objects.deepEquals(roles, hat.roles);
+        return Objects.equals(name, hat.name) && Objects.deepEquals(hatRoles, hat.hatRoles);
     }
 
-    // Переопределение метода hashCode
+    @Override
     public int hashCode() {
-        return Objects.hash(name, Arrays.hashCode(roles));
+        return Objects.hash(name, Arrays.hashCode(hatRoles));
     }
 }

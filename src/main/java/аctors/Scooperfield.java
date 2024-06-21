@@ -13,6 +13,7 @@ import аbstract.FacialExpressions;
 import java.util.Arrays;
 import java.util.Objects;
 
+
 public class Scooperfield extends Mister implements Thankable, InteractionWithHat {
     // Переменная для выражения лица
     private FacialExpressions facialExpressions;
@@ -20,13 +21,11 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     private boolean isHatOnHead;
     // Массив для хранения предметов
     private final Item[] arrayThings = Item.values();
-    private boolean isBeingWashed;
 
     // Имя персонажа (Крабс)
     public Scooperfield(String name, String pronoun) {
         super(name, pronoun);
     }
-    // Метод выводит на экран метсоимение
 
     // Метод осмотр локации (улица, комната или ванная комната)
     public void look(Location location) {
@@ -43,7 +42,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         if (Objects.equals(facialExpressions, FacialExpressions.GRIMACE_OF_DISGUST) || Objects.equals(facialExpressions, FacialExpressions.SMILE)) {
             this.facialExpressions = facialExpressions;
         } else {
-            throw new NotSetFacialExpressionsException("Enter "+ FacialExpressions.GRIMACE_OF_DISGUST+" or " + FacialExpressions.SMILE);
+            throw new NotSetFacialExpressionsException("Enter " + FacialExpressions.GRIMACE_OF_DISGUST + " or " + FacialExpressions.SMILE);
         }
     }
 
@@ -72,6 +71,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         }
     }
 
+    @Override
     // Переопределяем метод интерфейса. Достать все предметы из шляпы
     public void takeItemsFromHat() {
         int quantityOfItem;
@@ -80,6 +80,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         }
     }
 
+    @Override
     // Переопределяем метод интерфейса. Достать предмет из шляпы
     public void takeItemFromHat(Item item) throws ScooperfieldNotTakeItemFromHatException {
         if (item == null) {
@@ -99,38 +100,44 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         System.out.print("Put his " + item + " near, ");
     }
 
+    @Override
     // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
     public void thanks(Communication addressObject) {
         System.out.println("Mr." + getName() + " thanked " + "Mr." + addressObject);
     }
 
-    // Метод помыть часть тела
-    public void washBodyPart(Washable bodyPart) {
-        this.isBeingWashed = true;
-        System.out.print("started to wash his " + bodyPart);
-    }
-
-    public void isBeingWashed(Washable bodyPart) {
-        String isWashed;
-        if (isBeingWashed) {
-            isWashed = " was washed";
-        } else {
-            isWashed = " wasn't washed";
-        }
-        System.out.println(bodyPart.toString() +
-                isWashed);
-    }
 
     public void isWashingWithAnotherSoap(Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
         System.out.println(itemFirst + " but with " + itemSecond + "that lay nearby.");
     }
 
+
     // Вложенные статические классы Hands and Cheeks
     public static class Hands implements Washable {
-        String name;
+        // Переменая имя
+        private final String name;
+        // Переменная помыты ли руки
+        private boolean isHandsWashed;
 
         public Hands(String name) {
             this.name = name;
+        }
+
+        // Метод помыть руки
+        public void toWashHands(Washable hands) {
+            isHandsWashed = true;
+            System.out.print("started to wash his " + hands);
+        }
+
+        // Метод для проверки помыты ли руки
+        public void isWashedHands(Washable hands) {
+            String isWashed;
+            if (isHandsWashed) {
+                isWashed = " was washed";
+            } else {
+                isWashed = " wasn't washed";
+            }
+            System.out.print(hands + isWashed);
         }
 
         @Override
@@ -140,10 +147,30 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     public static class Cheeks implements Washable {
-        String name;
+        // Переменая имя
+        private final String name;
+        // Переменная помыты ли щеки
+        private boolean isCheeksWashed;
 
         public Cheeks(String name) {
             this.name = name;
+        }
+
+        // Метод помыть щеки
+        public void toWashCheeks(Washable cheeks) {
+            isCheeksWashed = true;
+            System.out.print("started to wash his " + cheeks);
+        }
+
+        // Метод для проверки помыты ли щеки
+        public void isWashedCheeks(Washable cheeks) {
+            String isWashed;
+            if (isCheeksWashed) {
+                isWashed = " was washed";
+            } else {
+                isWashed = " wasn't washed";
+            }
+            System.out.print(cheeks + isWashed);
         }
 
         @Override
@@ -158,12 +185,12 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Scooperfield that = (Scooperfield) o;
-        return isHatOnHead == that.isHatOnHead && isBeingWashed == that.isBeingWashed && Objects.equals(facialExpressions, that.facialExpressions) && Objects.deepEquals(arrayThings, that.arrayThings);
+        return isHatOnHead == that.isHatOnHead && facialExpressions == that.facialExpressions && Objects.deepEquals(arrayThings, that.arrayThings);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), facialExpressions, isHatOnHead, Arrays.hashCode(arrayThings), isBeingWashed);
+        return Objects.hash(super.hashCode(), facialExpressions, isHatOnHead, Arrays.hashCode(arrayThings));
     }
 }
 
