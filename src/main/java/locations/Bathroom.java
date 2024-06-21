@@ -32,7 +32,7 @@ public class Bathroom extends Location {
     // Создаем класс Shelf
     public static class Shelf {
         private String name;
-        private Item placeOnShelf;
+        private Item itemsOnShelf;
 
         public Shelf(String name) {
             this.name = name;
@@ -40,7 +40,7 @@ public class Bathroom extends Location {
 
         // Метод положить предмет рядом на полку
         public void putItemOnShelf(Item item) {
-            placeOnShelf = item;
+            itemsOnShelf = item;
             System.out.print("Put his " + item + " near, ");
         }
 

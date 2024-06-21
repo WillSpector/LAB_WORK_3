@@ -65,7 +65,7 @@ public class Main {
         // Соединяем строки
         сoncatenation.getAnd();
         // Вывод на экран текста достать из шляпы
-        scooperfield.pullOutOFHat();
+        scooperfield.pullOutOfHat();
         // Перемещаем предмет из шляпы в руки
         scooperfield.getItemsFromHat(hat.itemsInHat);
         /* Достаем вещи из шляпы (расписал для каждого предмета, если надо будет достать определенный)*/
@@ -131,7 +131,7 @@ public class Main {
         сoncatenation.getHowever();
         сoncatenation.getSpace();
         // Метод помыть другим мылом
-        scooperfield.isWashingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
+        scooperfield.washingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
 
 
         // Анонимный класс ресторан

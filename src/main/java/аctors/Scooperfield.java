@@ -22,14 +22,14 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     // Массив для хранения предметов (в руках)
     private Item[] listOfThings;
 
-    // Достать масив из шляпы
-    public void getItemsFromHat(Item[] itemsInHand) {
-        listOfThings = itemsInHand;
-    }
-
     // Имя персонажа (Крабс)
     public Scooperfield(String name, String pronoun) {
         super(name, pronoun);
+    }
+
+    // Достать масив из шляпы
+    public void getItemsFromHat(Item[] itemsInHands) {
+        listOfThings = itemsInHands;
     }
 
     // Метод осмотр локации (улица, комната или ванная комната)
@@ -78,7 +78,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
 
-    public void pullOutOFHat() {
+    public void pullOutOfHat() {
         System.out.print(" pulled out of it: ");
     }
 
@@ -102,8 +102,8 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод "замечать где"
-    public void notice(Bathroom.Shelf locations, Bathroom.Shelf.StrawberrySoapOfCrabs item, Character object) {
-        System.out.print("but then noticed on " + locations + " at the washstand, exactly the same " + item + "belonging to " + object + ", ");
+    public void notice(Bathroom.Shelf location, Bathroom.Shelf.StrawberrySoapOfCrabs item, Character object) {
+        System.out.print("but then noticed on " + location + " at the washstand, exactly the same " + item + "belonging to " + object + ", ");
     }
 
     @Override
@@ -112,7 +112,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         System.out.println("Mr." + getName() + " thanked " + "Mr." + addressObject);
     }
 
-    public void isWashingWithAnotherSoap(Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
+    public void washingWithAnotherSoap(Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
         System.out.println(itemFirst + " but with " + itemSecond + "that lay nearby.");
     }
 

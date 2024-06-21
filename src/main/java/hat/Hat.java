@@ -17,13 +17,14 @@ public class Hat {
     // Массив предметов
     public Item[] itemsInHat;
 
-    public void setItemsInHat() {
-        itemsInHat = Item.values();
-    }
-
     // Имя объекта
     public Hat(String name) {
         this.name = name;
+    }
+
+    // Сохранение массива
+    public void setItemsInHat() {
+        itemsInHat = Item.values();
     }
 
     // Метод, который выводит место подбора предметов
