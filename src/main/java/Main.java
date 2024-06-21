@@ -96,7 +96,7 @@ public class Main {
         // Вызываем метод где заметил, какой предмет и кому он принадлежал
         scooperfield.toNotice(shelf, strawberrySoapOfCrabs, crabs);
         // Метод положить рядом
-        scooperfield.putItemNear(Item.STRAWBERRY_SOAP);
+        shelf.toPutItemOnShelf(Item.STRAWBERRY_SOAP);
         // Скуперфильд
         System.out.print(scooperfield);
         // Метод смотреть на предметы
@@ -111,10 +111,6 @@ public class Main {
         scooperfield.getPronoun();
         // Пробел
         сoncatenation.space();
-
-
-
-
         //Создаем части тела
         Scooperfield.Hands hands = new Scooperfield.Hands("hands");
         Scooperfield.Cheeks cheeks = new Scooperfield.Cheeks("cheeks");
@@ -133,6 +129,10 @@ public class Main {
         сoncatenation.space();
         // Метод помыть другим мылом
         scooperfield.isWashingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
+
+
+
+
 
 
 

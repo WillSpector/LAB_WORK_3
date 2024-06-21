@@ -22,6 +22,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     // Массив для хранения предметов
     private final Item[] arrayThings = Item.values();
 
+
     // Имя персонажа (Крабс)
     public Scooperfield(String name, String pronoun) {
         super(name, pronoun);
@@ -95,22 +96,15 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         System.out.print("but then noticed on " + locations + " at the washstand, exactly the same " + item + "belonging to " + object + ", ");
     }
 
-    // Метод положить предмет рядом
-    public void putItemNear(Item item) {
-        System.out.print("Put his " + item + " near, ");
-    }
-
     @Override
     // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
     public void thanks(Communication addressObject) {
         System.out.println("Mr." + getName() + " thanked " + "Mr." + addressObject);
     }
 
-
     public void isWashingWithAnotherSoap(Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
         System.out.println(itemFirst + " but with " + itemSecond + "that lay nearby.");
     }
-
 
     // Вложенные статические классы Hands and Cheeks
     public static class Hands implements Washable {

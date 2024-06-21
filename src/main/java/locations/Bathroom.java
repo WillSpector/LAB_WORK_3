@@ -27,9 +27,16 @@ public class Bathroom extends Location {
     // Создаем класс Shelf
     public static class Shelf {
         private String name;
+        private Item placeOnShelf;
 
         public Shelf(String name) {
             this.name = name;
+        }
+
+        // Метод положить предмет рядом на полку
+        public void toPutItemOnShelf(Item item) {
+            placeOnShelf = item;
+            System.out.print("Put his " + item + " near, ");
         }
 
         // Создаем класс StrawberrySoapOfCrabs
@@ -39,11 +46,13 @@ public class Bathroom extends Location {
             public StrawberrySoapOfCrabs(String name) {
                 this.name = name;
             }
+
             @Override
             public String toString() {
                 return name;
             }
         }
+
         @Override
         public String toString() {
             return name;
