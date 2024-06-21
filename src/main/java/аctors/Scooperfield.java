@@ -19,8 +19,13 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     private FacialExpressions facialExpressions;
     //  Переменная наличия шляпы на голове
     private boolean isHatOnHead;
-    // Массив для хранения предметов
-    private final Item[] listOfThings = Item.values();
+    // Массив для хранения предметов (в руках)
+    private Item[] listOfThings;
+
+    // Достать масив из шляпы
+    public void getItemsFromHat(Item[] itemsInHand) {
+        listOfThings = itemsInHand;
+    }
 
     // Имя персонажа (Крабс)
     public Scooperfield(String name, String pronoun) {
@@ -55,21 +60,23 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         }
     }
 
-    // Метод позволяет установить (надета ли шляпа на голове)
-    public void setHatOnHead(boolean isHatOnHead) {
-        this.isHatOnHead = isHatOnHead;
-    }
 
     @Override
     // Метод для снятия шляпы с головы
     public void takeOffHat(Hat hat) {
+        isHatOnHead = false;
+        System.out.print(" took off his " + hat + " from head ");
+    }
+
+    // Метод позволяет установить (надета ли шляпа на голове)
+    public void isHatOnHead() {
         if (isHatOnHead) {
-            this.isHatOnHead = false;
-            System.out.print(" took off his " + hat + " from head ");
+            System.out.println("The hat on the head");
         } else {
-            System.out.print("Hat isn't on head");
+            System.out.println("The hat is not on the head");
         }
     }
+
 
     public void pullOutOFHat() {
         System.out.print(" pulled out of it: ");
@@ -90,7 +97,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         if (item == null) {
             throw new ScooperfieldNotTakeItemFromHatException("Can't pull out null from Hat!");
         } else {
-            System.out.print(item.getItem() + ", ");
+            System.out.print(item + ", ");
         }
     }
 

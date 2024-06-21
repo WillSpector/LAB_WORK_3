@@ -58,10 +58,6 @@ public class Main {
         Hat hat = new Hat("hat");
         // Сохраняем предметы в шляпе
         hat.setItemsInHat();
-
-
-        // Надета ли шляпа?
-        scooperfield.setHatOnHead(true);
         // Местоимение He
         scooperfield.getPronoun();
         // Скуперфильд снимает шляпу с головы
@@ -70,6 +66,8 @@ public class Main {
         сoncatenation.and();
         // Вывод на экран текста достать из шляпы
         scooperfield.pullOutOFHat();
+        // Перемещаем предмет из шляпы в руки
+        scooperfield.getItemsFromHat(hat.itemsInHat);
         /* Достаем вещи из шляпы (расписал для каждого предмета, если надо будет достать определенный)*/
         scooperfield.takeItemFromHat(Item.TOOTHBRUSH);
         scooperfield.takeItemFromHat(Item.HANDKERCHIEFS);
@@ -134,19 +132,6 @@ public class Main {
         сoncatenation.space();
         // Метод помыть другим мылом
         scooperfield.isWashingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //        // Анонимный класс ресторан

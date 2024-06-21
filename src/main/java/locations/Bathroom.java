@@ -12,13 +12,18 @@ public class Bathroom extends Location {
     // Создаем класс Locker
     public static class Locker {
         private String name;
+        private Item[] listOfThings;
+        private boolean isEmpty;
 
         public Locker(String name) {
             this.name = name;
+            isEmpty = true;
         }
 
         // Создаем метод "спрятать вещи в шкафчик"
         public void putThingsInsideLocker(Item[] thingsInsideLocker) {
+            isEmpty = false;
+            listOfThings = thingsInsideLocker;
             System.out.println("\n" +
                     "Hid all things in the locker: " + Arrays.toString(thingsInsideLocker).replaceAll("\\[|\\]$", "") + ".");
         }
