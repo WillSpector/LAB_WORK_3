@@ -20,8 +20,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     //  Переменная наличия шляпы на голове
     private boolean isHatOnHead;
     // Массив для хранения предметов
-    private final Item[] arrayThings = Item.values();
-
+    private final Item[] listOfThings = Item.values();
 
     // Имя персонажа (Крабс)
     public Scooperfield(String name, String pronoun) {
@@ -76,8 +75,8 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     // Переопределяем метод интерфейса. Достать все предметы из шляпы
     public void takeItemsFromHat() {
         int quantityOfItem;
-        for (quantityOfItem = 0; quantityOfItem < arrayThings.length; quantityOfItem++) {
-            System.out.print(arrayThings[quantityOfItem] + ", ");
+        for (quantityOfItem = 0; quantityOfItem < listOfThings.length; quantityOfItem++) {
+            System.out.print(listOfThings[quantityOfItem] + ", ");
         }
     }
 
@@ -180,12 +179,12 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Scooperfield that = (Scooperfield) o;
-        return isHatOnHead == that.isHatOnHead && facialExpressions == that.facialExpressions && Objects.deepEquals(arrayThings, that.arrayThings);
+        return isHatOnHead == that.isHatOnHead && facialExpressions == that.facialExpressions && Objects.deepEquals(listOfThings, that.listOfThings);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), facialExpressions, isHatOnHead, Arrays.hashCode(arrayThings));
+        return Objects.hash(super.hashCode(), facialExpressions, isHatOnHead, Arrays.hashCode(listOfThings));
     }
 }
 

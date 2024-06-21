@@ -24,13 +24,9 @@ public class Main {
         // Пробел
         сoncatenation.space();
         // Создаем локации
-        HotelRoom hotelRoom = new HotelRoom("hotel room");
-        // Задаем локацию в которую будет пермещаться Scooperfield
-        scooperfield.setLocation(hotelRoom);
-        // Задаем локацию в которую будет пермещаться Crabs
-        crabs.setLocation(hotelRoom);
+        HotelRoom hotelRoom = new HotelRoom("the hotel room");
         // Выводим на экран куда и с кем перемещается персонаж
-        crabs.moveToLocationWith(scooperfield);
+        crabs.moveToLocationWith(scooperfield,hotelRoom);
         // Задаем фразу которую говорит Крабс
         crabs.setPhrase("You need to wash your face!");
         // Выводим на экран что говорит Крабс
@@ -54,11 +50,10 @@ public class Main {
         сoncatenation.and();
         // Пробел
         сoncatenation.space();
-        // Создаем и задаем локацию в которую будем перемещаться
+        // Создаем локацию
         Bathroom bathroom = new Bathroom("bathroom");
-        scooperfield.setLocation(bathroom);
         // Выводим на экран куда перемещается персонаж
-        scooperfield.moveToLocationAlone();
+        scooperfield.moveToLocationAlone(bathroom);
         // Создаем объект Шляпа
         Hat hat = new Hat("hat");
         // Надета ли шляпа?
@@ -79,11 +74,11 @@ public class Main {
         //Выводим на экран роль шляпы
         hat.getRoles();
         // Создаем массив из вещей
-        Item[] arrayItem = {Item.TOOTHBRUSH, Item.HANDKERCHIEFS, Item.DENTIFRICE, Item.SPARE_SOCKS, Item.OLD_NAIL, Item.TOWEL, Item.PIECE_OF_COPPER_WIRE};
+        Item[] listOfItem = {Item.TOOTHBRUSH, Item.HANDKERCHIEFS, Item.DENTIFRICE, Item.SPARE_SOCKS, Item.OLD_NAIL, Item.TOWEL, Item.PIECE_OF_COPPER_WIRE};
         // Создаем класс шкафчик
         Bathroom.Locker locker = new Bathroom.Locker("Locker");
         // Класдем массив из предметов в шкафчик
-        locker.putThingsInsideLocker(arrayItem);
+        locker.putThingsInsideLocker(listOfItem);
         //Достаем мыло из шляпы
         System.out.print(scooperfield + " take from " + hat);
         // Пробел

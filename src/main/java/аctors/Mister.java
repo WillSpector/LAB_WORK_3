@@ -17,18 +17,15 @@ public class Mister extends Character implements Communication {
         super(name, pronoun);
     }
 
-    // Выбор локации
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
     // Метод перемещения в выбранную локацию c кем-то
-    public void moveToLocationWith(Character character) {
-        System.out.print("went to " + this.location + " with " + "Mr." + character + ". ");
+    public void moveToLocationWith(Character character, Location location) {
+        this.location = location;
+        System.out.print("went to " + this.location + " with " + character + ". ");
     }
 
     // Метод перемещения в выбранную локацию
-    public void moveToLocationAlone() {
+    public void moveToLocationAlone(Location location) {
+        this.location = location;
         System.out.print("went to " + this.location + ". ");
     }
 
