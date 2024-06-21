@@ -14,6 +14,12 @@ public class Hat {
     private final String name;
     // Массив роли шляпы
     private HatRoles[] hatRoles;
+    // Массив предметов
+    private Item[] items;
+
+    public void setItemsInHat() {
+        items = Item.values();
+    }
 
     // Имя объекта
     public Hat(String name) {

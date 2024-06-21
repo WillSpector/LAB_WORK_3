@@ -56,6 +56,10 @@ public class Main {
         scooperfield.moveToLocationAlone(bathroom);
         // Создаем объект Шляпа
         Hat hat = new Hat("hat");
+        // Сохраняем предметы в шляпе
+        hat.setItemsInHat();
+
+
         // Надета ли шляпа?
         scooperfield.setHatOnHead(true);
         // Местоимение He
@@ -130,6 +134,8 @@ public class Main {
         сoncatenation.space();
         // Метод помыть другим мылом
         scooperfield.isWashingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
+
+
 
 
 

@@ -177,6 +177,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         }
     }
 
+    // Переопределение метода equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -186,6 +187,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         return isHatOnHead == that.isHatOnHead && facialExpressions == that.facialExpressions && Objects.deepEquals(listOfThings, that.listOfThings);
     }
 
+    // Переопределение метода hasCode
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), facialExpressions, isHatOnHead, Arrays.hashCode(listOfThings));

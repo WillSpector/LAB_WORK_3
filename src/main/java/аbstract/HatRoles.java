@@ -16,9 +16,8 @@ public enum HatRoles {
         return hatRoles;
     }
 
-    @Override
     // Переопределяем метод toString
-
+    @Override
     public String toString() {
         return getHatRoles();
     }

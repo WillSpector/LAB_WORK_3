@@ -32,8 +32,9 @@ abstract class Character {
         this.pronoun = pronoun;
     }
 
-    @Override
+
     // Переопределение метода equals
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -42,11 +43,13 @@ abstract class Character {
     }
 
     // Переопределение метода hashCode
+    @Override
     public int hashCode() {
         return Objects.hashCode(name);
     }
 
     // Переопределение метода toString
+    @Override
     public String toString() {
         return name;
     }

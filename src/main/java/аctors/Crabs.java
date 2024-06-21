@@ -21,13 +21,15 @@ public class Crabs extends Mister implements Speakable {
         this.phrase = phrase;
     }
 
-    @Override
+
     // Выводит на экран фразу и к кому она направлена
+    @Override
     public void speak(Communication addressObject) {
         System.out.println("Mr." + getName() + " said: " + this.phrase + " - to " + "Mr." + addressObject + ". ");
     }
 
     // Переопределение метода equals
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -37,7 +39,8 @@ public class Crabs extends Mister implements Speakable {
     }
 
 
-    // Переопределение метода hashCode
+    // Переопределение метода hasCode
+    @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), phrase);
     }

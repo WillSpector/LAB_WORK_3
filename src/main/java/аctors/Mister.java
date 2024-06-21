@@ -29,6 +29,7 @@ public class Mister extends Character implements Communication {
         System.out.print("went to " + this.location + ". ");
     }
 
+    // Переопределение метода equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -38,6 +39,7 @@ public class Mister extends Character implements Communication {
         return Objects.equals(location, mister.location);
     }
 
+    // Переопределение метода hasCode
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), location);
