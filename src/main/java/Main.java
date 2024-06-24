@@ -82,7 +82,8 @@ public class Main {
         //Выводим на экран роль шляпы
         hat.getRoles();
         // Создаем массив из вещей
-        Item[] listOfItem = {Item.TOOTHBRUSH, Item.HANDKERCHIEFS, Item.DENTIFRICE, Item.SPARE_SOCKS, Item.OLD_NAIL, Item.TOWEL, Item.PIECE_OF_COPPER_WIRE};
+        Item[] listOfItem = {Item.TOOTHBRUSH, Item.HANDKERCHIEFS, Item.DENTIFRICE, Item.SPARE_SOCKS, Item.OLD_NAIL,
+                Item.TOWEL, Item.PIECE_OF_COPPER_WIRE};
         // Создаем класс шкафчик
         Bathroom.Locker locker = new Bathroom.Locker("Locker");
         // Класдем массив из предметов в шкафчик
@@ -95,9 +96,12 @@ public class Main {
         // Создаем объект полка
         Bathroom.Shelf shelf = new Bathroom.Shelf("shelf");
         // Создаем объект strawberry soap of Crabs
-        Bathroom.Shelf.StrawberrySoapOfCrabs strawberrySoapOfCrabs = new Bathroom.Shelf.StrawberrySoapOfCrabs("soap ");
-        // Вызываем метод где заметил, какой предмет и кому он принадлежал
-        scooperfield.notice(shelf, strawberrySoapOfCrabs, crabs);
+        Bathroom.Shelf.StrawberrySoapOfCrabs strawberrySoapOfCrabs =
+                new Bathroom.Shelf.StrawberrySoapOfCrabs("soap ");
+        // Вызываем метод где заметил
+        scooperfield.notice(shelf);
+        // Метод принадлежности предмета
+        scooperfield.belongTo(strawberrySoapOfCrabs, crabs);
         // Метод положить рядом
         shelf.putItemOnShelf(Item.STRAWBERRY_SOAP);
         // Скуперфильд
@@ -132,7 +136,6 @@ public class Main {
         сoncatenation.getSpace();
         // Метод помыть другим мылом
         scooperfield.washingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
-
 
         // Анонимный класс ресторан
         Location restaurant = new Location("restaurant") {

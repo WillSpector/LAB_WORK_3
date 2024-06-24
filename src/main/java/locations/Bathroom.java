@@ -25,14 +25,16 @@ public class Bathroom extends Location {
             isEmpty = false;
             listOfThings = thingsInsideLocker;
             System.out.println("\n" +
-                    "Hid all things in the locker: " + Arrays.toString(thingsInsideLocker).replaceAll("\\[|\\]$", "") + ".");
+                    "Hid all things in the locker: "
+                    + Arrays.toString(thingsInsideLocker).replaceAll("\\[|\\]$", "") + ".");
         }
     }
 
     // Создаем класс Shelf
     public static class Shelf {
         private String name;
-        private Item itemsOnShelf;
+        private final int numberOfPlacesOnTheShelf = 0;
+        private Item[] itemsOnShelf = new Item[numberOfPlacesOnTheShelf];
 
         public Shelf(String name) {
             this.name = name;
@@ -40,7 +42,12 @@ public class Bathroom extends Location {
 
         // Метод положить предмет рядом на полку
         public void putItemOnShelf(Item item) {
-            itemsOnShelf = item;
+            Item[] newItemsOnShelf = new Item[itemsOnShelf.length + 1];
+            for (int i = 0; i < itemsOnShelf.length; i++) {
+                newItemsOnShelf[i] = itemsOnShelf[i];
+            }
+            newItemsOnShelf[newItemsOnShelf.length - 1] = item;
+            itemsOnShelf = newItemsOnShelf;
             System.out.print("Put his " + item + " near, ");
         }
 

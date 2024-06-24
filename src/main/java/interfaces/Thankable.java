@@ -1,6 +1,6 @@
 package interfaces;
 
 public interface Thankable {
-    // Метод, говорит ли Скопрефильд спасибо и кому
+    // Метод, говорить спасибо
     void thanks(Communication addressObject);
 }

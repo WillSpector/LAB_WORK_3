@@ -11,11 +11,6 @@ abstract class Character {
     // Местоимение персонажа
     private String pronoun;
 
-    // Метод для установки имени
-    public void setName(String name) {
-        this.name = "Mr." + name;
-    }
-
     // Метод возврата имени (пока не используется)
     public String getName() {
         return this.name;

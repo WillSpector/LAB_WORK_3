@@ -41,9 +41,14 @@ public class Hat {
         hatRoles = HatRoles.values();
         System.out.print("Obviously, Mr.Scooperfield's hat used");
         for (int i = 0; i < hatRoles.length; i++) {
-            System.out.print(" as " + hatRoles[i]);
+            if (i == 0) {
+                System.out.print(" as " + hatRoles[i]);
+            } else if (i < hatRoles.length - 1) {
+                System.out.print(", as " + hatRoles[i]);
+            } else {
+                System.out.print(", as " + hatRoles[i] + ".");
+            }
         }
-        System.out.print(".");
     }
 
     @Override

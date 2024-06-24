@@ -44,19 +44,23 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
 
     // Метод позволяет настроить гримасу на лице Скуперфильда (только smile или grimace of disgust)
     public void setFacialExpressions(FacialExpressions facialExpressions) throws NotSetFacialExpressionsException {
-        if (Objects.equals(facialExpressions, FacialExpressions.GRIMACE_OF_DISGUST) || Objects.equals(facialExpressions, FacialExpressions.SMILE)) {
+        if (Objects.equals(facialExpressions, FacialExpressions.GRIMACE_OF_DISGUST) ||
+                Objects.equals(facialExpressions, FacialExpressions.SMILE)) {
             this.facialExpressions = facialExpressions;
         } else {
-            throw new NotSetFacialExpressionsException("Enter " + FacialExpressions.GRIMACE_OF_DISGUST + " or " + FacialExpressions.SMILE);
+            throw new NotSetFacialExpressionsException("Enter " + FacialExpressions.GRIMACE_OF_DISGUST
+                    + " or " + FacialExpressions.SMILE);
         }
     }
 
     // Метод выводит на экран манипуляции с лицом
     public void getFacialExpressions() {
         if (Objects.equals(this.facialExpressions, FacialExpressions.SMILE)) {
-            System.out.print("putting a " + this.facialExpressions + " on his face, which can be mistaken for a grimace of disgust, ");
+            System.out.print("putting a " + this.facialExpressions
+                    + " on his face, which can be mistaken for a grimace of disgust, ");
         } else if (Objects.equals(this.facialExpressions, FacialExpressions.GRIMACE_OF_DISGUST)) {
-            System.out.print("putting a " + this.facialExpressions + " on his face, which can be mistaken for a smile, ");
+            System.out.print("putting a " + this.facialExpressions
+                    + " on his face, which can be mistaken for a smile, ");
         }
     }
 
@@ -102,14 +106,19 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод "замечать где"
-    public void notice(Bathroom.Shelf location, Bathroom.Shelf.StrawberrySoapOfCrabs item, Character object) {
-        System.out.print("but then noticed on " + location + " at the washstand, exactly the same " + item + "belonging to " + object + ", ");
+    public void notice(Bathroom.Shelf location) {
+        System.out.print("but then noticed on " + location + " at the washstand, exactly the same ");
+    }
+
+    // Метод принадлежности
+    public void belongTo(Bathroom.Shelf.StrawberrySoapOfCrabs item, Character object) {
+        System.out.print(item + "belonging to " + object + ". ");
     }
 
     @Override
     // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
     public void thanks(Communication addressObject) {
-        System.out.println("Mr." + getName() + " thanked " + "Mr." + addressObject);
+        System.out.println(getName() + " thanked " + addressObject);
     }
 
     public void washingWithAnotherSoap(Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
@@ -191,7 +200,8 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Scooperfield that = (Scooperfield) o;
-        return isHatOnHead == that.isHatOnHead && facialExpressions == that.facialExpressions && Objects.deepEquals(listOfThings, that.listOfThings);
+        return isHatOnHead == that.isHatOnHead && facialExpressions == that.facialExpressions
+                && Objects.deepEquals(listOfThings, that.listOfThings);
     }
 
     // Переопределение метода hasCode
