@@ -1,14 +1,11 @@
 // imports
 
 import exception.NotSetFacialExpressionsException;
-import hat.Hat;
-import hat.Item;
+import hat.*;
 import locations.*;
 import аbstract.FacialExpressions;
 import аctors.*;
 import аbstract.Concatenation;
-
-import java.sql.SQLOutput;
 
 
 public class Main {

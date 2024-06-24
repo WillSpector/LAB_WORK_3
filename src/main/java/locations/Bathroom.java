@@ -32,7 +32,7 @@ public class Bathroom extends Location {
 
     // Создаем класс Shelf
     public static class Shelf {
-        private String name;
+        private final String name;
         private final int numberOfPlacesOnTheShelf = 0;
         private Item[] itemsOnShelf = new Item[numberOfPlacesOnTheShelf];
 
@@ -43,9 +43,7 @@ public class Bathroom extends Location {
         // Метод положить предмет рядом на полку
         public void putItemOnShelf(Item item) {
             Item[] newItemsOnShelf = new Item[itemsOnShelf.length + 1];
-            for (int i = 0; i < itemsOnShelf.length; i++) {
-                newItemsOnShelf[i] = itemsOnShelf[i];
-            }
+            System.arraycopy(itemsOnShelf, 0, newItemsOnShelf, 0, itemsOnShelf.length);
             newItemsOnShelf[newItemsOnShelf.length - 1] = item;
             itemsOnShelf = newItemsOnShelf;
             System.out.print("Put his " + item + " near, ");
@@ -53,7 +51,7 @@ public class Bathroom extends Location {
 
         // Создаем класс StrawberrySoapOfCrabs
         public static class StrawberrySoapOfCrabs {
-            private String name;
+            private final String name;
 
             public StrawberrySoapOfCrabs(String name) {
                 this.name = name;

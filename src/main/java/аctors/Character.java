@@ -6,10 +6,10 @@ import java.util.Objects;
 
 abstract class Character {
     // Имя персонажа
-    private String name;
+    private final String name;
 
     // Местоимение персонажа
-    private String pronoun;
+    private final String pronoun;
 
     // Метод возврата имени (пока не используется)
     public String getName() {
@@ -22,7 +22,7 @@ abstract class Character {
     }
 
     // Конструктор Character
-    public Character(String name, String pronoun) {
+    protected Character(String name, String pronoun) {
         this.name = name;
         this.pronoun = pronoun;
     }
