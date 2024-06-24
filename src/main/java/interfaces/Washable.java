@@ -1,6 +1,6 @@
 package interfaces;
 
-import аctors.Scooperfield;
+import actors.Scooperfield;
 
 public interface Washable {
     //Помыть руки

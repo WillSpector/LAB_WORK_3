@@ -4,7 +4,7 @@ import exception.NotSetFacialExpressionsException;
 import hat.*;
 import locations.*;
 import аbstract.FacialExpressions;
-import аctors.*;
+import actors.*;
 import аbstract.Concatenation;
 
 

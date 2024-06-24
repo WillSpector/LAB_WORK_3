@@ -26,7 +26,7 @@ public class Bathroom extends Location {
             listOfThings = thingsInsideLocker;
             System.out.println("\n" +
                     "Hid all things in the locker: "
-                    + Arrays.toString(thingsInsideLocker).replaceAll("\\[|\\]$", "") + ".");
+                    + Arrays.toString(thingsInsideLocker).replaceAll("\\[|]$", "") + ".");
         }
     }
 
