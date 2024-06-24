@@ -152,14 +152,14 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         }
 
         // Метод для проверки помыты ли руки
-        public void isWashedHands(Washable hands) {
+        public void isWashedHands() {
             String text;
             if (isWashed) {
-                text = " was washed";
+                text = "Hands was washed";
             } else {
-                text = " wasn't washed";
+                text = "Hands wasn't washed";
             }
-            System.out.print(hands + text);
+            System.out.print(text);
         }
 
         @Override
@@ -181,14 +181,14 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
 
         // Метод для проверки помыты ли щеки
 
-        public void isWashedCheeks(Washable cheeks) {
+        public void isWashedCheeks() {
             String text;
             if (isWashed) {
-                text = " was washed";
+                text = "Cheeks was washed";
             } else {
-                text = " wasn't washed";
+                text = "Cheeks wasn't washed";
             }
-            System.out.print(cheeks + text);
+            System.out.print(text);
         }
 
         @Override
