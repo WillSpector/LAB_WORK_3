@@ -2,6 +2,7 @@ package interfaces;
 
 // imports
 
+import actors.Scooperfield;
 import hat.*;
 
 public interface InteractionWithHat {

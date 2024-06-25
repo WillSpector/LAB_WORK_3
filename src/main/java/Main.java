@@ -81,7 +81,7 @@ public class Main {
         // Класдем массив из предметов в шкафчик
         locker.putThingsInsideLocker(scooperfield.listOfThings, scooperfield);
         //Достаем мыло из шляпы
-        System.out.print(scooperfield + " take from " + hat);
+        System.out.print(scooperfield);
         scooperfield.takeItemFromHat(Item.STRAWBERRY_SOAP, hat);
         // Пробел
         сoncatenation.getSpace();

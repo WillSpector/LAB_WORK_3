@@ -49,7 +49,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
             System.arraycopy(listOfThings, 0, newListOfThings, 0, listOfThings.length);
             newListOfThings[newListOfThings.length - 1] = item;
             listOfThings = newListOfThings;
-            System.out.print(" " + item + ",");
+            System.out.print(" take " + item + " from " + hat + ",");
         }
     }
 
