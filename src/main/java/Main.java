@@ -29,7 +29,7 @@ public class Main {
         // Выводим на экран что говорит Крабс
         crabs.speak(scooperfield);
         // Скоперфильд осматривает локацию (можно выбрать)
-        scooperfield.look(hotelRoom);
+        scooperfield.lookAround(hotelRoom);
         // Пробел
         сoncatenation.getSpace();
         // Соединяем строки

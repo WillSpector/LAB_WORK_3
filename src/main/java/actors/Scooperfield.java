@@ -33,7 +33,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод осмотр локации (улица, комната или ванная комната)
-    public void look(Location location) {
+    public void lookAround(Location location) {
         System.out.print("Looking around " + location);
     }
 
