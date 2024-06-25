@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 
-public class Scooperfield extends Mister implements Thankable, InteractionWithHat, Washable {
+public class Scooperfield extends Mister implements Thankable, InteractionWithHat {
     // Переменная для выражения лица
     private FacialExpressions facialExpressions;
     //  Переменная наличия шляпы на голове
@@ -107,12 +107,12 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
 
     // Метод "замечать где"
     public void notice(Bathroom.Shelf location) {
-        System.out.print("but then noticed on " + location + " at the washstand, exactly the same ");
+        System.out.print("but then noticed on " + location + " at the washstand,");
     }
 
     // Метод принадлежности
     public void belongTo(Bathroom.Shelf.StrawberrySoapOfCrabs item, Character object) {
-        System.out.print(item + "belonging to " + object + ". ");
+        System.out.print(" exactly the same " + item + "belonging to " + object + ". ");
     }
 
     @Override
@@ -125,70 +125,74 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         System.out.println(itemFirst + " but with " + itemSecond + "that lay nearby.");
     }
 
-    // Метод помыть руки
-    @Override
-    public void washHands(Hands hands) {
-        Hands.isWashed = true;
-        System.out.print("started to wash his " + hands);
-    }
-
-    // Метод помыть щеки
-    @Override
-    public void washCheeks(Cheeks cheeks) {
-        Cheeks.isWashed = true;
-        System.out.print("started to wash his " + cheeks);
-
+    // Метод помыть часть тела
+    public void washBodyPart(Washable bodyPart) {
+        bodyPart.setWashed(true);
+        System.out.print("started to wash his " + bodyPart);
     }
 
     // Вложенные статические классы Hands and Cheeks
-    public static class Hands {
+    public static class Hands implements Washable {
         // Переменая имя
         private final String name;
         // Переменная помыты ли руки
-        private static boolean isWashed;
+        private boolean isWashed;
 
         public Hands(String name) {
             this.name = name;
         }
 
+        // Переопределение метода (булевая переменная пымыты ли руки)
+        @Override
+        public void setWashed(boolean isWashed) {
+            this.isWashed = isWashed;
+
+        }
+
         // Метод для проверки помыты ли руки
-        public void isWashedHands() {
-            String text;
+        public void isWashedHands(Washable hands) {
+            String isHandsWashed;
             if (isWashed) {
-                text = "Hands was washed";
+                isHandsWashed = "Hands was washed";
             } else {
-                text = "Hands wasn't washed";
+                isHandsWashed = "Hands wasn't washed";
             }
-            System.out.print(text);
+            System.out.print(isHandsWashed);
         }
 
         @Override
         public String toString() {
             return name;
         }
+
     }
 
-    public static class Cheeks {
+    public static class Cheeks implements Washable {
         // Переменая имя
         private final String name;
         // Переменная помыты ли щеки
-        private static boolean isWashed;
+        private boolean isWashed;
 
         public Cheeks(String name) {
             this.name = name;
         }
 
+        // Переопределение метода (булевая переменная пымыты ли щеки)
+        @Override
+        public void setWashed(boolean isWashed) {
+            this.isWashed = isWashed;
+        }
 
         // Метод для проверки помыты ли щеки
 
         public void isWashedCheeks() {
-            String text;
+            String isCheeksWashed;
             if (isWashed) {
-                text = "Cheeks was washed";
+                isCheeksWashed = "Cheeks was washed";
             } else {
-                text = "Cheeks wasn't washed";
+                isCheeksWashed = "Cheeks wasn't washed";
             }
-            System.out.print(text);
+            System.out.print(isCheeksWashed);
         }
 
         @Override
