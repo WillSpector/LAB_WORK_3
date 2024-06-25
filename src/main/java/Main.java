@@ -91,7 +91,7 @@ public class Main {
         Bathroom.Shelf.StrawberrySoapOfCrabs strawberrySoapOfCrabs =
                 new Bathroom.Shelf.StrawberrySoapOfCrabs("soap ");
         // Вызываем метод где заметил
-        scooperfield.notice(shelf);
+        scooperfield.noticeOn(shelf);
         // Метод принадлежности предмета
         scooperfield.belongTo(strawberrySoapOfCrabs, crabs);
         // Метод положить рядом на полку

@@ -122,7 +122,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод "замечать где"
-    public void notice(Bathroom.Shelf location) {
+    public void noticeOn(Bathroom.Shelf location) {
         System.out.print("but then noticed on " + location + " at the washstand,");
     }
 
