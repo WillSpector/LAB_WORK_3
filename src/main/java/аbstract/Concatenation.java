@@ -3,7 +3,7 @@ package аbstract;
 public class Concatenation {
     // Метод выводит на экран "и"
     public void getAnd() {
-        System.out.print("and");
+        System.out.print(" and ");
     }
 
     // Метод выводит на экран "пробел"

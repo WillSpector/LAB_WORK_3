@@ -11,14 +11,23 @@ import java.util.Objects;
 public class Hat {
     //Переменная имя
     private final String name;
+    // Местоимение шляпы
+    private final String pronoun;
     // Массив роли шляпы
     private HatRoles[] hatRoles;
     // Массив предметов
     public Item[] itemsInHat = Item.values();
 
+    // Метод выводит местоимение
+    public String getPronoun() {
+        return this.pronoun;
+    }
+
+
     // Имя объекта
-    public Hat(String name) {
+    public Hat(String name,String pronoun) {
         this.name = name;
+        this.pronoun = pronoun;
     }
 
     // Сохранение массива

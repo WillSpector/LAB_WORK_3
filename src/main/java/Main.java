@@ -30,12 +30,8 @@ public class Main {
         crabs.speak(scooperfield);
         // Скоперфильд осматривает локацию (можно выбрать)
         scooperfield.lookAround(hotelRoom);
-        // Пробел
-        сoncatenation.getSpace();
         // Соединяем строки
         сoncatenation.getAnd();
-        // Пробел
-        сoncatenation.getSpace();
         // Задаем выражение лица
         scooperfield.setFacialExpressions(FacialExpressions.GRIMACE_OF_DISGUST);
         // Выводим текст сравнения выражение лица
@@ -45,14 +41,12 @@ public class Main {
         scooperfield.thanks(crabs);
         // Соединяем строки
         сoncatenation.getAnd();
-        // Пробел
-        сoncatenation.getSpace();
         // Создаем локацию
         Bathroom bathroom = new Bathroom("bathroom");
         // Выводим на экран куда перемещается персонаж
         scooperfield.moveToLocationAlone(bathroom);
         // Создаем объект Шляпа
-        Hat hat = new Hat("hat");
+        Hat hat = new Hat("hat","his");
         // Сохраняем предметы в шляпе
         hat.setItemsInHat();
         // Местоимение He
@@ -115,12 +109,8 @@ public class Main {
         Scooperfield.Cheeks cheeks = new Scooperfield.Cheeks("cheeks");
         //Методы помыть руки
         scooperfield.washBodyPart(hands);
-        // Пробел
-        сoncatenation.getSpace();
         // Соединяем строки
         сoncatenation.getAnd();
-        // Пробел
-        сoncatenation.getSpace();
         //Методы помыть щеки
         scooperfield.washBodyPart(cheeks);
         // Вводная часть

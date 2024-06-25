@@ -95,7 +95,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     // Метод для снятия шляпы с головы
     public void takeOffHat(Hat hat) {
         isHatOnHead = false;
-        System.out.print(" took off his " + hat + " from head ");
+        System.out.print(" took off "+ hat.getPronoun()+" " + hat + " from head");
     }
 
     // Метод позволяет установить (надета ли шляпа на голове)
@@ -109,7 +109,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
 
 
     public void pullOutOfHat() {
-        System.out.print(" pulled out of it:");
+        System.out.print("pulled out of it:");
     }
 
     @Override
