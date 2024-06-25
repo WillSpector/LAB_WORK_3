@@ -7,9 +7,7 @@ import locations.*;
 
 import java.util.Objects;
 
-
 public class Mister extends Character implements Communication {
-
     // Имя
     public Mister(String name, String pronoun) {
         super("Mr." + name, pronoun);
@@ -17,8 +15,8 @@ public class Mister extends Character implements Communication {
 
     // Метод перемещения в выбранную локацию c кем-то
     public void moveToLocationWith(Character character, Location location) {
-        character.location = location;
         this.location = location;
+        character.location = location;
         System.out.print("went to " + this.location + " with " + character + ". ");
     }
 
