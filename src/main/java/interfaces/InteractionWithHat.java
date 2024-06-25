@@ -11,6 +11,5 @@ public interface InteractionWithHat {
     // Достать предметы из шляпы
     void takeItemsFromHat();
 
-    void takeItemFromHat(Item item);
-
+    void takeItemFromHat(Item item, Hat hat);
 }

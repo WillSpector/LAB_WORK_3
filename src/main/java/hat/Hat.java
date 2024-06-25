@@ -10,12 +10,11 @@ import java.util.Objects;
 
 public class Hat {
     //Переменная имя
-
     private final String name;
     // Массив роли шляпы
     private HatRoles[] hatRoles;
     // Массив предметов
-    public Item[] itemsInHat;
+    public Item[] itemsInHat = Item.values();
 
     // Имя объекта
     public Hat(String name) {

@@ -63,33 +63,28 @@ public class Main {
         сoncatenation.getAnd();
         // Вывод на экран текста достать из шляпы
         scooperfield.pullOutOfHat();
-        // Перемещаем предмет из шляпы в руки
-        scooperfield.getItemsFromHat(hat.itemsInHat);
-        /* Достаем вещи из шляпы (расписал для каждого предмета, если надо будет достать определенный)*/
-        scooperfield.takeItemFromHat(Item.TOOTHBRUSH);
-        scooperfield.takeItemFromHat(Item.HANDKERCHIEFS);
-        scooperfield.takeItemFromHat(Item.DENTIFRICE);
-        scooperfield.takeItemFromHat(Item.SPARE_SOCKS);
-        scooperfield.takeItemFromHat(Item.OLD_NAIL);
-        scooperfield.takeItemFromHat(Item.TOWEL);
-        scooperfield.takeItemFromHat(Item.PIECE_OF_COPPER_WIRE);
+        // Достаем вещи из шляпы (Держит в руках)
+        scooperfield.takeItemFromHat(Item.TOOTHBRUSH, hat);
+        scooperfield.takeItemFromHat(Item.HANDKERCHIEFS, hat);
+        scooperfield.takeItemFromHat(Item.DENTIFRICE, hat);
+        scooperfield.takeItemFromHat(Item.SPARE_SOCKS, hat);
+        scooperfield.takeItemFromHat(Item.OLD_NAIL, hat);
+        scooperfield.takeItemFromHat(Item.TOWEL, hat);
+        scooperfield.takeItemFromHat(Item.PIECE_OF_COPPER_WIRE, hat);
         //Выводим место где были взяты предметы
         Street street = new Street("street");
         hat.pickUpLocationItem(street);
         //Выводим на экран роль шляпы
         hat.getRoles();
-        // Создаем массив из вещей
-        Item[] listOfItem = {Item.TOOTHBRUSH, Item.HANDKERCHIEFS, Item.DENTIFRICE, Item.SPARE_SOCKS, Item.OLD_NAIL,
-                Item.TOWEL, Item.PIECE_OF_COPPER_WIRE};
         // Создаем класс шкафчик
         Bathroom.Locker locker = new Bathroom.Locker("Locker");
         // Класдем массив из предметов в шкафчик
-        locker.putThingsInsideLocker(listOfItem);
+        locker.putThingsInsideLocker(scooperfield.listOfThings, scooperfield);
         //Достаем мыло из шляпы
         System.out.print(scooperfield + " take from " + hat);
+        scooperfield.takeItemFromHat(Item.STRAWBERRY_SOAP, hat);
         // Пробел
         сoncatenation.getSpace();
-        scooperfield.takeItemFromHat(Item.STRAWBERRY_SOAP);
         // Создаем объект полка
         Bathroom.Shelf shelf = new Bathroom.Shelf("shelf");
         // Создаем объект strawberry soap of Crabs
@@ -99,8 +94,8 @@ public class Main {
         scooperfield.notice(shelf);
         // Метод принадлежности предмета
         scooperfield.belongTo(strawberrySoapOfCrabs, crabs);
-        // Метод положить рядом
-        shelf.putItemOnShelf(Item.STRAWBERRY_SOAP);
+        // Метод положить рядом на полку
+        shelf.putItemOnShelf(Item.STRAWBERRY_SOAP, scooperfield);
         // Скуперфильд
         System.out.print(scooperfield);
         // Метод смотреть на предметы

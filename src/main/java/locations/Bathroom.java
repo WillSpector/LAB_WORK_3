@@ -1,5 +1,6 @@
 package locations;
 
+import actors.Scooperfield;
 import hat.Item;
 
 import java.util.Arrays;
@@ -11,7 +12,7 @@ public class Bathroom extends Location {
 
     // Создаем класс Locker
     public static class Locker {
-        private String name;
+        private final String name;
         private Item[] listOfThings;
         private boolean isEmpty;
 
@@ -21,9 +22,10 @@ public class Bathroom extends Location {
         }
 
         // Создаем метод "спрятать вещи в шкафчик"
-        public void putThingsInsideLocker(Item[] thingsInsideLocker) {
+        public void putThingsInsideLocker(Item[] thingsInsideLocker, Scooperfield scooperfield) {
             isEmpty = false;
             listOfThings = thingsInsideLocker;
+            scooperfield.listOfThings = new Item[0];
             System.out.println("\n" +
                     "Hid all things in the locker: "
                     + Arrays.toString(thingsInsideLocker).replaceAll("\\[|]$", "") + ".");
@@ -34,14 +36,15 @@ public class Bathroom extends Location {
     public static class Shelf {
         private final String name;
         private final int numberOfPlacesOnTheShelf = 0;
-        private Item[] itemsOnShelf = new Item[numberOfPlacesOnTheShelf];
+        public Item[] itemsOnShelf = new Item[numberOfPlacesOnTheShelf];
 
         public Shelf(String name) {
             this.name = name;
         }
 
         // Метод положить предмет рядом на полку
-        public void putItemOnShelf(Item item) {
+        public void putItemOnShelf(Item item, Scooperfield scooperfield) {
+            scooperfield.listOfThings = new Item[0];
             Item[] newItemsOnShelf = new Item[itemsOnShelf.length + 1];
             System.arraycopy(itemsOnShelf, 0, newItemsOnShelf, 0, itemsOnShelf.length);
             newItemsOnShelf[newItemsOnShelf.length - 1] = item;

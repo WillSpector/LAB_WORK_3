@@ -9,7 +9,6 @@ import locations.Bathroom;
 import locations.Location;
 import аbstract.FacialExpressions;
 
-
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -19,17 +18,44 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     private FacialExpressions facialExpressions;
     //  Переменная наличия шляпы на голове
     private boolean isHatOnHead;
+    // Место в руках
+    private final int numberOfPlacesInHands = 0;
     // Массив для хранения предметов (в руках)
-    private Item[] listOfThings;
+    public Item[] listOfThings = new Item[numberOfPlacesInHands];
+
+    @Override
+    // Переопределяем метод интерфейса. Достать предмет из шляпы
+    public void takeItemFromHat(Item item, Hat hat) throws ScooperfieldNotTakeItemFromHatException {
+        if (item == null) {
+            throw new ScooperfieldNotTakeItemFromHatException("Can't pull out null from Hat!");
+        } else {
+            int index = -1;
+            for (int i = 0; i < hat.itemsInHat.length; i++) {
+                if (hat.itemsInHat[i] == item) {
+                    index = i;
+                    break;
+                }
+            }
+            if (index != -1) {
+                Item[] newItemsInHat = new Item[hat.itemsInHat.length - 1];
+                for (int i = 0, j = 0; i < hat.itemsInHat.length; i++) {
+                    if (i != index) {
+                        newItemsInHat[j++] = hat.itemsInHat[i];
+                    }
+                }
+                hat.itemsInHat = newItemsInHat;
+            }
+            Item[] newListOfThings = new Item[listOfThings.length + 1];
+            System.arraycopy(listOfThings, 0, newListOfThings, 0, listOfThings.length);
+            newListOfThings[newListOfThings.length - 1] = item;
+            listOfThings = newListOfThings;
+            System.out.print(" " + item + ",");
+        }
+    }
 
     // Имя персонажа (Крабс)
     public Scooperfield(String name, String pronoun) {
         super(name, pronoun);
-    }
-
-    // Достать масив из шляпы
-    public void getItemsFromHat(Item[] itemsInHands) {
-        listOfThings = itemsInHands;
     }
 
     // Метод осмотр локации (улица, комната или ванная комната)
@@ -83,7 +109,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
 
 
     public void pullOutOfHat() {
-        System.out.print(" pulled out of it: ");
+        System.out.print(" pulled out of it:");
     }
 
     @Override
@@ -92,16 +118,6 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         int quantityOfItem;
         for (quantityOfItem = 0; quantityOfItem < listOfThings.length; quantityOfItem++) {
             System.out.print(listOfThings[quantityOfItem] + ", ");
-        }
-    }
-
-    @Override
-    // Переопределяем метод интерфейса. Достать предмет из шляпы
-    public void takeItemFromHat(Item item) throws ScooperfieldNotTakeItemFromHatException {
-        if (item == null) {
-            throw new ScooperfieldNotTakeItemFromHatException("Can't pull out null from Hat!");
-        } else {
-            System.out.print(item + ", ");
         }
     }
 
