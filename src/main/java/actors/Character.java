@@ -2,14 +2,17 @@ package actors;
 
 // imports
 
+import locations.Location;
+
 import java.util.Objects;
 
 abstract class Character {
     // Имя персонажа
     private final String name;
-
     // Местоимение персонажа
     private final String pronoun;
+    // Переменная location
+    protected Location location;
 
     // Метод возврата имени (пока не используется)
     public String getName() {
