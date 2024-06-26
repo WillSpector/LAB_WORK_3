@@ -7,12 +7,11 @@ import аbstract.FacialExpressions;
 import actors.*;
 import аbstract.Concatenation;
 
-
 public class Main {
     public static void main(String[] args) throws NotSetFacialExpressionsException {
-        //Создаем объект класса Crabs
+        // Создаем объект класса Crabs
         Crabs crabs = new Crabs("Crabs", "he");
-        //Создаем объект класса Scooperfield
+        // Создаем объект класса Scooperfield
         Scooperfield scooperfield = new Scooperfield("Scooperfield", "he");
         // Создаем класс and для соединения строк в тексте
         Concatenation сoncatenation = new Concatenation();
@@ -34,8 +33,7 @@ public class Main {
         scooperfield.setFacialExpressions(FacialExpressions.GRIMACE_OF_DISGUST);
         // Выводим текст сравнения выражение лица
         scooperfield.getFacialExpressions();
-         /* Будет ли Mr.Scooperfield кого-то благодарить. Да параметр "willThank" лишний,
-         но так интересней плюс можно расписать false:)*/
+        // Кого благодарит Scooperfield
         scooperfield.thanks(crabs);
         // Соединяем строки
         сoncatenation.getAnd();
@@ -44,7 +42,7 @@ public class Main {
         // Выводим на экран куда перемещается персонаж
         scooperfield.moveToLocationAlone(bathroom);
         // Создаем объект Шляпа
-        Hat hat = new Hat("hat","it");
+        Hat hat = new Hat("hat", "it");
         // Сохраняем предметы в шляпе
         hat.setItemsInHat();
         // Местоимение He
@@ -63,16 +61,15 @@ public class Main {
         scooperfield.takeItemFromHat(Item.OLD_NAIL, hat);
         scooperfield.takeItemFromHat(Item.TOWEL, hat);
         scooperfield.takeItemFromHat(Item.PIECE_OF_COPPER_WIRE, hat);
-        //Выводим место где были взяты предметы
         Street street = new Street("street");
         hat.pickUpLocationItem(street);
-        //Выводим на экран роль шляпы
+        // Выводим на экран роль шляпы
         hat.getRoles();
         // Создаем класс шкафчик
         Bathroom.Locker locker = new Bathroom.Locker("Locker");
-        // Класдем массив из предметов в шкафчик
+        // Кладем массив из предметов в шкафчик
         locker.putThingsInsideLocker(scooperfield.listOfThings, scooperfield);
-        //Достаем мыло из шляпы
+        // Достаем мыло из шляпы
         System.out.print(scooperfield);
         scooperfield.takeItemFromHat(Item.STRAWBERRY_SOAP, hat);
         // Создаем объект полка
@@ -92,20 +89,20 @@ public class Main {
         System.out.print(scooperfield);
         // Метод смотреть на предметы
         scooperfield.lookAtSoaps(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
-        //, after that
+        // after that
         сoncatenation.getAfter();
         // Местоимение he
         scooperfield.getPronoun();
         // Пробел
         сoncatenation.getSpace();
-        //Создаем части тела
+        // Создаем части тела
         Scooperfield.Hands hands = new Scooperfield.Hands("hands");
         Scooperfield.Cheeks cheeks = new Scooperfield.Cheeks("cheeks");
-        //Методы помыть руки
+        // Методы помыть руки
         scooperfield.washBodyPart(hands);
         // Соединяем строки
         сoncatenation.getAnd();
-        //Методы помыть щеки
+        // Методы помыть щеки
         scooperfield.washBodyPart(cheeks);
         // Выводим however
         сoncatenation.getHowever();

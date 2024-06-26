@@ -77,7 +77,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     public void pullOutOfHat(Hat hat) {
-        System.out.print("pulled out of " + hat.getPronoun() + ": ");
+        System.out.print("pulled out of " + hat.getPronoun() + ":");
     }
 
     // Переопределяем метод интерфейса. Достать все предметы из шляпы

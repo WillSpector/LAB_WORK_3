@@ -17,7 +17,7 @@ public class Bathroom extends Location {
         // Имя
         private final String name;
         // Массив предметов в шкафчике
-        private Item[] listOfThings;
+        public Item[] listOfThings;
         // Шкафчик пустой?
         private boolean isEmpty;
 
@@ -43,7 +43,7 @@ public class Bathroom extends Location {
         // Имя
         private final String name;
         // Массив для хранения предметов на полке
-        private final ArrayList<Object> itemsOnShelf = new ArrayList<>();
+        public final ArrayList<Object> itemsOnShelf = new ArrayList<>();
 
         // Конструктор
         public Shelf(String name) {
@@ -52,6 +52,7 @@ public class Bathroom extends Location {
 
         // Метод "Положить предмет рядом на полку"
         public void putItemOnShelf(Item item, Scooperfield scooperfield) {
+            scooperfield.listOfThings = new Item[0];
             itemsOnShelf.add(item);
             System.out.print("Put his " + item + " near, ");
         }
