@@ -9,33 +9,32 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Hat {
-    //Переменная имя
+    // Имя
     private final String name;
-    // Местоимение шляпы
+    // Местоимение
     private final String pronoun;
-    // Массив роли шляпы
+    // Роль шялпы
     private HatRoles[] hatRoles;
-    // Массив предметов
+    // Предметы в шляпе
     public Item[] itemsInHat = Item.values();
 
-    // Метод выводит местоимение
-    public String getPronoun() {
-        return this.pronoun;
-    }
-
-
-    // Имя объекта
-    public Hat(String name,String pronoun) {
+    // Конструктор
+    public Hat(String name, String pronoun) {
         this.name = name;
         this.pronoun = pronoun;
     }
 
-    // Сохранение массива
+    // Метод "Получить местоимение"
+    public String getPronoun() {
+        return this.pronoun;
+    }
+
+    // Метод "Задать предметы в шялпе"
     public void setItemsInHat() {
         itemsInHat = Item.values();
     }
 
-    // Метод, который выводит место подбора предметов
+    // Метод "Выводим на экран место, где взяли предметы
     public void pickUpLocationItem(Location location) {
         if (location instanceof Street) {
             System.out.println("which he got on " + location + ".");
@@ -44,7 +43,7 @@ public class Hat {
         }
     }
 
-    // Метод роли шляпы
+    // Метод "Роль шляпы"
     public void getRoles() {
         hatRoles = HatRoles.values();
         System.out.print("Obviously, Mr.Scooperfield's hat used");
@@ -57,12 +56,13 @@ public class Hat {
         }
     }
 
+    // Переопределим метод toString
     @Override
-    //  Переопределим метод toString
     public String toString() {
         return name;
     }
 
+    // Переопределение метода equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -71,6 +71,7 @@ public class Hat {
         return Objects.equals(name, hat.name) && Objects.deepEquals(hatRoles, hat.hatRoles);
     }
 
+    // Переопределение метода hashCode
     @Override
     public int hashCode() {
         return Objects.hash(name, Arrays.hashCode(hatRoles));

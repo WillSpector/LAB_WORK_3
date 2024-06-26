@@ -5,13 +5,15 @@ public enum HatRoles {
     TRAVEL_BAG("a travel bag"),
     WAREHOUSE_FOR_SCRAP_MATERIALS("warehouse for scrap materials");
 
-    // Переменная для хранения предмета
+    // Имя
     private final String hatRoles;
 
+    // Конструктор
     HatRoles(String hatRoles) {
         this.hatRoles = hatRoles;
     }
 
+    // Метод "Получить имя"
     public String getHatRoles() {
         return hatRoles;
     }

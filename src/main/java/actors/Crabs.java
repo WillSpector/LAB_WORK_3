@@ -8,21 +8,20 @@ import interfaces.Speakable;
 import java.util.Objects;
 
 public class Crabs extends Mister implements Speakable {
-    // Переменная для хранения слов Крабса
+    // Фраза Крабса
     private String phrase;
 
-    // Имя персонажа (Крабс)
+    // Конструктор
     public Crabs(String name, String pronoun) {
         super(name, pronoun);
     }
 
-    // Метод для установки слов, которые говорит Крабс
+    // Метод "Задать слова, которые говорит Crabs"
     public void setPhrase(String phrase) {
         this.phrase = phrase;
     }
 
-
-    // Выводит на экран фразу и к кому она направлена
+    // Переопределяем метод интерфейса.Вывести на экран слова Crabs и к кому они направлены
     @Override
     public void speak(Communication addressObject) {
         System.out.println(getName() + " said: " + this.phrase + " - to " + addressObject + ". ");
@@ -37,7 +36,6 @@ public class Crabs extends Mister implements Speakable {
         Crabs crabs = (Crabs) o;
         return Objects.equals(phrase, crabs.phrase);
     }
-
 
     // Переопределение метода hasCode
     @Override

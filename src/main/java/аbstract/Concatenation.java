@@ -1,24 +1,24 @@
 package аbstract;
 
 public class Concatenation {
-    // Метод выводит на экран "и"
+    // Метод "Вывести на экран "и""
     public void getAnd() {
         System.out.print(" and ");
     }
 
-    // Метод выводит на экран "пробел"
+    // Метод "Вывести на экран "пробел""
     public void getSpace() {
         System.out.print(" ");
     }
 
-    // Метод выводит на экран "after"
+    // Метод "Вывести на экран "after""
     public void getAfter() {
-        System.out.print("after that");
+        System.out.print(" after that ");
     }
 
-    // Метод выводит на экран "however"
+    // Метод в"Вывести на экран "however""
     public void getHowever() {
-        System.out.print(", however, not with");
+        System.out.print(", however, not with ");
     }
 }
 

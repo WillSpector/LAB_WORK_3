@@ -3,25 +3,31 @@ package locations;
 import actors.Scooperfield;
 import hat.Item;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Bathroom extends Location {
+    // Конструктор
     public Bathroom(String name) {
         super(name);
     }
 
-    // Создаем класс Locker
+    // Класс Locker
     public static class Locker {
+        // Имя
         private final String name;
+        // Массив предметов в шкафчике
         private Item[] listOfThings;
+        // Шкафчик пустой?
         private boolean isEmpty;
 
+        // Конструктор
         public Locker(String name) {
             this.name = name;
             isEmpty = true;
         }
 
-        // Создаем метод "спрятать вещи в шкафчик"
+        // Метод "Спрятать вещи в шкафчик"
         public void putThingsInsideLocker(Item[] thingsInsideLocker, Scooperfield scooperfield) {
             isEmpty = false;
             listOfThings = thingsInsideLocker;
@@ -32,40 +38,47 @@ public class Bathroom extends Location {
         }
     }
 
-    // Создаем класс Shelf
+    // Класс Shelf
     public static class Shelf {
+        // Имя
         private final String name;
-        private final int numberOfPlacesOnTheShelf = 0;
-        public Item[] itemsOnShelf = new Item[numberOfPlacesOnTheShelf];
+        // Массив для хранения предметов на полке
+        private final ArrayList<Object> itemsOnShelf = new ArrayList<>();
 
+        // Конструктор
         public Shelf(String name) {
             this.name = name;
         }
 
-        // Метод положить предмет рядом на полку
+        // Метод "Положить предмет рядом на полку"
         public void putItemOnShelf(Item item, Scooperfield scooperfield) {
-            scooperfield.listOfThings = new Item[0];
-            Item[] newItemsOnShelf = new Item[itemsOnShelf.length + 1];
-            System.arraycopy(itemsOnShelf, 0, newItemsOnShelf, 0, itemsOnShelf.length);
-            newItemsOnShelf[newItemsOnShelf.length - 1] = item;
-            itemsOnShelf = newItemsOnShelf;
+            itemsOnShelf.add(item);
             System.out.print("Put his " + item + " near, ");
         }
 
-        // Создаем класс StrawberrySoapOfCrabs
+        // Метод "Задать предмет Мыло на полке"
+        public void setSoapOnShelf(StrawberrySoapOfCrabs soap) {
+            itemsOnShelf.add(soap);
+        }
+
+        // Класс StrawberrySoapOfCrabs
         public static class StrawberrySoapOfCrabs {
+            // Имя
             private final String name;
 
+            // Конструктор
             public StrawberrySoapOfCrabs(String name) {
                 this.name = name;
             }
 
+            // Переопределим метод toString
             @Override
             public String toString() {
                 return name;
             }
         }
 
+        // Переопределим метод toString
         @Override
         public String toString() {
             return name;

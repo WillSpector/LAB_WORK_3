@@ -10,19 +10,21 @@ public enum Item {
     TOWEL("towel"),
     PIECE_OF_COPPER_WIRE("piece of copper wire"),
     STRAWBERRY_SOAP("strawberry soap");
-    // Переменная для хранения предмета
+
+    // Имя
     private final String item;
 
+    // Конструктор
     Item(String item) {
         this.item = item;
     }
-
+    // Метод "Получить имя"
     public String getItem() {
         return item;
     }
 
-    @Override
     // Переопределяем метод toString
+    @Override
     public String toString() {
         return getItem();
     }

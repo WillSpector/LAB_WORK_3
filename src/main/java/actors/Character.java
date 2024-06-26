@@ -11,25 +11,24 @@ abstract class Character {
     private final String name;
     // Местоимение персонажа
     private final String pronoun;
-    // Переменная location
+    // Локация
     protected Location location;
 
-    // Метод возврата имени (пока не используется)
-    public String getName() {
-        return this.name;
-    }
-
-    // Метод выводит местоимение
-    public void getPronoun() {
-        System.out.print(this.pronoun);
-    }
-
-    // Конструктор Character
+    // Конструктор
     protected Character(String name, String pronoun) {
         this.name = name;
         this.pronoun = pronoun;
     }
 
+    // Метод "Получить имя"
+    public String getName() {
+        return this.name;
+    }
+
+    // Метод "Получить местоимение"
+    public void getPronoun() {
+        System.out.print(this.pronoun);
+    }
 
     // Переопределение метода equals
     @Override

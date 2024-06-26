@@ -14,17 +14,83 @@ import java.util.Objects;
 
 
 public class Scooperfield extends Mister implements Thankable, InteractionWithHat {
-    // Переменная для выражения лица
+    // Выражения лица
     private FacialExpressions facialExpressions;
-    //  Переменная наличия шляпы на голове
+    //  Шляпы на голове?
     private boolean isHatOnHead;
     // Место в руках
     private final int numberOfPlacesInHands = 0;
     // Массив для хранения предметов (в руках)
     public Item[] listOfThings = new Item[numberOfPlacesInHands];
 
+    // Конструктор
+    public Scooperfield(String name, String pronoun) {
+        super(name, pronoun);
+    }
+
+    // Метод "Осмотреть локацию"
+    public void lookAround(Location location) {
+        System.out.print("Looking around " + location);
+    }
+
+    // Метод "Смотреть на два разных мыла"
+    public void lookAtSoaps(Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
+        System.out.print(" looked at " + itemFirst + " and " + itemSecond + " for a while,");
+    }
+
+    // Метод "Настроить гримасу на лице Скуперфильда (только smile или grimace of disgust)"
+    public void setFacialExpressions(FacialExpressions facialExpressions) throws NotSetFacialExpressionsException {
+        if (Objects.equals(facialExpressions, FacialExpressions.GRIMACE_OF_DISGUST) ||
+                Objects.equals(facialExpressions, FacialExpressions.SMILE)) {
+            this.facialExpressions = facialExpressions;
+        } else {
+            throw new NotSetFacialExpressionsException("Enter " + FacialExpressions.GRIMACE_OF_DISGUST
+                    + " or " + FacialExpressions.SMILE);
+        }
+    }
+
+    // Метод "Вывести на экран манипуляцию с лицом"
+    public void getFacialExpressions() {
+        if (Objects.equals(this.facialExpressions, FacialExpressions.SMILE)) {
+            System.out.print("putting a " + this.facialExpressions
+                    + " on his face, which can be mistaken for a grimace of disgust, ");
+        } else if (Objects.equals(this.facialExpressions, FacialExpressions.GRIMACE_OF_DISGUST)) {
+            System.out.print("putting a " + this.facialExpressions
+                    + " on his face, which can be mistaken for a smile, ");
+        }
+    }
+
+    // Переопределяем метод интерфейса. Метод для снятия шляпы с головы
     @Override
+    public void takeOffHat(Hat hat) {
+        isHatOnHead = false;
+        System.out.print(" took off his " + hat + " from head");
+    }
+
+    // Метод "Надета ли шляпа на голове"
+    public void isHatOnHead() {
+        if (isHatOnHead) {
+            System.out.println("The hat on the head");
+        } else {
+            System.out.println("The hat is not on the head");
+        }
+    }
+
+    public void pullOutOfHat(Hat hat) {
+        System.out.print("pulled out of " + hat.getPronoun() + ": ");
+    }
+
+    // Переопределяем метод интерфейса. Достать все предметы из шляпы
+    @Override
+    public void takeItemsFromHat() {
+        int quantityOfItem;
+        for (quantityOfItem = 0; quantityOfItem < listOfThings.length; quantityOfItem++) {
+            System.out.print(listOfThings[quantityOfItem] + ", ");
+        }
+    }
+
     // Переопределяем метод интерфейса. Достать предмет из шляпы
+    @Override
     public void takeItemFromHat(Item item, Hat hat) throws ScooperfieldNotTakeItemFromHatException {
         if (item == null) {
             throw new ScooperfieldNotTakeItemFromHatException("Can't pull out null from Hat!");
@@ -53,77 +119,9 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         }
     }
 
-    // Имя персонажа (Крабс)
-    public Scooperfield(String name, String pronoun) {
-        super(name, pronoun);
-    }
-
-    // Метод осмотр локации (улица, комната или ванная комната)
-    public void lookAround(Location location) {
-        System.out.print("Looking around " + location);
-    }
-
-    // Метод смотреть на предметы
-    public void lookAtSoaps(Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
-        System.out.print(" looked at " + itemFirst + " and " + itemSecond + "for a while,");
-    }
-
-    // Метод позволяет настроить гримасу на лице Скуперфильда (только smile или grimace of disgust)
-    public void setFacialExpressions(FacialExpressions facialExpressions) throws NotSetFacialExpressionsException {
-        if (Objects.equals(facialExpressions, FacialExpressions.GRIMACE_OF_DISGUST) ||
-                Objects.equals(facialExpressions, FacialExpressions.SMILE)) {
-            this.facialExpressions = facialExpressions;
-        } else {
-            throw new NotSetFacialExpressionsException("Enter " + FacialExpressions.GRIMACE_OF_DISGUST
-                    + " or " + FacialExpressions.SMILE);
-        }
-    }
-
-    // Метод выводит на экран манипуляции с лицом
-    public void getFacialExpressions() {
-        if (Objects.equals(this.facialExpressions, FacialExpressions.SMILE)) {
-            System.out.print("putting a " + this.facialExpressions
-                    + " on his face, which can be mistaken for a grimace of disgust, ");
-        } else if (Objects.equals(this.facialExpressions, FacialExpressions.GRIMACE_OF_DISGUST)) {
-            System.out.print("putting a " + this.facialExpressions
-                    + " on his face, which can be mistaken for a smile, ");
-        }
-    }
-
-
-    @Override
-    // Метод для снятия шляпы с головы
-    public void takeOffHat(Hat hat) {
-        isHatOnHead = false;
-        System.out.print(" took off "+ hat.getPronoun()+" " + hat + " from head");
-    }
-
-    // Метод позволяет установить (надета ли шляпа на голове)
-    public void isHatOnHead() {
-        if (isHatOnHead) {
-            System.out.println("The hat on the head");
-        } else {
-            System.out.println("The hat is not on the head");
-        }
-    }
-
-
-    public void pullOutOfHat() {
-        System.out.print("pulled out of it:");
-    }
-
-    @Override
-    // Переопределяем метод интерфейса. Достать все предметы из шляпы
-    public void takeItemsFromHat() {
-        int quantityOfItem;
-        for (quantityOfItem = 0; quantityOfItem < listOfThings.length; quantityOfItem++) {
-            System.out.print(listOfThings[quantityOfItem] + ", ");
-        }
-    }
-
-    // Метод "замечать где"
+    // Метод "Замечать"
     public void noticeOn(Bathroom.Shelf location) {
-        System.out.print("but then noticed on " + location + " at the washstand,");
+        System.out.print(" but then noticed on " + location + " at the washstand,");
     }
 
     // Метод принадлежности
@@ -132,33 +130,35 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     @Override
-    // Переопределяем метод интерфейса. Метод, говорит ли Скопрефильд спасибо и кому
+    // Переопределяем метод интерфейса. Говорит ли Скопрефильд спасибо и кому
     public void thanks(Communication addressObject) {
         System.out.println(getName() + " thanked " + addressObject);
     }
 
+    // Метод "Помыть с помощью другого мыла"
     public void washingWithAnotherSoap(Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
-        System.out.println(itemFirst + " but with " + itemSecond + "that lay nearby.");
+        System.out.println(itemFirst + " but with " + itemSecond + " that lay nearby.");
     }
 
-    // Метод помыть часть тела
+    // Метод "Помыть часть тела"
     public void washBodyPart(Washable bodyPart) {
         bodyPart.setWashed(true);
         System.out.print("started to wash his " + bodyPart);
     }
 
-    // Вложенные статические классы Hands and Cheeks
+    // Вложенный статический класс Hands
     public static class Hands implements Washable {
-        // Переменая имя
+        // Имя
         private final String name;
-        // Переменная помыты ли руки
+        // Помыты ли руки
         private boolean isWashed;
 
+        // Конструктор
         public Hands(String name) {
             this.name = name;
         }
 
-        // Переопределение метода (булевая переменная пымыты ли руки)
+        // Переопределяем метод интерфейса. Помыты ли руки
         @Override
         public void setWashed(boolean isWashed) {
             this.isWashed = isWashed;
@@ -176,6 +176,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
             System.out.print(isHandsWashed);
         }
 
+        // Переопределение метода toString
         @Override
         public String toString() {
             return name;
@@ -183,24 +184,25 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
 
     }
 
+    // Вложенный статический класс Cheeks
     public static class Cheeks implements Washable {
-        // Переменая имя
+        // Имя
         private final String name;
-        // Переменная помыты ли щеки
+        // Помыты ли щеки
         private boolean isWashed;
 
+        // Конструктор
         public Cheeks(String name) {
             this.name = name;
         }
 
-        // Переопределение метода (булевая переменная пымыты ли щеки)
+        // Метод для проверки помыты ли щеки
         @Override
         public void setWashed(boolean isWashed) {
             this.isWashed = isWashed;
         }
 
-        // Метод для проверки помыты ли щеки
-
+        // Переопределяем метод интерфейса. Помыты ли щеки
         public void isWashedCheeks() {
             String isCheeksWashed;
             if (isWashed) {
@@ -211,6 +213,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
             System.out.print(isCheeksWashed);
         }
 
+        // Переопределение метода toString
         @Override
         public String toString() {
             return name;

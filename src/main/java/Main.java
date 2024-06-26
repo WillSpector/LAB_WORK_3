@@ -18,8 +18,6 @@ public class Main {
         Concatenation сoncatenation = new Concatenation();
         // Выводи на экран имя объекта crabs
         System.out.print(crabs);
-        // Пробел
-        сoncatenation.getSpace();
         // Создаем локации
         HotelRoom hotelRoom = new HotelRoom("the hotel room");
         // Выводим на экран куда и с кем перемещается персонаж
@@ -46,7 +44,7 @@ public class Main {
         // Выводим на экран куда перемещается персонаж
         scooperfield.moveToLocationAlone(bathroom);
         // Создаем объект Шляпа
-        Hat hat = new Hat("hat","his");
+        Hat hat = new Hat("hat","it");
         // Сохраняем предметы в шляпе
         hat.setItemsInHat();
         // Местоимение He
@@ -56,7 +54,7 @@ public class Main {
         // Соединяем строки
         сoncatenation.getAnd();
         // Вывод на экран текста достать из шляпы
-        scooperfield.pullOutOfHat();
+        scooperfield.pullOutOfHat(hat);
         // Достаем вещи из шляпы (Держит в руках)
         scooperfield.takeItemFromHat(Item.TOOTHBRUSH, hat);
         scooperfield.takeItemFromHat(Item.HANDKERCHIEFS, hat);
@@ -77,13 +75,13 @@ public class Main {
         //Достаем мыло из шляпы
         System.out.print(scooperfield);
         scooperfield.takeItemFromHat(Item.STRAWBERRY_SOAP, hat);
-        // Пробел
-        сoncatenation.getSpace();
         // Создаем объект полка
         Bathroom.Shelf shelf = new Bathroom.Shelf("shelf");
         // Создаем объект strawberry soap of Crabs
         Bathroom.Shelf.StrawberrySoapOfCrabs strawberrySoapOfCrabs =
-                new Bathroom.Shelf.StrawberrySoapOfCrabs("soap ");
+                new Bathroom.Shelf.StrawberrySoapOfCrabs("soap");
+        // Сеттим обеъект мыло на полку
+        shelf.setSoapOnShelf(strawberrySoapOfCrabs);
         // Вызываем метод где заметил
         scooperfield.noticeOn(shelf);
         // Метод принадлежности предмета
@@ -94,12 +92,8 @@ public class Main {
         System.out.print(scooperfield);
         // Метод смотреть на предметы
         scooperfield.lookAtSoaps(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
-        // Пробел
-        сoncatenation.getSpace();
         //, after that
         сoncatenation.getAfter();
-        // Пробел
-        сoncatenation.getSpace();
         // Местоимение he
         scooperfield.getPronoun();
         // Пробел
@@ -113,9 +107,8 @@ public class Main {
         сoncatenation.getAnd();
         //Методы помыть щеки
         scooperfield.washBodyPart(cheeks);
-        // Вводная часть
+        // Выводим however
         сoncatenation.getHowever();
-        сoncatenation.getSpace();
         // Метод помыть другим мылом
         scooperfield.washingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
 

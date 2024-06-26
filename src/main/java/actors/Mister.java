@@ -7,22 +7,20 @@ import locations.*;
 
 import java.util.Objects;
 
-
 public class Mister extends Character implements Communication {
 
-    // Имя
     public Mister(String name, String pronoun) {
         super("Mr." + name, pronoun);
     }
 
-    // Метод перемещения в выбранную локацию c кем-то
+    // Метод "Переместиться в выбранную локацию c кем-то"
     public void moveToLocationWith(Character character, Location location) {
         character.location = location;
         this.location = location;
-        System.out.print("went to " + this.location + " with " + character + ". ");
+        System.out.print(" went to " + this.location + " with " + character + ". ");
     }
 
-    // Метод перемещения в выбранную локацию
+    // Метод "Переместиться в выбранную локацию в одиночку"
     public void moveToLocationAlone(Location location) {
         this.location = location;
         System.out.print("went to " + this.location + ". ");
