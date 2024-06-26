@@ -3,7 +3,7 @@ package hat;
 // imports
 
 import locations.*;
-import аbstract.HatRoles;
+import abstracts.HatRoles;
 
 import java.util.Arrays;
 import java.util.Objects;

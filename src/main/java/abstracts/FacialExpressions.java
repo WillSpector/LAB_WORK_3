@@ -1,4 +1,4 @@
-package аbstract;
+package abstracts;
 
 public enum FacialExpressions {
     // Список выражений на лице

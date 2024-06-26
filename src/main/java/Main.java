@@ -3,9 +3,9 @@
 import exception.NotSetFacialExpressionsException;
 import hat.*;
 import locations.*;
-import аbstract.FacialExpressions;
+import abstracts.FacialExpressions;
 import actors.*;
-import аbstract.Concatenation;
+import abstracts.Concatenation;
 
 public class Main {
     public static void main(String[] args) throws NotSetFacialExpressionsException {
@@ -14,7 +14,7 @@ public class Main {
         // Создаем объект класса Scooperfield
         Scooperfield scooperfield = new Scooperfield("Scooperfield", "he");
         // Создаем класс and для соединения строк в тексте
-        Concatenation сoncatenation = new Concatenation();
+        Concatenation concatenation = new Concatenation();
         // Выводи на экран имя объекта crabs
         System.out.print(crabs);
         // Создаем локации
@@ -28,7 +28,7 @@ public class Main {
         // Скоперфильд осматривает локацию (можно выбрать)
         scooperfield.lookAround(hotelRoom);
         // Соединяем строки
-        сoncatenation.getAnd();
+        concatenation.getAnd();
         // Задаем выражение лица
         scooperfield.setFacialExpressions(FacialExpressions.GRIMACE_OF_DISGUST);
         // Выводим текст сравнения выражение лица
@@ -36,7 +36,7 @@ public class Main {
         // Кого благодарит Scooperfield
         scooperfield.thanks(crabs);
         // Соединяем строки
-        сoncatenation.getAnd();
+        concatenation.getAnd();
         // Создаем локацию
         Bathroom bathroom = new Bathroom("bathroom");
         // Выводим на экран куда перемещается персонаж
@@ -50,7 +50,7 @@ public class Main {
         // Скуперфильд снимает шляпу с головы
         scooperfield.takeOffHat(hat);
         // Соединяем строки
-        сoncatenation.getAnd();
+        concatenation.getAnd();
         // Вывод на экран текста достать из шляпы
         scooperfield.pullOutOfHat(hat);
         // Достаем вещи из шляпы (Держит в руках)
@@ -90,22 +90,22 @@ public class Main {
         // Метод смотреть на предметы
         scooperfield.lookAtSoaps(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
         // after that
-        сoncatenation.getAfter();
+        concatenation.getAfter();
         // Местоимение he
         scooperfield.getPronoun();
         // Пробел
-        сoncatenation.getSpace();
+        concatenation.getSpace();
         // Создаем части тела
         Scooperfield.Hands hands = new Scooperfield.Hands("hands");
         Scooperfield.Cheeks cheeks = new Scooperfield.Cheeks("cheeks");
         // Методы помыть руки
         scooperfield.washBodyPart(hands);
         // Соединяем строки
-        сoncatenation.getAnd();
+        concatenation.getAnd();
         // Методы помыть щеки
         scooperfield.washBodyPart(cheeks);
         // Выводим however
-        сoncatenation.getHowever();
+        concatenation.getHowever();
         // Метод помыть другим мылом
         scooperfield.washingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
 

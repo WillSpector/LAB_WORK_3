@@ -1,4 +1,4 @@
-package аbstract;
+package abstracts;
 
 public class Concatenation {
     // Метод "Вывести на экран "и""

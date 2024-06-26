@@ -1,4 +1,4 @@
-package аbstract;
+package abstracts;
 
 public enum HatRoles {
     HEADGEAR("a headgear"),
