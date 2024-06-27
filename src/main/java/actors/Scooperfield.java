@@ -19,9 +19,9 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     //  Шляпы на голове?
     private boolean isHatOnHead;
     // Место в руках
-    private final int numberOfPlacesInHands = 0;
+    private static final int NUMBER_OF_PLACES_IN_HANDS = 0;
     // Массив для хранения предметов (в руках)
-    public Item[] listOfThings = new Item[numberOfPlacesInHands];
+    public Item[] listOfThings = new Item[NUMBER_OF_PLACES_IN_HANDS];
 
     // Конструктор
     public Scooperfield(String name, String pronoun) {
