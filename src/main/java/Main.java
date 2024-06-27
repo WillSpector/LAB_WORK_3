@@ -52,7 +52,7 @@ public class Main {
         // Инициализация класса "соединителя"
         concatenation = new Concatenation();
 
-        // Инициализация анонимного класса класса
+        // Инициализация анонимного класса
         restaurant = new Location("restaurant") {
         };
     }
