@@ -58,7 +58,8 @@ public class Main {
         // Задаем фразу которую говорит Крабс
         crabs.setPhrase("You need to wash your face!");
         // Выводим на экран что говорит Крабс
-        crabs.speak(crabs, scooperfield);
+        crabs.getName();
+        crabs.speak(scooperfield);
         // Скоперфильд осматривает локацию (можно выбрать)
         scooperfield.lookAround(hotelRoom);
         // Соединяем строки
@@ -68,7 +69,8 @@ public class Main {
         // Выводим текст сравнения выражение лица
         scooperfield.getFacialExpression();
         // Кого благодарит Scooperfield
-        scooperfield.thanks(scooperfield, crabs);
+        scooperfield.getName();
+        scooperfield.thanks(crabs);
         // Соединяем строки
         concatenation.getAnd();
         // Выводим на экран куда перемещается персонаж

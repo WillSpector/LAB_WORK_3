@@ -131,8 +131,8 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
 
     @Override
     // Переопределяем метод интерфейса. Говорит ли Скопрефильд спасибо и кому
-    public void thanks(Scooperfield scooperfield, Communication addressObject) {
-        System.out.println(scooperfield + " thanked " + addressObject);
+    public void thanks(Communication addressObject) {
+        System.out.println(" thanked " + addressObject);
     }
 
     // Метод "Помыть с помощью другого мыла"
