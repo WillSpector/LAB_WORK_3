@@ -73,7 +73,7 @@ public class Main {
         // Задаем выражение лица
         scooperfield.setFacialExpression(FacialExpression.GRIMACE_OF_DISGUST);
         // Выводим текст сравнения выражение лица
-        scooperfield.getFacialExpressions();
+        scooperfield.getFacialExpression();
         // Кого благодарит Scooperfield
         scooperfield.thanks(crabs);
         // Соединяем строки

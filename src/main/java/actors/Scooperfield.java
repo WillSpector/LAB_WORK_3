@@ -50,7 +50,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод "Вывести на экран манипуляцию с лицом"
-    public void getFacialExpressions() {
+    public void getFacialExpression() {
         if (Objects.equals(this.facialExpression, FacialExpression.SMILE)) {
             System.out.print("putting a " + this.facialExpression
                     + " on his face, which can be mistaken for a grimace of disgust, ");
