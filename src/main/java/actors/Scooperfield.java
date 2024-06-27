@@ -14,9 +14,9 @@ import java.util.Objects;
 
 
 public class Scooperfield extends Mister implements Thankable, InteractionWithHat {
-    // Выражения лица
+    // Выражение лица
     private FacialExpression facialExpression;
-    //  Шляпы на голове?
+    //  Шляпа на голове?
     private boolean isHatOnHead;
     // Место в руках
     private static final int NUMBER_OF_PLACES_IN_HANDS = 0;
