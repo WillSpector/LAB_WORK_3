@@ -64,7 +64,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     @Override
     public void takeOffHat(Hat hat) {
         isHatOnHead = false;
-        System.out.print(" took off his " + hat + " from head");
+        System.out.print(getPronoun() + " took off his " + hat + " from head");
     }
 
     // Метод "Надета ли шляпа на голове"
@@ -132,7 +132,7 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     @Override
     // Переопределяем метод интерфейса. Говорит ли Скопрефильд спасибо и кому
     public void thanks(Communication addressObject) {
-        System.out.println(" thanked " + addressObject);
+        System.out.println(getName() + " thanked " + addressObject);
     }
 
     // Метод "Помыть с помощью другого мыла"

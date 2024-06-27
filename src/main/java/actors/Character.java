@@ -21,13 +21,13 @@ abstract class Character {
     }
 
     // Метод "Получить имя"
-    public void getName() {
-        System.out.print(this.name);
+    public String getName() {
+        return this.name;
     }
 
     // Метод "Получить местоимение"
-    public void getPronoun() {
-        System.out.print(this.pronoun);
+    public String getPronoun() {
+        return this.pronoun;
     }
 
     // Переопределение метода equals

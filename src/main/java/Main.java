@@ -51,14 +51,11 @@ public class Main {
     }
 
     public static void main(String[] args) throws NotSetFacialExpressionsException {
-        // Выводи на экран имя объекта crabs
-        crabs.getName();
         // Выводим на экран куда и с кем перемещается персонаж
         crabs.moveToLocationWith(scooperfield, hotelRoom);
         // Задаем фразу которую говорит Крабс
         crabs.setPhrase("You need to wash your face!");
         // Выводим на экран что говорит Крабс
-        crabs.getName();
         crabs.speak(scooperfield);
         // Скоперфильд осматривает локацию (можно выбрать)
         scooperfield.lookAround(hotelRoom);
@@ -69,7 +66,6 @@ public class Main {
         // Выводим текст сравнения выражение лица
         scooperfield.getFacialExpression();
         // Кого благодарит Scooperfield
-        scooperfield.getName();
         scooperfield.thanks(crabs);
         // Соединяем строки
         concatenation.getAnd();
@@ -77,8 +73,6 @@ public class Main {
         scooperfield.moveToLocationAlone(bathroom);
         // Сохраняем предметы в шляпе
         hat.setItemsInHat();
-        // Местоимение He
-        scooperfield.getPronoun();
         // Скуперфильд снимает шляпу с головы
         scooperfield.takeOffHat(hat);
         // Соединяем строки
@@ -99,7 +93,7 @@ public class Main {
         // Кладем массив из предметов в шкафчик
         locker.putThingsInsideLocker(scooperfield.listOfThings, scooperfield);
         // Достаем мыло из шляпы
-        scooperfield.getName();
+        System.out.print(scooperfield);
         scooperfield.takeItemFromHat(Item.STRAWBERRY_SOAP, hat);
         // Сеттим обеъект мыло на полку
         shelf.setSoapOnShelf(strawberrySoapOfCrabs);
@@ -114,7 +108,7 @@ public class Main {
         // after that
         concatenation.getAfter();
         // Местоимение he
-        scooperfield.getPronoun();
+        System.out.print(scooperfield.getPronoun());
         // Пробел
         concatenation.getSpace();
         // Методы помыть руки
