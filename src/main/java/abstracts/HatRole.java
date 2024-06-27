@@ -1,26 +1,27 @@
 package abstracts;
 
-public enum HatRoles {
+public enum HatRole {
+    // Список ролей шляпы
     HEADGEAR("a headgear"),
     TRAVEL_BAG("a travel bag"),
     WAREHOUSE_FOR_SCRAP_MATERIALS("warehouse for scrap materials");
 
-    // Имя
-    private final String hatRoles;
+    // Поле
+    private final String value;
 
     // Конструктор
-    HatRoles(String hatRoles) {
-        this.hatRoles = hatRoles;
+    HatRole(String value) {
+        this.value = value;
     }
 
     // Метод "Получить имя"
-    public String getHatRoles() {
-        return hatRoles;
+    public String getHatRole() {
+        return value;
     }
 
     // Переопределяем метод toString
     @Override
     public String toString() {
-        return getHatRoles();
+        return getHatRole();
     }
 }

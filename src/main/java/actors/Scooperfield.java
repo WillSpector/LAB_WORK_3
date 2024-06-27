@@ -7,7 +7,7 @@ import interfaces.*;
 import hat.*;
 import locations.Bathroom;
 import locations.Location;
-import abstracts.FacialExpressions;
+import abstracts.FacialExpression;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -15,7 +15,7 @@ import java.util.Objects;
 
 public class Scooperfield extends Mister implements Thankable, InteractionWithHat {
     // Выражения лица
-    private FacialExpressions facialExpressions;
+    private FacialExpression facialExpression;
     //  Шляпы на голове?
     private boolean isHatOnHead;
     // Место в руках
@@ -39,23 +39,23 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод "Настроить гримасу на лице Скуперфильда (только smile или grimace of disgust)"
-    public void setFacialExpressions(FacialExpressions facialExpressions) throws NotSetFacialExpressionsException {
-        if (Objects.equals(facialExpressions, FacialExpressions.GRIMACE_OF_DISGUST) ||
-                Objects.equals(facialExpressions, FacialExpressions.SMILE)) {
-            this.facialExpressions = facialExpressions;
+    public void setFacialExpression(FacialExpression facialExpression) throws NotSetFacialExpressionsException {
+        if (Objects.equals(facialExpression, FacialExpression.GRIMACE_OF_DISGUST) ||
+                Objects.equals(facialExpression, FacialExpression.SMILE)) {
+            this.facialExpression = facialExpression;
         } else {
-            throw new NotSetFacialExpressionsException("Enter " + FacialExpressions.GRIMACE_OF_DISGUST
-                    + " or " + FacialExpressions.SMILE);
+            throw new NotSetFacialExpressionsException("Enter " + FacialExpression.GRIMACE_OF_DISGUST
+                    + " or " + FacialExpression.SMILE);
         }
     }
 
     // Метод "Вывести на экран манипуляцию с лицом"
     public void getFacialExpressions() {
-        if (Objects.equals(this.facialExpressions, FacialExpressions.SMILE)) {
-            System.out.print("putting a " + this.facialExpressions
+        if (Objects.equals(this.facialExpression, FacialExpression.SMILE)) {
+            System.out.print("putting a " + this.facialExpression
                     + " on his face, which can be mistaken for a grimace of disgust, ");
-        } else if (Objects.equals(this.facialExpressions, FacialExpressions.GRIMACE_OF_DISGUST)) {
-            System.out.print("putting a " + this.facialExpressions
+        } else if (Objects.equals(this.facialExpression, FacialExpression.GRIMACE_OF_DISGUST)) {
+            System.out.print("putting a " + this.facialExpression
                     + " on his face, which can be mistaken for a smile, ");
         }
     }
@@ -227,14 +227,14 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Scooperfield that = (Scooperfield) o;
-        return isHatOnHead == that.isHatOnHead && facialExpressions == that.facialExpressions
+        return isHatOnHead == that.isHatOnHead && facialExpression == that.facialExpression
                 && Objects.deepEquals(listOfThings, that.listOfThings);
     }
 
     // Переопределение метода hasCode
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), facialExpressions, isHatOnHead, Arrays.hashCode(listOfThings));
+        return Objects.hash(super.hashCode(), facialExpression, isHatOnHead, Arrays.hashCode(listOfThings));
     }
 }
 

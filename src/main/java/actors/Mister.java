@@ -14,10 +14,10 @@ public class Mister extends Character implements Communication {
     }
 
     // Метод "Переместиться в выбранную локацию c кем-то"
-    public void moveToLocationWith(Character character, Location location) {
-        character.location = location;
+    public void moveToLocationWith(Mister mister, Location location) {
+        mister.location = location;
         this.location = location;
-        System.out.print(" went to " + this.location + " with " + character + ". ");
+        System.out.print(" went to " + this.location + " with " + mister + ". ");
     }
 
     // Метод "Переместиться в выбранную локацию в одиночку"

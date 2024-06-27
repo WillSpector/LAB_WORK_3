@@ -12,15 +12,16 @@ public enum Item {
     STRAWBERRY_SOAP("strawberry soap");
 
     // Имя
-    private final String item;
+    private final String value;
 
     // Конструктор
-    Item(String item) {
-        this.item = item;
+    Item(String value) {
+        this.value = value;
     }
+
     // Метод "Получить имя"
     public String getItem() {
-        return item;
+        return value;
     }
 
     // Переопределяем метод toString

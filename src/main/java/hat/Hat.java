@@ -3,7 +3,7 @@ package hat;
 // imports
 
 import locations.*;
-import abstracts.HatRoles;
+import abstracts.HatRole;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -14,7 +14,7 @@ public class Hat {
     // Местоимение
     private final String pronoun;
     // Роль шялпы
-    private HatRoles[] hatRoles;
+    private HatRole[] hatRoles;
     // Предметы в шляпе
     public Item[] itemsInHat = Item.values();
 
@@ -45,7 +45,7 @@ public class Hat {
 
     // Метод "Роль шляпы"
     public void getRoles() {
-        hatRoles = HatRoles.values();
+        hatRoles = HatRole.values();
         System.out.print("Obviously, Mr.Scooperfield's hat used");
         for (int i = 0; i < hatRoles.length; i++) {
             if (i != hatRoles.length - 1) {

@@ -3,7 +3,7 @@
 import exception.NotSetFacialExpressionsException;
 import hat.*;
 import locations.*;
-import abstracts.FacialExpressions;
+import abstracts.FacialExpression;
 import actors.*;
 import abstracts.Concatenation;
 
@@ -71,7 +71,7 @@ public class Main {
         // Соединяем строки
         concatenation.getAnd();
         // Задаем выражение лица
-        scooperfield.setFacialExpressions(FacialExpressions.GRIMACE_OF_DISGUST);
+        scooperfield.setFacialExpression(FacialExpression.GRIMACE_OF_DISGUST);
         // Выводим текст сравнения выражение лица
         scooperfield.getFacialExpressions();
         // Кого благодарит Scooperfield

@@ -1,26 +1,26 @@
 package abstracts;
 
-public enum FacialExpressions {
+public enum FacialExpression {
     // Список выражений на лице
     GRIMACE_OF_DISGUST("grimace of disgust"),
     SMILE("smile");
 
-    // Имя
-    private final String facialExpressions;
+    // Поле
+    private final String value;
 
     // Конструктор
-    FacialExpressions(String facialExpressions) {
-        this.facialExpressions = facialExpressions;
+    FacialExpression(String value) {
+        this.value = value;
     }
 
     // Метод "Получить имя"
-    public String getFacialExpressions() {
-        return facialExpressions;
+    public String getFacialExpression() {
+        return value;
     }
 
     // Переопределяем метод toString
     @Override
     public String toString() {
-        return getFacialExpressions();
+        return getFacialExpression();
     }
 }
