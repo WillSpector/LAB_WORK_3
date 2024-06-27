@@ -21,4 +21,3 @@ public class Concatenation {
         System.out.print(", however, not with ");
     }
 }
-

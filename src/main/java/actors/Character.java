@@ -51,13 +51,3 @@ abstract class Character {
         return name;
     }
 }
-
-
-
-
-
-
-
-
-
-

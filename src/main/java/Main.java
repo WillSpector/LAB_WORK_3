@@ -134,4 +134,3 @@ public class Main {
         System.out.println(crabs + " go to " + restaurant);
     }
 }
-

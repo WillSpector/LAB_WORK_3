@@ -15,4 +15,3 @@ public abstract class Location {
         return name;
     }
 }
-

@@ -237,13 +237,3 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
         return Objects.hash(super.hashCode(), facialExpression, isHatOnHead, Arrays.hashCode(listOfThings));
     }
 }
-
-
-
-
-
-
-
-
-
-
