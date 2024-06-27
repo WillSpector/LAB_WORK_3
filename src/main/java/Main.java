@@ -7,18 +7,59 @@ import abstracts.FacialExpressions;
 import actors.*;
 import abstracts.Concatenation;
 
+
 public class Main {
+
+    // Декларация персонажей
+    static Crabs crabs;
+    static Scooperfield scooperfield;
+    // Декларация частей тела Скуперфильда
+    static Scooperfield.Hands hands;
+    static Scooperfield.Cheeks cheeks;
+    // Декларация локаций
+    static Street street;
+    static HotelRoom hotelRoom;
+    static Bathroom bathroom;
+    // Декларация предметов
+    static Hat hat;
+    static Bathroom.Shelf.StrawberrySoapOfCrabs strawberrySoapOfCrabs;
+    // Декларация объектов в ванной
+    static Bathroom.Locker locker;
+    static Bathroom.Shelf shelf;
+    // Декларация класса "соединителя"
+    static Concatenation concatenation;
+
+    // Декларация анонимного класса класса
+    static Location restaurant;
+
+    static {
+        // Инициализация персонажей
+        crabs = new Crabs("Crabs", "he");
+        scooperfield = new Scooperfield("Scooperfield", "he");
+        // Инициализация частей тела Скуперфильда
+        hands = new Scooperfield.Hands("hands");
+        cheeks = new Scooperfield.Cheeks("cheeks");
+        // Инициализация локаций
+        street = new Street("street");
+        hotelRoom = new HotelRoom("the hotel room");
+        bathroom = new Bathroom("bathroom");
+        // Инициализация предметов
+        hat = new Hat("hat", "it");
+        strawberrySoapOfCrabs = new Bathroom.Shelf.StrawberrySoapOfCrabs("soap");
+        // Инициализация объектов в ванной
+        locker = new Bathroom.Locker("Locker");
+        shelf = new Bathroom.Shelf("shelf");
+        // Инициализация класса "соединителя"
+        concatenation = new Concatenation();
+
+        // Инициализация анонимного класса класса
+        restaurant = new Location("restaurant") {
+        };
+    }
+
     public static void main(String[] args) throws NotSetFacialExpressionsException {
-        // Создаем объект класса Crabs
-        Crabs crabs = new Crabs("Crabs", "he");
-        // Создаем объект класса Scooperfield
-        Scooperfield scooperfield = new Scooperfield("Scooperfield", "he");
-        // Создаем класс and для соединения строк в тексте
-        Concatenation concatenation = new Concatenation();
         // Выводи на экран имя объекта crabs
         System.out.print(crabs);
-        // Создаем локации
-        HotelRoom hotelRoom = new HotelRoom("the hotel room");
         // Выводим на экран куда и с кем перемещается персонаж
         crabs.moveToLocationWith(scooperfield, hotelRoom);
         // Задаем фразу которую говорит Крабс
@@ -37,12 +78,8 @@ public class Main {
         scooperfield.thanks(crabs);
         // Соединяем строки
         concatenation.getAnd();
-        // Создаем локацию
-        Bathroom bathroom = new Bathroom("bathroom");
         // Выводим на экран куда перемещается персонаж
         scooperfield.moveToLocationAlone(bathroom);
-        // Создаем объект Шляпа
-        Hat hat = new Hat("hat", "it");
         // Сохраняем предметы в шляпе
         hat.setItemsInHat();
         // Местоимение He
@@ -61,22 +98,14 @@ public class Main {
         scooperfield.takeItemFromHat(Item.OLD_NAIL, hat);
         scooperfield.takeItemFromHat(Item.TOWEL, hat);
         scooperfield.takeItemFromHat(Item.PIECE_OF_COPPER_WIRE, hat);
-        Street street = new Street("street");
         hat.pickUpLocationItem(street);
         // Выводим на экран роль шляпы
         hat.getRoles();
-        // Создаем класс шкафчик
-        Bathroom.Locker locker = new Bathroom.Locker("Locker");
         // Кладем массив из предметов в шкафчик
         locker.putThingsInsideLocker(scooperfield.listOfThings, scooperfield);
         // Достаем мыло из шляпы
         System.out.print(scooperfield);
         scooperfield.takeItemFromHat(Item.STRAWBERRY_SOAP, hat);
-        // Создаем объект полка
-        Bathroom.Shelf shelf = new Bathroom.Shelf("shelf");
-        // Создаем объект strawberry soap of Crabs
-        Bathroom.Shelf.StrawberrySoapOfCrabs strawberrySoapOfCrabs =
-                new Bathroom.Shelf.StrawberrySoapOfCrabs("soap");
         // Сеттим обеъект мыло на полку
         shelf.setSoapOnShelf(strawberrySoapOfCrabs);
         // Вызываем метод где заметил
@@ -95,9 +124,6 @@ public class Main {
         scooperfield.getPronoun();
         // Пробел
         concatenation.getSpace();
-        // Создаем части тела
-        Scooperfield.Hands hands = new Scooperfield.Hands("hands");
-        Scooperfield.Cheeks cheeks = new Scooperfield.Cheeks("cheeks");
         // Методы помыть руки
         scooperfield.washBodyPart(hands);
         // Соединяем строки
@@ -110,8 +136,6 @@ public class Main {
         scooperfield.washingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
 
         // Анонимный класс ресторан
-        Location restaurant = new Location("restaurant") {
-        };
         System.out.println(crabs + " go to " + restaurant);
     }
 }
