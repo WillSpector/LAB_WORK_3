@@ -52,13 +52,13 @@ public class Main {
 
     public static void main(String[] args) throws NotSetFacialExpressionsException {
         // Выводи на экран имя объекта crabs
-        System.out.print(crabs);
+        crabs.getName();
         // Выводим на экран куда и с кем перемещается персонаж
         crabs.moveToLocationWith(scooperfield, hotelRoom);
         // Задаем фразу которую говорит Крабс
         crabs.setPhrase("You need to wash your face!");
         // Выводим на экран что говорит Крабс
-        crabs.speak(scooperfield);
+        crabs.speak(crabs, scooperfield);
         // Скоперфильд осматривает локацию (можно выбрать)
         scooperfield.lookAround(hotelRoom);
         // Соединяем строки
@@ -68,7 +68,7 @@ public class Main {
         // Выводим текст сравнения выражение лица
         scooperfield.getFacialExpression();
         // Кого благодарит Scooperfield
-        scooperfield.thanks(crabs);
+        scooperfield.thanks(scooperfield, crabs);
         // Соединяем строки
         concatenation.getAnd();
         // Выводим на экран куда перемещается персонаж
@@ -97,7 +97,7 @@ public class Main {
         // Кладем массив из предметов в шкафчик
         locker.putThingsInsideLocker(scooperfield.listOfThings, scooperfield);
         // Достаем мыло из шляпы
-        System.out.print(scooperfield);
+        scooperfield.getName();
         scooperfield.takeItemFromHat(Item.STRAWBERRY_SOAP, hat);
         // Сеттим обеъект мыло на полку
         shelf.setSoapOnShelf(strawberrySoapOfCrabs);
@@ -107,10 +107,8 @@ public class Main {
         scooperfield.belongTo(strawberrySoapOfCrabs, crabs);
         // Метод положить рядом на полку
         shelf.putItemOnShelf(Item.STRAWBERRY_SOAP, scooperfield);
-        // Скуперфильд
-        System.out.print(scooperfield);
         // Метод смотреть на предметы
-        scooperfield.lookAtSoaps(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
+        scooperfield.lookAtSoaps(scooperfield, Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
         // after that
         concatenation.getAfter();
         // Местоимение he

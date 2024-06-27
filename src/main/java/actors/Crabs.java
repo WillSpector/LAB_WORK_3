@@ -23,8 +23,8 @@ public class Crabs extends Mister implements Speakable {
 
     // Переопределяем метод интерфейса.Вывести на экран слова Crabs и к кому они направлены
     @Override
-    public void speak(Communication addressObject) {
-        System.out.println(getName() + " said: " + this.phrase + " - to " + addressObject + ". ");
+    public void speak(Crabs crabs, Communication addressObject) {
+        System.out.println(crabs + " said: " + this.phrase + " - to " + addressObject + ". ");
     }
 
     // Переопределение метода equals

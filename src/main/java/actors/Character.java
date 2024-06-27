@@ -21,8 +21,8 @@ abstract class Character {
     }
 
     // Метод "Получить имя"
-    public String getName() {
-        return this.name;
+    public void getName() {
+        System.out.print(this.name);
     }
 
     // Метод "Получить местоимение"

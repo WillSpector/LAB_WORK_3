@@ -34,8 +34,8 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
     }
 
     // Метод "Смотреть на два разных мыла"
-    public void lookAtSoaps(Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
-        System.out.print(" looked at " + itemFirst + " and " + itemSecond + " for a while,");
+    public void lookAtSoaps(Scooperfield scooperfield, Item itemFirst, Bathroom.Shelf.StrawberrySoapOfCrabs itemSecond) {
+        System.out.print(scooperfield + " looked at " + itemFirst + " and " + itemSecond + " for a while,");
     }
 
     // Метод "Настроить гримасу на лице Скуперфильда (только smile или grimace of disgust)"
@@ -131,8 +131,8 @@ public class Scooperfield extends Mister implements Thankable, InteractionWithHa
 
     @Override
     // Переопределяем метод интерфейса. Говорит ли Скопрефильд спасибо и кому
-    public void thanks(Communication addressObject) {
-        System.out.println(getName() + " thanked " + addressObject);
+    public void thanks(Scooperfield scooperfield, Communication addressObject) {
+        System.out.println(scooperfield + " thanked " + addressObject);
     }
 
     // Метод "Помыть с помощью другого мыла"
