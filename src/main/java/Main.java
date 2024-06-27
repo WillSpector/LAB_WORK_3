@@ -29,9 +29,6 @@ public class Main {
     // Декларация класса "соединителя"
     static Concatenation concatenation;
 
-    // Декларация анонимного класса
-    static Location restaurant;
-
     static {
         // Инициализация персонажей
         crabs = new Crabs("Crabs", "he");
@@ -51,10 +48,6 @@ public class Main {
         shelf = new Bathroom.Shelf("shelf");
         // Инициализация класса "соединителя"
         concatenation = new Concatenation();
-
-        // Инициализация анонимного класса
-        restaurant = new Location("restaurant") {
-        };
     }
 
     public static void main(String[] args) throws NotSetFacialExpressionsException {
@@ -136,6 +129,9 @@ public class Main {
         scooperfield.washingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
 
         // Анонимный класс ресторан
+        Location restaurant = new Location("restaurant") {
+        };
         System.out.println(crabs + " go to " + restaurant);
     }
 }
+
