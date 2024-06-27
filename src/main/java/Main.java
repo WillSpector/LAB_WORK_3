@@ -29,7 +29,7 @@ public class Main {
     // Декларация класса "соединителя"
     static Concatenation concatenation;
 
-    // Декларация анонимного класса класса
+    // Декларация анонимного класса
     static Location restaurant;
 
     static {
