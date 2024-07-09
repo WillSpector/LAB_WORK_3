@@ -134,5 +134,6 @@ public class Main {
         COUNT_OF_APPLES = 30;
         System.out.println(COUNT_OF_APPLES);
 
+
     }
 }
