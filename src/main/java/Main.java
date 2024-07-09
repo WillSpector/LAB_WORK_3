@@ -7,6 +7,9 @@ import abstracts.FacialExpression;
 import actors.*;
 import abstracts.Concatenation;
 
+import javax.swing.*;
+import java.util.Scanner;
+
 
 public class Main {
 
@@ -125,6 +128,11 @@ public class Main {
         // Анонимный класс ресторан
         Location restaurant = new Location("restaurant") {
         };
-        System.out.println(crabs + " go to " + restaurant);
+        System.out.println("System.out.println (" + ");");
+
+        final int COUNT_OF_APPLES;
+        COUNT_OF_APPLES = 30;
+        System.out.println(COUNT_OF_APPLES);
+
     }
 }
