@@ -124,7 +124,6 @@ public class Main {
         concatenation.getHowever();
         // Метод помыть другим мылом
         scooperfield.washingWithAnotherSoap(Item.STRAWBERRY_SOAP, strawberrySoapOfCrabs);
-// Проверка
         // Анонимный класс ресторан
         Location restaurant = new Location("restaurant") {
         };
